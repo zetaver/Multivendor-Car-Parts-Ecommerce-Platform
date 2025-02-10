@@ -4,7 +4,7 @@ import { MessageCircle, Phone, Mail, FileText, HelpCircle, Video } from 'lucide-
 const SellerSupport = () => {
   const supportChannels = [
     {
-      icon: <Phone className="w-8 h-8 text-blue-600" />,
+      icon: <Phone className="w-8 h-8 text-[#FFB800]" />,
       title: 'Phone Support',
       description: 'Speak directly with our seller support team',
       action: 'Call Now',
@@ -12,7 +12,7 @@ const SellerSupport = () => {
       availability: 'Mon-Fri, 9:00-18:00',
     },
     {
-      icon: <MessageCircle className="w-8 h-8 text-blue-600" />,
+      icon: <MessageCircle className="w-8 h-8 text-[#FFB800]" />,
       title: 'Live Chat',
       description: 'Get instant help from our support agents',
       action: 'Start Chat',
@@ -20,7 +20,7 @@ const SellerSupport = () => {
       availability: '24/7',
     },
     {
-      icon: <Mail className="w-8 h-8 text-blue-600" />,
+      icon: <Mail className="w-8 h-8 text-[#FFB800]" />,
       title: 'Email Support',
       description: 'Send us your detailed inquiries',
       action: 'Send Email',
@@ -62,10 +62,11 @@ const SellerSupport = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <div className="bg-blue-600 py-16">
+      <div className="bg-[#1E1E2D] py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <HelpCircle className="w-16 h-16 text-white mx-auto mb-4" />
           <h1 className="text-4xl font-bold text-white mb-4">
+
             Seller Support Center
           </h1>
           <p className="text-xl text-blue-100 max-w-2xl mx-auto">
@@ -92,10 +93,11 @@ const SellerSupport = () => {
               </p>
               <a
                 href={channel.link}
-                className="inline-flex items-center justify-center w-full px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700"
+                className="inline-flex items-center justify-center w-full px-4 py-2 border border-transparent text-base font-medium rounded-md text-white bg-[#FFB800] hover:bg-[#e6a600]"
               >
                 {channel.action}
               </a>
+
             </div>
           ))}
         </div>
@@ -114,9 +116,10 @@ const SellerSupport = () => {
                 <ul className="space-y-3">
                   {section.items.map((item, itemIndex) => (
                     <li key={itemIndex} className="flex items-center text-gray-600">
-                      <FileText className="w-5 h-5 text-blue-600 mr-2" />
+                      <FileText className="w-5 h-5 text-[#FFB800] mr-2" />
                       {item}
                     </li>
+
                   ))}
                 </ul>
               </div>
@@ -129,10 +132,11 @@ const SellerSupport = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="bg-white rounded-lg shadow-md p-8">
           <div className="flex items-center mb-6">
-            <Video className="w-8 h-8 text-blue-600 mr-3" />
+            <Video className="w-8 h-8 text-[#FFB800] mr-3" />
             <h2 className="text-2xl font-bold">Video Tutorials</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+
             <div className="aspect-w-16 aspect-h-9 bg-gray-100 rounded-lg">
               {/* Embed video player here */}
               <div className="flex items-center justify-center">

@@ -132,10 +132,11 @@ const SellerDashboard = () => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             <button
               onClick={() => setShowPostAdModal(true)}
-              className="flex items-center justify-center p-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+              className="flex items-center justify-center p-4 bg-[#FFB800] text-[#1E1E2D] rounded-lg hover:bg-[#e6a600] transition-colors"
             >
               <Plus className="w-5 h-5 mr-2" />
               Add New Listing
+
             </button>
             <Link
               to="/seller/orders"
@@ -250,10 +251,11 @@ const SellerDashboard = () => {
           <div className="bg-white rounded-lg max-w-2xl w-full mx-4 max-h-[90vh] overflow-y-auto">
             <div className="p-6">
               <div className="flex justify-between items-center mb-6">
-                <h2 className="text-2xl font-bold text-gray-900">Post New Ad</h2>
+                <h2 className="text-2xl font-bold text-[#1E1E2D]">Post New Ad</h2>
                 <button
                   onClick={() => setShowPostAdModal(false)}
                   className="text-gray-400 hover:text-gray-500"
+
                 >
                   <X className="w-6 h-6" />
                 </button>
@@ -391,10 +393,11 @@ const SellerDashboard = () => {
                   </button>
                   <button
                     type="submit"
-                    className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
+                    className="px-4 py-2 bg-[#FFB800] text-[#1E1E2D] rounded-md hover:bg-[#e6a600]"
                   >
                     Post Ad
                   </button>
+
                 </div>
               </form>
             </div>

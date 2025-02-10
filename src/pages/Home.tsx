@@ -115,7 +115,7 @@ const Home = () => {
                 </h2>
                 <Link
                   to={`/categories/${feature.toLowerCase().replace(/\s+/g, "-")}`}
-                  className="text-blue-600 text-sm md:text-base hover:underline font-medium"
+                  className="text-[#FFB800] text-sm md:text-base hover:underline font-bold"
                 >
                   See all
                 </Link>
@@ -183,10 +183,11 @@ const Home = () => {
                               €{product.price}
                             </span>
                           </div>
-                          <button className="bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium px-4 py-2 rounded-lg transition-colors duration-300">
+                          <button className="bg-[#FFB800]  hover:bg-[#e6a600]  text-secondary text-sm  px-4 py-2 rounded-lg transition-colors ">
                             View Details
                           </button>
                         </div>
+
                       </div>
                     </Link>
                   ))}

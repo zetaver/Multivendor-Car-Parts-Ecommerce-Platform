@@ -4,22 +4,22 @@ import { RefreshCw, Shield, Clock, Truck, AlertCircle, CheckCircle, HelpCircle }
 const Returns = () => {
   const returnSteps = [
     {
-      icon: <Clock className="w-8 h-8 text-blue-600" />,
+      icon: <Clock className="w-8 h-8 text-[#FFB800]" />,
       title: 'Initiate Return',
       description: 'Start your return within 30 days of purchase through your account dashboard',
     },
     {
-      icon: <Truck className="w-8 h-8 text-blue-600" />,
+      icon: <Truck className="w-8 h-8 text-[#FFB800]" />,
       title: 'Ship Item Back',
       description: 'Use our prepaid shipping label to return the item',
     },
     {
-      icon: <CheckCircle className="w-8 h-8 text-blue-600" />,
+      icon: <CheckCircle className="w-8 h-8 text-[#FFB800]" />,
       title: 'Quality Check',
       description: 'We inspect the returned item to ensure it meets return criteria',
     },
     {
-      icon: <RefreshCw className="w-8 h-8 text-blue-600" />,
+      icon: <RefreshCw className="w-8 h-8 text-[#FFB800]" />,
       title: 'Refund Processing',
       description: 'Refund is processed within 5-7 business days after inspection',
     },
@@ -62,11 +62,11 @@ const Returns = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <div className="bg-blue-600 py-16">
+      <div className="bg-[#1E1E2D] py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <RefreshCw className="w-16 h-16 text-white mx-auto mb-4" />
+          <RefreshCw className="w-16 h-16 text-[#FFB800] mx-auto mb-4" />
           <h1 className="text-4xl font-bold text-white mb-4">Returns & Refunds</h1>
-          <p className="text-xl text-blue-100 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
             Easy and hassle-free returns within 30 days of purchase
           </p>
         </div>
@@ -156,10 +156,10 @@ const Returns = () => {
             Our customer service team is here to assist you with any questions about returns or refunds.
           </p>
           <div className="flex justify-center space-x-4">
-            <button className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700">
+            <button className="inline-flex items-center px-6 py-3 border border-transparent text-base font-bold rounded-md text-[#1E1E2D] bg-[#FFB800] hover:bg-[#e6a600]">
               Contact Support
             </button>
-            <button className="inline-flex items-center px-6 py-3 border border-blue-600 text-base font-medium rounded-md text-blue-600 bg-transparent hover:bg-blue-50">
+            <button className="inline-flex items-center px-6 py-3 border border-[#FFB800] text-base font-bold rounded-md text-[#FFB800] bg-transparent hover:bg-[#FFB800] hover:text-[#1E1E2D]">
               View Return Status
             </button>
           </div>

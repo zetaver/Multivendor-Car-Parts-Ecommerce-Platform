@@ -5,11 +5,11 @@ const Cookies = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <div className="bg-blue-600 py-16">
+      <div className="bg-[#1E1E2D] py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <Cookie className="w-16 h-16 text-white mx-auto mb-4" />
+          <Cookie className="w-16 h-16 text-[#FFB800] mx-auto mb-4" />
           <h1 className="text-4xl font-bold text-white mb-4">Cookie Policy</h1>
-          <p className="text-xl text-blue-100 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
             Understanding how we use cookies to improve your experience
           </p>
         </div>
@@ -76,12 +76,12 @@ const Cookies = () => {
                 with an updated revision date.
               </p>
 
-              <div className="mt-8 bg-blue-50 rounded-lg p-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-4">Contact Us</h3>
-                <p className="text-gray-600">
+              <div className="mt-8 bg-[#1E1E2D] rounded-lg p-6">
+                <h3 className="text-lg font-semibold text-white mb-4">Contact Us</h3>
+                <p className="text-gray-300">
                   If you have any questions about our Cookie Policy, please contact us at:
                 </p>
-                <ul className="mt-4 space-y-2 text-gray-600">
+                <ul className="mt-4 space-y-2 text-gray-300">
                   <li>Email: privacy@easycasse.com</li>
                   <li>Phone: +33 1 23 45 67 89</li>
                 </ul>

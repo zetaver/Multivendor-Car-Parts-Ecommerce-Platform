@@ -4,7 +4,7 @@ import { Lock, Shield, Eye, Database, Bell, Settings } from 'lucide-react';
 const Privacy = () => {
   const sections = [
     {
-      icon: <Database className="w-6 h-6 text-blue-600" />,
+      icon: <Database className="w-6 h-6 text-[#FFB800]" />,
       title: 'Information We Collect',
       content: [
         'Personal identification information (Name, email address, phone number)',
@@ -15,7 +15,7 @@ const Privacy = () => {
       ],
     },
     {
-      icon: <Eye className="w-6 h-6 text-blue-600" />,
+      icon: <Eye className="w-6 h-6 text-[#FFB800]" />,
       title: 'How We Use Your Information',
       content: [
         'Process your orders and transactions',
@@ -26,7 +26,7 @@ const Privacy = () => {
       ],
     },
     {
-      icon: <Shield className="w-6 h-6 text-blue-600" />,
+      icon: <Shield className="w-6 h-6 text-[#FFB800]" />,
       title: 'Data Protection',
       content: [
         'Encryption of sensitive data',
@@ -37,7 +37,7 @@ const Privacy = () => {
       ],
     },
     {
-      icon: <Bell className="w-6 h-6 text-blue-600" />,
+      icon: <Bell className="w-6 h-6 text-[#FFB800]" />,
       title: 'Your Privacy Rights',
       content: [
         'Right to access your personal data',
@@ -52,11 +52,11 @@ const Privacy = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <div className="bg-blue-600 py-16">
+      <div className="bg-[#1E1E2D] py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <Lock className="w-16 h-16 text-white mx-auto mb-4" />
+          <Lock className="w-16 h-16 text-[#FFB800] mx-auto mb-4" />
           <h1 className="text-4xl font-bold text-white mb-4">Privacy Policy</h1>
-          <p className="text-xl text-blue-100 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
             We are committed to protecting your privacy and personal information
           </p>
         </div>
@@ -83,12 +83,12 @@ const Privacy = () => {
                 <div key={index} className="mt-12">
                   <div className="flex items-center mb-4">
                     {section.icon}
-                    <h2 className="text-2xl font-bold text-gray-900 ml-3">{section.title}</h2>
+                    <h2 className="text-2xl font-bold text-[#1E1E2D] ml-3">{section.title}</h2>
                   </div>
                   <ul className="space-y-3">
                     {section.content.map((item, itemIndex) => (
                       <li key={itemIndex} className="flex items-start">
-                        <span className="text-blue-600 mr-2">•</span>
+                        <span className="text-[#FFB800] mr-2">•</span>
                         <span className="text-gray-600">{item}</span>
                       </li>
                     ))}
@@ -99,8 +99,8 @@ const Privacy = () => {
               {/* Cookie Policy */}
               <div className="mt-12 bg-gray-50 rounded-lg p-6">
                 <div className="flex items-center mb-4">
-                  <Settings className="w-6 h-6 text-blue-600 mr-2" />
-                  <h2 className="text-2xl font-bold text-gray-900">Cookie Policy</h2>
+                  <Settings className="w-6 h-6 text-[#FFB800] mr-2" />
+                  <h2 className="text-2xl font-bold text-[#1E1E2D]">Cookie Policy</h2>
                 </div>
                 <p className="text-gray-600 mb-4">
                   We use cookies and similar tracking technologies to improve your browsing experience, 
@@ -119,7 +119,7 @@ const Privacy = () => {
 
               {/* Contact Information */}
               <div className="mt-12">
-                <h2 className="text-2xl font-bold text-gray-900 mb-4">Contact Us</h2>
+                <h2 className="text-2xl font-bold text-[#1E1E2D] mb-4">Contact Us</h2>
                 <p className="text-gray-600">
                   If you have any questions about this Privacy Policy or our data practices, please contact our Data Protection Officer:
                 </p>
@@ -131,11 +131,11 @@ const Privacy = () => {
               </div>
 
               {/* Updates to Privacy Policy */}
-              <div className="mt-12 bg-blue-50 rounded-lg p-6">
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+              <div className="mt-12 bg-[#1E1E2D] rounded-lg p-6">
+                <h3 className="text-lg font-semibold text-white mb-2">
                   Updates to This Policy
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-gray-300">
                   We may update this Privacy Policy from time to time. We will notify you of any changes 
                   by posting the new Privacy Policy on this page and updating the "Last updated" date.
                 </p>

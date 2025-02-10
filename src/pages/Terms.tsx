@@ -32,11 +32,11 @@ const Terms = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <div className="bg-blue-600 py-16">
+      <div className="bg-[#1E1E2D] py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <FileText className="w-16 h-16 text-white mx-auto mb-4" />
+          <FileText className="w-16 h-16 text-[#FFB800] mx-auto mb-4" />
           <h1 className="text-4xl font-bold text-white mb-4">Terms of Service</h1>
-          <p className="text-xl text-blue-100 max-w-2xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
             Please read these terms carefully before using our platform
           </p>
         </div>
