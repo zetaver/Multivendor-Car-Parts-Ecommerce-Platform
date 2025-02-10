@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { store } from './store/store';
 import Navbar from './components/Navbar';
@@ -69,143 +69,152 @@ const ProtectedRoute = ({ children, role, redirectTo = '/login' }: ProtectedRout
   return <>{children}</>;
 };
 
+const AppContent = () => {
+  const location = useLocation();
+  const shouldHaveMargin = ['/', '/products'].includes(location.pathname);
+
+  return (
+    <div className="min-h-screen bg-gray-50 flex flex-col">
+      <Navbar />
+      <main className={`flex-grow md:pb-0 ${shouldHaveMargin ? 'mt-[102px]' : 'mt-[150px]'}`}>
+        <Routes>
+          {/* Public Routes */}
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/products" element={<ProductList />} />
+
+          <Route path="/products/:id" element={<ProductDetail />} />
+          <Route path="/categories" element={<Categories />} />
+          <Route path="/new-arrivals" element={<NewArrivals />} />
+          <Route path="/best-sellers" element={<BestSellers />} />
+          <Route path="/deals" element={<Deals />} />
+          <Route path="/sell" element={<Sell />} />
+          <Route path="/seller-guidelines" element={<SellerGuidelines />} />
+          <Route path="/shipping" element={<Shipping />} />
+          <Route path="/seller-support" element={<SellerSupport />} />
+          <Route path="/help" element={<Help />} />
+          <Route path="/returns" element={<Returns />} />
+          <Route path="/track-order" element={<TrackOrder />} />
+          <Route path="/terms" element={<Terms />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/cookies" element={<Cookies />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/seller/:sellerId" element={<SellerStore />} />
+          <Route path="/search" element={<SearchPage />} />
+          <Route path="/products" element={<ProductsPage />} />
+
+          {/* Protected Routes */}
+          <Route
+            path="/messages"
+            element={
+              <ProtectedRoute>
+                <Messages />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/wishlist"
+            element={
+              <ProtectedRoute>
+                <Wishlist />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/notifications"
+            element={
+              <ProtectedRoute>
+                <Notifications />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/settings"
+            element={
+              <ProtectedRoute>
+                <UserSettings />
+              </ProtectedRoute>
+            }
+          />
+
+          {/* Protected Seller Routes */}
+          <Route
+            path="/seller/dashboard"
+            element={
+              <ProtectedRoute role="seller">
+                <SellerDashboard />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/seller/orders"
+            element={
+              <ProtectedRoute role="seller">
+                <Orders />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/seller/add-listing"
+            element={
+              <ProtectedRoute role="seller">
+                <AddListing />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/seller/inventory"
+            element={
+              <ProtectedRoute role="seller">
+                <Inventory />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/seller/analytics"
+            element={
+              <ProtectedRoute role="seller">
+                <SellerAnalytics />
+              </ProtectedRoute>
+            }
+          />
+
+          {/* Protected Admin Routes */}
+          <Route
+            path="/admin"
+            element={
+              <ProtectedRoute role="admin">
+                <AdminLayout />
+              </ProtectedRoute>
+            }
+          >
+            <Route index element={<AdminDashboard />} />
+            <Route path="users" element={<Users />} />
+            <Route path="products" element={<Products />} />
+            <Route path="orders" element={<AdminOrders />} />
+            <Route path="analytics" element={<AdminAnalytics />} />
+            <Route path="reports" element={<Reports />} />
+            <Route path="settings" element={<Settings />} />
+          </Route>
+
+          {/* Catch all route - 404 */}
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </main>
+      <Footer className="hidden md:block" />
+      <BottomNavigation 
+        className={`md:hidden ${location.pathname.includes('/products/') ? 'hidden' : ''}`} 
+      />
+    </div>
+  );
+};
+
 const App = () => {
   return (
     <Provider store={store}>
       <Router>
-        <div className="min-h-screen bg-gray-50 flex flex-col">
-          <Navbar />
-          <main className="flex-grow md:pb-0 mt-[102px]">
-            <Routes>
-              {/* Public Routes */}
-              <Route path="/" element={<Home />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/register" element={<Register />} />
-              <Route path="/products" element={<ProductList />} />
-
-              <Route path="/products/:id" element={<ProductDetail />} />
-              <Route path="/categories" element={<Categories />} />
-              <Route path="/new-arrivals" element={<NewArrivals />} />
-              <Route path="/best-sellers" element={<BestSellers />} />
-              <Route path="/deals" element={<Deals />} />
-              <Route path="/sell" element={<Sell />} />
-              <Route path="/seller-guidelines" element={<SellerGuidelines />} />
-              <Route path="/shipping" element={<Shipping />} />
-              <Route path="/seller-support" element={<SellerSupport />} />
-              <Route path="/help" element={<Help />} />
-              <Route path="/returns" element={<Returns />} />
-              <Route path="/track-order" element={<TrackOrder />} />
-              <Route path="/terms" element={<Terms />} />
-              <Route path="/privacy" element={<Privacy />} />
-              <Route path="/cookies" element={<Cookies />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/seller/:sellerId" element={<SellerStore />} />
-              <Route path="/search" element={<SearchPage />} />
-              <Route path="/products" element={<ProductsPage />} />
-
-              {/* Protected Routes */}
-              <Route
-                path="/messages"
-                element={
-                  <ProtectedRoute>
-                    <Messages />
-                  </ProtectedRoute>
-                }
-              />
-              <Route
-                path="/wishlist"
-                element={
-                  <ProtectedRoute>
-                    <Wishlist />
-                  </ProtectedRoute>
-                }
-              />
-              <Route
-                path="/notifications"
-                element={
-                  <ProtectedRoute>
-                    <Notifications />
-                  </ProtectedRoute>
-                }
-              />
-              <Route
-                path="/settings"
-                element={
-                  <ProtectedRoute>
-                    <UserSettings />
-                  </ProtectedRoute>
-                }
-              />
-
-              {/* Protected Seller Routes */}
-              <Route
-                path="/seller/dashboard"
-                element={
-                  <ProtectedRoute role="seller">
-                    <SellerDashboard />
-                  </ProtectedRoute>
-                }
-              />
-              <Route
-                path="/seller/orders"
-                element={
-                  <ProtectedRoute role="seller">
-                    <Orders />
-                  </ProtectedRoute>
-                }
-              />
-              <Route
-                path="/seller/add-listing"
-                element={
-                  <ProtectedRoute role="seller">
-                    <AddListing />
-                  </ProtectedRoute>
-                }
-              />
-              <Route
-                path="/seller/inventory"
-                element={
-                  <ProtectedRoute role="seller">
-                    <Inventory />
-                  </ProtectedRoute>
-                }
-              />
-              <Route
-                path="/seller/analytics"
-                element={
-                  <ProtectedRoute role="seller">
-                    <SellerAnalytics />
-                  </ProtectedRoute>
-                }
-              />
-
-              {/* Protected Admin Routes */}
-              <Route
-                path="/admin"
-                element={
-                  <ProtectedRoute role="admin">
-                    <AdminLayout />
-                  </ProtectedRoute>
-                }
-              >
-                <Route index element={<AdminDashboard />} />
-                <Route path="users" element={<Users />} />
-                <Route path="products" element={<Products />} />
-                <Route path="orders" element={<AdminOrders />} />
-                <Route path="analytics" element={<AdminAnalytics />} />
-                <Route path="reports" element={<Reports />} />
-                <Route path="settings" element={<Settings />} />
-              </Route>
-
-              {/* Catch all route - 404 */}
-              <Route path="*" element={<Navigate to="/" replace />} />
-            </Routes>
-          </main>
-          <Footer className="hidden md:block" />
-          <BottomNavigation 
-            className={`md:hidden ${location.pathname.includes('/products/') ? 'hidden' : ''}`} 
-          />
-        </div>
+        <AppContent />
       </Router>
     </Provider>
   );

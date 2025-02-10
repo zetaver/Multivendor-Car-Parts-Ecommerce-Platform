@@ -58,10 +58,11 @@ const Help = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <div className="bg-blue-600 py-16">
+      <div className="bg-[#1E1E2D] py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <HelpCircle className="w-16 h-16 text-white mx-auto mb-4" />
+          <HelpCircle className="w-16 h-16 text-[#FFB800] mx-auto mb-4" />
           <h1 className="text-4xl font-bold text-white mb-4">
+
             How can we help you?
           </h1>
           <div className="max-w-xl mx-auto">
@@ -70,10 +71,11 @@ const Help = () => {
               <input
                 type="text"
                 placeholder="Search for help..."
-                className="w-full pl-10 pr-4 py-3 rounded-lg border-none focus:ring-2 focus:ring-blue-500"
+                className="w-full pl-10 pr-4 py-3 rounded-lg border-none focus:ring-2 focus:ring-[#FFB800]"
               />
             </div>
           </div>
+
         </div>
       </div>
 
@@ -86,9 +88,10 @@ const Help = () => {
               to={category.link}
               className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
             >
-              <div className="flex items-center text-blue-600 mb-3">
+              <div className="flex items-center text-[#FFB800] mb-3">
                 {category.icon}
                 <h3 className="text-lg font-semibold ml-2">{category.title}</h3>
+
               </div>
             </Link>
           ))}
@@ -113,10 +116,11 @@ const Help = () => {
                 <p className="text-gray-600 mb-4">{item.answer}</p>
                 <Link
                   to={item.link}
-                  className="text-blue-600 hover:text-blue-700 font-medium"
+                  className="text-[#FFB800] hover:text-[#e6a600] font-medium"
                 >
                   Learn more →
                 </Link>
+
               </div>
             ))}
           </div>
@@ -131,34 +135,40 @@ const Help = () => {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="bg-white p-6 rounded-lg shadow-md text-center">
-              <Phone className="w-8 h-8 text-blue-600 mx-auto mb-4" />
+              <Phone className="w-8 h-8 text-[#FFB800] mx-auto mb-4" />
               <h3 className="text-lg font-semibold mb-2">Call Us</h3>
               <p className="text-gray-600">Available Mon-Fri, 9am-6pm</p>
               <a
+
                 href="tel:+33123456789"
-                className="mt-4 inline-block text-blue-600 hover:text-blue-700"
+                className="mt-4 inline-block text-[#FFB800] hover:text-[#e6a600]"
               >
                 +33 1 23 45 67 89
               </a>
+
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md text-center">
-              <Mail className="w-8 h-8 text-blue-600 mx-auto mb-4" />
+              <Mail className="w-8 h-8 text-[#FFB800] mx-auto mb-4" />
               <h3 className="text-lg font-semibold mb-2">Email Support</h3>
               <p className="text-gray-600">Get a response within 24 hours</p>
               <a
+
                 href="mailto:support@easycasse.com"
-                className="mt-4 inline-block text-blue-600 hover:text-blue-700"
+                className="mt-4 inline-block text-[#FFB800] hover:text-[#e6a600]"
               >
                 support@easycasse.com
               </a>
+
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md text-center">
-              <MessageCircle className="w-8 h-8 text-blue-600 mx-auto mb-4" />
+              <MessageCircle className="w-8 h-8 text-[#FFB800] mx-auto mb-4" />
               <h3 className="text-lg font-semibold mb-2">Live Chat</h3>
               <p className="text-gray-600">Chat with our support team</p>
-              <button className="mt-4 text-blue-600 hover:text-blue-700">
+
+              <button className="mt-4 text-[#FFB800] hover:text-[#e6a600]">
                 Start Chat
               </button>
+
             </div>
           </div>
         </div>
