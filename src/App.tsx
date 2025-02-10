@@ -201,7 +201,9 @@ const App = () => {
             </Routes>
           </main>
           <Footer className="hidden md:block" />
-          <BottomNavigation className="md:hidden" />
+          <BottomNavigation 
+            className={`md:hidden ${location.pathname.includes('/products/') ? 'hidden' : ''}`} 
+          />
         </div>
       </Router>
     </Provider>
