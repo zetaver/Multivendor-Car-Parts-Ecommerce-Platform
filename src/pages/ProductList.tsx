@@ -172,7 +172,7 @@ const ProductList = () => {
             <div className="relative">
               <button
                 onClick={() => setShowFilterMenu(!showFilterMenu)}
-                className="flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50"
+                className="flex items-center px-4 py-2 border border-secondary rounded-md shadow-sm text-sm font-medium text-secondary bg-white hover:bg-gray-50"
               >
                 <Filter className="h-5 w-5 mr-2 text-gray-400" />
                 Filters
@@ -233,7 +233,7 @@ const ProductList = () => {
                     <div className="pt-4 border-t">
                       <button
                         onClick={() => setShowFilterMenu(false)}
-                        className="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700"
+                        className="w-full bg-primary text-secondary-dark py-3 rounded-lg hover:bg-primary-dark transition-colors"
                       >
                         Apply Filters
                       </button>
@@ -314,7 +314,7 @@ const ProductList = () => {
                     <div className="mt-4 pt-4 border-t">
                       <button
                         onClick={() => setShowFilterMenu(false)}
-                        className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700"
+                        className="w-full bg-primary text-secondary-dark py-3 rounded-lg hover:bg-primary-dark transition-colors"
                       >
                         Apply Filters
                       </button>
@@ -363,44 +363,44 @@ const ProductList = () => {
           sortOption) && (
             <div className="mb-6 flex flex-wrap gap-2">
               {filters.category !== 'All Categories' && (
-                <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800">
+                <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary/10 text-secondary">
                   {filters.category}
                   <button
                     onClick={() => handleFilterChange('category', 'All Categories')}
-                    className="ml-2 text-blue-600 hover:text-blue-500"
+                    className="ml-2 text-secondary hover:text-secondary-dark"
                   >
                     <X className="h-4 w-4" />
                   </button>
                 </span>
               )}
               {filters.condition !== 'All Conditions' && (
-                <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800">
+                <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary/10 text-secondary">
                   {filters.condition}
                   <button
                     onClick={() => handleFilterChange('condition', 'All Conditions')}
-                    className="ml-2 text-blue-600 hover:text-blue-500"
+                    className="ml-2 text-secondary hover:text-secondary-dark"
                   >
                     <X className="h-4 w-4" />
                   </button>
                 </span>
               )}
               {filters.priceRange !== 'All Prices' && (
-                <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800">
+                <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary/10 text-secondary">
                   {filters.priceRange}
                   <button
                     onClick={() => handleFilterChange('priceRange', 'All Prices')}
-                    className="ml-2 text-blue-600 hover:text-blue-500"
+                    className="ml-2 text-secondary hover:text-secondary-dark"
                   >
                     <X className="h-4 w-4" />
                   </button>
                 </span>
               )}
               {sortOption && (
-                <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800">
+                <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary/10 text-secondary">
                   {sortOptions.find(opt => opt.value === sortOption)?.label}
                   <button
                     onClick={() => setSortOption('')}
-                    className="ml-2 text-blue-600 hover:text-blue-500"
+                    className="ml-2 text-secondary hover:text-secondary-dark"
                   >
                     <X className="h-4 w-4" />
                   </button>
@@ -415,7 +415,7 @@ const ProductList = () => {
                   });
                   setSortOption('');
                 }}
-                className="text-sm text-blue-600 hover:text-blue-500"
+                className="text-sm text-secondary hover:text-secondary-dark"
               >
                 Clear all
               </button>
@@ -484,7 +484,7 @@ const ProductList = () => {
                 ) : null}
                 <button
                   onClick={() => handleViewDetails(product.id)}
-                  className="w-full mt-3 bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors duration-200 text-sm"
+                  className="w-full mt-3 bg-primary text-secondary-dark py-2 px-4 rounded-md hover:bg-primary-dark transition-colors duration-200 text-sm"
                 >
                   {product.stock > 0 ? 'View Details' : 'Out of Stock'}
                 </button>
@@ -507,7 +507,7 @@ const ProductList = () => {
                 });
                 setSortOption('');
               }}
-              className="mt-4 text-blue-600 hover:text-blue-700"
+              className="mt-4 text-secondary hover:text-secondary-dark"
             >
               Clear all filters
             </button>

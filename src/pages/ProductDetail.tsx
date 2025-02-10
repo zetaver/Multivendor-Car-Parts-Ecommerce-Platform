@@ -250,11 +250,11 @@ const ProductDetail = () => {
         <div className="fixed bottom-0 left-0 right-0 bg-white border-t p-4 flex gap-3">
           <button 
             onClick={handleMakeOffer}
-            className="flex-1 py-3 px-4 border border-gray-300 rounded-lg font-medium"
+            className="flex-1 py-3 px-4 border border-secondary rounded-lg font-medium hover:bg-gray-50"
           >
             Make an offer
           </button>
-          <button className="flex-1 py-3 px-4 bg-[#1D4ED8] text-white rounded-lg font-medium">
+          <button className="flex-1 py-3 px-4 bg-primary text-secondary-dark rounded-lg font-medium hover:bg-primary-dark transition-colors">
             Buy Now
           </button>
         </div>
@@ -303,7 +303,7 @@ const ProductDetail = () => {
                     onClick={() => setCurrentImageIndex(index)}
                     className={`aspect-square rounded-lg overflow-hidden transition-all
                       ${currentImageIndex === index 
-                        ? 'ring-2 ring-[#1D4ED8] ring-offset-2' 
+                        ? 'ring-2 ring-primary ring-offset-2' 
                         : 'hover:opacity-80'
                       }`}
                   >
@@ -382,17 +382,17 @@ const ProductDetail = () => {
                 <div className="flex gap-4 pt-4">
                   <button 
                     onClick={handleMakeOffer}
-                    className="flex-1 py-3.5 px-6 border border-gray-300 rounded-xl font-medium hover:bg-gray-50 transition-colors"
+                    className="flex-1 py-3.5 px-6 border border-secondary rounded-xl font-medium hover:bg-gray-50 transition-colors"
                   >
                     Make an offer
                   </button>
-                  <button className="flex-1 py-3.5 px-6 bg-[#1D4ED8] text-white rounded-xl font-medium hover:bg-[#1D4ED8]/90 transition-colors">
+                  <button className="flex-1 py-3.5 px-6 bg-primary text-secondary-dark rounded-xl font-medium hover:bg-primary-dark transition-colors">
                     Buy Now
                   </button>
                 </div>
                 <button 
                   onClick={() => {/* Add your view details logic here */}}
-                  className="w-full py-3 px-6 text-[#1D4ED8] border border-[#1D4ED8] rounded-xl font-medium hover:bg-blue-50 transition-colors"
+                  className="w-full py-3 px-6 text-secondary border border-secondary rounded-xl font-medium hover:bg-gray-50 transition-colors"
                 >
                   View Full Details
                 </button>
@@ -403,12 +403,9 @@ const ProductDetail = () => {
           {/* Similar Products */}
           <div className="mt-16">
             <h2 className="text-2xl font-semibold mb-6">Similar Products</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-4 gap-6">
               {similarProducts.map((product) => (
-                <div 
-                  key={product.id} 
-                  className="flex flex-col bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
-                >
+                <div key={product.id} className="flex flex-col bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
                   <div className="aspect-square w-full overflow-hidden">
                     <img
                       src={product.image}
@@ -430,7 +427,7 @@ const ProductDetail = () => {
                     </div>
                     <button 
                       onClick={() => navigate(`/products/${product.id}`)}
-                      className="w-full py-2 px-4 text-sm text-[#1D4ED8] border border-[#1D4ED8] rounded-lg hover:bg-blue-50 transition-colors"
+                      className="w-full py-2 px-4 text-sm text-secondary border border-secondary rounded-lg hover:bg-gray-50 transition-colors"
                     >
                       View Details
                     </button>
@@ -457,7 +454,7 @@ const ProductDetail = () => {
                   id="offerAmount"
                   value={offerAmount}
                   onChange={(e) => setOfferAmount(e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary"
                   placeholder="Enter amount"
                 />
               </div>
@@ -470,7 +467,7 @@ const ProductDetail = () => {
                 </button>
                 <button
                   onClick={handleSubmitOffer}
-                  className="flex-1 py-2.5 px-4 bg-[#1D4ED8] text-white rounded-lg font-medium hover:bg-[#1D4ED8]/90"
+                  className="flex-1 py-2.5 px-4 bg-primary text-secondary-dark rounded-lg font-medium hover:bg-primary-dark"
                 >
                   Send Offer
                 </button>

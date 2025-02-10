@@ -20,8 +20,8 @@ const FeaturedProducts = ({ title, products }: FeaturedProductsProps) => {
   return (
     <div className="py-4">
       <div className="flex justify-between items-center px-4 mb-4">
-        <h2 className="text-xl font-bold text-gray-900">{title}</h2>
-        <Link to="/see-all" className="text-sm text-gray-600">
+        <h2 className="text-xl font-bold text-secondary">{title}</h2>
+        <Link to="/see-all" className="text-sm text-secondary hover:text-secondary-dark">
           See all
         </Link>
       </div>
@@ -41,7 +41,7 @@ const FeaturedProducts = ({ title, products }: FeaturedProductsProps) => {
                     className="w-full h-full object-cover"
                   />
                   {product.isNew && (
-                    <span className="absolute top-2 left-2 bg-green-500 text-white text-xs px-2 py-1 rounded-full">
+                    <span className="absolute top-2 left-2 bg-primary text-secondary-dark text-xs px-2 py-1 rounded-full">
                       New
                     </span>
                   )}

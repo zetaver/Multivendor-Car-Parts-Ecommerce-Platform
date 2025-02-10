@@ -75,7 +75,7 @@ const App = () => {
       <Router>
         <div className="min-h-screen bg-gray-50 flex flex-col">
           <Navbar />
-          <main className="flex-grow md:pb-0 mt-[111px]">
+          <main className="flex-grow md:pb-0 mt-[102px]">
             <Routes>
               {/* Public Routes */}
               <Route path="/" element={<Home />} />

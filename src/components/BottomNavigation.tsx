@@ -48,11 +48,13 @@ const BottomNavigation = ({ className = '' }: BottomNavigationProps) => {
               }`}
             >
               {item.isSell ? (
-                <div className="w-14 h-14 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl -translate-y-3 shadow-md">
+                <div className="w-14 h-14 bg-primary text-secondary-dark rounded-full flex items-center justify-center text-xl -translate-y-3 shadow-md hover:bg-primary-dark transition-colors">
                   +
                 </div>
               ) : (
-                <div className={`flex flex-col items-center ${isActive ? 'text-blue-600' : 'text-gray-500 hover:text-gray-700'}`}>
+                <div className={`flex flex-col items-center ${
+                  isActive ? 'text-primary' : 'text-gray-500 hover:text-gray-700'
+                }`}>
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d={item.icon} />
                   </svg>

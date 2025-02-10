@@ -10,12 +10,7 @@ import {
   MessageSquare,
   Bell,
   Menu,
-  X,
-  ChevronLeft,
-  ChevronRight,
-  Car,
-  Home,
-  Plus,
+  ChevronDown,
 } from "lucide-react";
 import LanguageSelector from "./LanguageSelector";
 import { useTranslation } from "react-i18next";
@@ -354,94 +349,143 @@ const Navbar = () => {
   };
 
   return (
-    <div className="fixed top-0 left-0 right-0 bg-[#1e3a8a] text-white z-50">
-      <div className="max-w-7xl mx-auto px-4">
-        {/* Top Bar */}
-        <div className="flex items-center justify-between h-14">
-          {/* Logo */}
-          <Link to="/" className="flex-shrink-0">
-            <span className="text-2xl font-bold text-white">EasyCasse</span>
-          </Link>
-
-          {/* Right Navigation */}
-          <div className="flex items-center space-x-4">
-            <LanguageSelector />
-            {isAuthenticated ? (
-              <>
-                <Link 
-                  to="/messages" 
-                  className="text-white/90 hover:text-white"
-                >
-                  <MessageSquare className="w-6 h-6" />
-                </Link>
-                <Link 
-                  to="/notifications" 
-                  className="text-white/90 hover:text-white"
-                >
-                  <Bell className="w-6 h-6" />
-                </Link>
-              </>
-            ) : (
-              <Link 
-                to="/login" 
-                className="text-white/90 hover:text-white"
-              >
-                <User className="w-6 h-6" />
+    <div className="fixed top-0 left-0 right-0 bg-secondary z-50">
+      {/* Top Bar */}
+      <div className="bg-secondary-dark text-white py-2">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center text-sm">
+            <div className="flex items-center space-x-4">
+              <Link to="/seller-support" className="hover:text-primary transition-colors">
+                Seller Support
               </Link>
-            )}
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-white/90 hover:text-white md:hidden"
-            >
-              <Menu className="h-6 w-6" />
-            </button>
+              <Link to="/help" className="hover:text-primary transition-colors">
+                Help Center
+              </Link>
+            </div>
+            <div className="flex items-center space-x-4">
+              <LanguageSelector />
+              <Link to="/track-order" className="hover:text-primary transition-colors">
+                Track Order
+              </Link>
+            </div>
           </div>
         </div>
+      </div>
 
-        {/* Search Bar */}
-        <div className="py-2 border-t border-white/10">
-          <form 
-            onSubmit={handleSearch}
-            className="relative flex items-center w-full"
-          >
-            <input
-              type="text"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search for..."
-              className="w-full pl-4 pr-10 py-1.5 bg-white rounded text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
-            />
-            <button 
-              type="submit" 
-              className="absolute right-2 top-1/2 transform -translate-y-1/2"
-            >
-              <Search className="w-4 h-4 text-gray-400" />
-            </button>
-          </form>
+      {/* Main Navbar */}
+      <div className="bg-secondary border-b border-secondary-light/10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16">
+            {/* Logo */}
+            <Link to="/" className="flex-shrink-0 flex items-center">
+              <img
+                src="/logo.png"
+                alt="EasyCasse"
+                className="h-12 w-auto"
+              />
+            </Link>
+
+            {/* Search Bar */}
+            <div className="flex-1 max-w-2xl mx-8">
+              <form 
+                onSubmit={handleSearch}
+                className="relative flex items-center"
+              >
+                <input
+                  type="text"
+                  value={searchQuery}
+                  onChange={(e) => setSearchQuery(e.target.value)}
+                  placeholder="Search for auto parts..."
+                  className="w-full pl-4 pr-10 py-2 bg-secondary-light rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary"
+                />
+                <button 
+                  type="submit" 
+                  className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-primary"
+                >
+                  <Search className="w-5 h-5" />
+                </button>
+              </form>
+            </div>
+
+            {/* Right Navigation */}
+            <div className="flex items-center space-x-6">
+              <Link 
+                to="/sell" 
+                className="bg-primary hover:bg-primary-dark text-secondary-dark px-4 py-2 rounded-lg font-medium transition-colors"
+              >
+                Sell Parts
+              </Link>
+
+              {isAuthenticated ? (
+                <>
+                  <Link 
+                    to="/messages" 
+                    className="text-white hover:text-primary transition-colors"
+                  >
+                    <MessageSquare className="w-6 h-6" />
+                  </Link>
+                  <Link 
+                    to="/notifications" 
+                    className="text-white hover:text-primary transition-colors"
+                  >
+                    <Bell className="w-6 h-6" />
+                  </Link>
+                  <div className="relative group">
+                    <button className="flex items-center text-white hover:text-primary transition-colors">
+                      <User className="w-6 h-6" />
+                      <ChevronDown className="w-4 h-4 ml-1" />
+                    </button>
+                    <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 hidden group-hover:block">
+                      <Link 
+                        to="/profile" 
+                        className="block px-4 py-2 text-secondary hover:bg-gray-100"
+                      >
+                        Profile
+                      </Link>
+                      <Link 
+                        to="/settings" 
+                        className="block px-4 py-2 text-secondary hover:bg-gray-100"
+                      >
+                        Settings
+                      </Link>
+                      <button 
+                        onClick={() => dispatch(logout())}
+                        className="block w-full text-left px-4 py-2 text-red-600 hover:bg-gray-100"
+                      >
+                        Logout
+                      </button>
+                    </div>
+                  </div>
+                </>
+              ) : (
+                <Link 
+                  to="/login" 
+                  className="text-white hover:text-primary transition-colors flex items-center"
+                >
+                  <User className="w-6 h-6 mr-2" />
+                  Login
+                </Link>
+              )}
+            </div>
+          </div>
         </div>
+      </div>
 
-        {/* Category Icons */}
-        <div className="relative border-t border-white/10">
-          <div className="flex overflow-x-auto scrollbar-hide py-2 space-x-8 px-2">
+      {/* Categories Bar */}
+      <div className="bg-secondary-light">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center space-x-8 h-12 text-sm">
             {categories.map((category) => (
               <Link
                 key={category.id}
                 to={`/products?category=${category.id}`}
-                className="flex flex-col items-center group flex-shrink-0"
+                className="text-gray-300 hover:text-primary transition-colors flex items-center"
               >
-                <div className="w-8 h-8 flex items-center justify-center text-lg mb-1">
-                  {category.icon}
-                </div>
-                <span className="text-xs text-white/80 group-hover:text-white whitespace-nowrap">
-                  {category.name}
-                </span>
+                <span className="mr-2">{category.icon}</span>
+                {category.name}
               </Link>
             ))}
           </div>
-          
-          {/* Scroll indicators */}
-          <div className="absolute left-0 top-0 bottom-0 bg-gradient-to-r from-[#1e3a8a] w-8 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 bg-gradient-to-l from-[#1e3a8a] w-8 pointer-events-none" />
         </div>
       </div>
     </div>

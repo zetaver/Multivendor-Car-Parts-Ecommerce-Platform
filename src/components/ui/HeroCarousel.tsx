@@ -67,15 +67,14 @@ const HeroCarousel = () => {
   };
 
   return (
-    <div className="relative bg-gray-100 h-auto md:h-[50vh] mt-16 pt-1">
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
-      <div className="flex flex-col md:grid md:grid-cols-3 h-full">
+    <div className="relative bg-gray-100 h-auto md:h-[60vh] mt-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
+        <div className="flex flex-col md:grid md:grid-cols-3 h-full">
           {/* Vehicle Filter */}
           <div className={`
             fixed inset-x-0 bottom-0 md:relative md:static
             z-[100] md:z-auto
-            bg-[#1e3a8a] 
-            
+            bg-secondary 
             transition-all duration-300 ease-in-out
             md:block md:h-full
             ${isFilterOpen ? 'translate-y-0' : 'translate-y-full'}
@@ -144,7 +143,7 @@ const HeroCarousel = () => {
                 {/* Search Button */}
                 <button
                   type="submit"
-                  className="w-full bg-orange-600 text-white py-3 px-4 rounded-lg hover:bg-orange-700 transition-colors flex items-center justify-center mt-1 text-base font-medium"
+                  className="w-full bg-primary text-secondary-dark py-3 px-4 rounded-lg hover:bg-primary-dark transition-colors flex items-center justify-center mt-1 text-base font-medium"
                 >
                   <Search className="w-5 h-5 mr-2" />
                   Search Parts
