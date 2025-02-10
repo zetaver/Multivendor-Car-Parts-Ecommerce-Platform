@@ -67,7 +67,7 @@ const HeroCarousel = () => {
   };
 
   return (
-    <div className="relative bg-gray-100 h-auto md:h-[70vh]">
+    <div className="relative bg-gray-100 h-auto md:h-[60vh] mt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
         <div className="flex flex-col md:grid md:grid-cols-3 h-full">
           {/* Vehicle Filter */}
@@ -96,16 +96,16 @@ const HeroCarousel = () => {
               </button>
             </div>
             
-            <div className="px-4 pb-6 pt-2 md:p-8">
-              <h2 className="text-white text-2xl font-bold mb-6 hidden md:block">Find Parts for Your Vehicle</h2>
-              <form onSubmit={handleSearch} className="flex flex-col gap-6">
+            <div className="px-4 pb-6 pt-2 md:p-6">
+              <h2 className="text-white text-xl font-bold mb-4 hidden md:block">Find Parts for Your Vehicle</h2>
+              <form onSubmit={handleSearch} className="flex flex-col gap-4">
                 {/* Year Selection */}
                 <div>
-                  <label className="block text-white text-base mb-2">Year</label>
+                  <label className="block text-white text-sm mb-1">Year</label>
                   <select
                     value={selectedYear}
                     onChange={(e) => setSelectedYear(e.target.value)}
-                    className="w-full p-4 bg-[rgba(255,255,255,0.1)] rounded-lg text-white border-0 appearance-none focus:ring-2 focus:ring-white/20 focus:outline-none cursor-pointer"
+                    className="w-full p-3 bg-[rgba(255,255,255,0.1)] rounded-lg text-white border-0 appearance-none focus:ring-2 focus:ring-white/20 focus:outline-none cursor-pointer"
                   >
                     <option value="">Select Year</option>
                     {Array.from({ length: 30 }, (_, i) => 2024 - i).map((year) => (
@@ -116,11 +116,11 @@ const HeroCarousel = () => {
 
                 {/* Brand Selection */}
                 <div>
-                  <label className="block text-white text-base mb-2">Brand</label>
+                  <label className="block text-white text-sm mb-1">Brand</label>
                   <select
                     value={selectedBrand}
                     onChange={(e) => setSelectedBrand(e.target.value)}
-                    className="w-full p-4 bg-[rgba(255,255,255,0.1)] rounded-lg text-white border-0 appearance-none focus:ring-2 focus:ring-white/20 focus:outline-none cursor-pointer"
+                    className="w-full p-3 bg-[rgba(255,255,255,0.1)] rounded-lg text-white border-0 appearance-none focus:ring-2 focus:ring-white/20 focus:outline-none cursor-pointer"
                   >
                     <option value="">Select Brand</option>
                     {popularBrands.map((brand) => (
@@ -131,11 +131,11 @@ const HeroCarousel = () => {
 
                 {/* Model Selection */}
                 <div>
-                  <label className="block text-white text-base mb-2">Model</label>
+                  <label className="block text-white text-sm mb-1">Model</label>
                   <select
                     value={selectedModel}
                     onChange={(e) => setSelectedModel(e.target.value)}
-                    className="w-full p-4 bg-[rgba(255,255,255,0.1)] rounded-lg text-white border-0 appearance-none focus:ring-2 focus:ring-white/20 focus:outline-none cursor-pointer"
+                    className="w-full p-3 bg-[rgba(255,255,255,0.1)] rounded-lg text-white border-0 appearance-none focus:ring-2 focus:ring-white/20 focus:outline-none cursor-pointer"
                   >
                     <option value="">Select Model</option>
                   </select>
@@ -144,7 +144,7 @@ const HeroCarousel = () => {
                 {/* Search Button */}
                 <button
                   type="submit"
-                  className="w-full bg-orange-600 text-white py-4 px-4 rounded-lg hover:bg-orange-700 transition-colors flex items-center justify-center mt-2 text-lg font-medium"
+                  className="w-full bg-orange-600 text-white py-3 px-4 rounded-lg hover:bg-orange-700 transition-colors flex items-center justify-center mt-1 text-base font-medium"
                 >
                   <Search className="w-5 h-5 mr-2" />
                   Search Parts
@@ -154,7 +154,7 @@ const HeroCarousel = () => {
           </div>
 
           {/* Carousel */}
-          <div className="col-span-2 relative h-[300px] md:h-full overflow-hidden order-first md:order-last mb-4 md:mb-0">
+          <div className="col-span-2 relative h-[250px] md:h-full overflow-hidden order-first md:order-last mb-4 md:mb-0">
             {slides.map((slide, index) => (
               <div
                 key={index}
@@ -168,20 +168,20 @@ const HeroCarousel = () => {
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent" />
-                <div className="absolute inset-y-0 left-0 flex items-center p-4 sm:p-6 md:p-8">
-                  <div className="max-w-md">
-                    <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2 md:mb-4">
+                <div className="absolute inset-y-0 left-0 flex items-center p-4 sm:p-6 md:p-8 max-w-lg">
+                  <div>
+                    <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2">
                       {slide.title}
                     </h2>
-                    <p className="text-sm sm:text-base md:text-lg text-gray-200 mb-4">
+                    <p className="text-sm sm:text-base text-gray-200 mb-4">
                       {slide.description}
                     </p>
                     <Link
                       to={slide.buttonLink}
-                      className="inline-flex items-center px-4 py-2 sm:px-6 sm:py-3 bg-orange-600 text-white text-sm sm:text-base font-medium rounded-lg hover:bg-orange-700 transition-colors"
+                      className="inline-flex items-center px-4 py-2 bg-orange-600 text-white text-sm font-medium rounded-lg hover:bg-orange-700 transition-colors"
                     >
                       {slide.buttonText}
-                      <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2" />
+                      <ChevronRight className="w-4 h-4 ml-2" />
                     </Link>
                   </div>
                 </div>
