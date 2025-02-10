@@ -67,9 +67,9 @@ const HeroCarousel = () => {
   };
 
   return (
-    <div className="relative bg-gray-100 h-auto md:h-[60vh] mt-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
-        <div className="flex flex-col md:grid md:grid-cols-3 h-full">
+    <div className="relative bg-gray-100 h-auto md:h-[50vh] mt-16 pt-1">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
+      <div className="flex flex-col md:grid md:grid-cols-3 h-full">
           {/* Vehicle Filter */}
           <div className={`
             fixed inset-x-0 bottom-0 md:relative md:static

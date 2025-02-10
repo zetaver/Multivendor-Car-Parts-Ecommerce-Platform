@@ -75,13 +75,14 @@ const App = () => {
       <Router>
         <div className="min-h-screen bg-gray-50 flex flex-col">
           <Navbar />
-          <main className="flex-grow md:pb-0 mt-12">
+          <main className="flex-grow md:pb-0 mt-[111px]">
             <Routes>
               {/* Public Routes */}
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
               <Route path="/products" element={<ProductList />} />
+
               <Route path="/products/:id" element={<ProductDetail />} />
               <Route path="/categories" element={<Categories />} />
               <Route path="/new-arrivals" element={<NewArrivals />} />

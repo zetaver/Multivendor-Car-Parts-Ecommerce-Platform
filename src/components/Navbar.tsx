@@ -354,192 +354,115 @@ const Navbar = () => {
   };
 
   return (
-    <div className="fixed top-0 left-0 right-0 bg-white shadow-sm z-50">
+    <div className="fixed top-0 left-0 right-0 bg-[#1e3a8a] text-white z-50">
       <div className="max-w-7xl mx-auto px-4">
-        {/* Main Navbar */}
-        <div className="flex items-center justify-between h-16">
+        {/* Top Bar */}
+        <div className="flex items-center justify-between h-14">
           {/* Logo */}
           <Link to="/" className="flex-shrink-0">
-            <span className="text-2xl font-bold text-blue-600">EasyCasse</span>
+            <span className="text-2xl font-bold text-white">EasyCasse</span>
           </Link>
 
-          {/* Desktop Search Bar */}
-          <div className="hidden md:flex flex-1 max-w-2xl mx-8">
-            <div 
-              onClick={() => navigate('/products')}
-              className="relative flex items-center w-full bg-gray-100 rounded-full px-4 py-2.5 cursor-pointer"
-            >
-              <Search className="w-5 h-5 text-gray-400 mr-2" />
-              <span className="text-gray-500">Search</span>
-            </div>
-          </div>
-
-          {/* Mobile Icons */}
-          <div className="flex md:hidden items-center space-x-4">
-            <button
-              onClick={() => navigate('/products')}
-              className="text-gray-600 hover:text-gray-900"
-            >
-              <Search className="h-6 w-6" />
-            </button>
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-gray-600 hover:text-gray-900"
-            >
-              <Menu className="h-6 w-6" />
-            </button>
-          </div>
-
-          {/* Desktop Right Navigation */}
-          <div className="hidden md:flex items-center space-x-6">
+          {/* Right Navigation */}
+          <div className="flex items-center space-x-4">
             <LanguageSelector />
             {isAuthenticated ? (
               <>
                 <Link 
                   to="/messages" 
-                  className="text-gray-600 hover:text-gray-900 flex items-center space-x-1"
+                  className="text-white/90 hover:text-white"
                 >
                   <MessageSquare className="w-6 h-6" />
                 </Link>
                 <Link 
                   to="/notifications" 
-                  className="text-gray-600 hover:text-gray-900 flex items-center space-x-1"
+                  className="text-white/90 hover:text-white"
                 >
                   <Bell className="w-6 h-6" />
                 </Link>
-                <button
-                  onClick={() => dispatch(logout())}
-                  className="text-sm text-red-600 hover:text-red-700"
-                >
-                  {t("common.logout")}
-                </button>
               </>
             ) : (
-              <div className="flex items-center space-x-4">
-                <Link 
-                  to="/login" 
-                  className="text-blue-600 hover:text-blue-700"
-                >
-                  {t("common.login")}
-                </Link>
-                <Link
-                  to="/register"
-                  className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
-                >
-                  {t("common.register")}
-                </Link>
-              </div>
-            )}
-            <Link
-              to="/sell"
-              className="bg-orange-600 text-white px-6 py-2 rounded-lg hover:bg-orange-700 font-medium"
-            >
-              {t("nav.sell")}
-            </Link>
-          </div>
-        </div>
-
-        {/* Categories Bar */}
-        <div className="hidden md:block border-t">
-          <div className="flex items-center space-x-8 h-12 text-sm">
-            {categories.map((category) => (
-              <div
-                key={category.id}
-                className="relative group"
-                onMouseEnter={() => handleCategoryClick(category.id)}
-                onMouseLeave={() => setExpandedCategory(null)}
+              <Link 
+                to="/login" 
+                className="text-white/90 hover:text-white"
               >
-                <button className="flex items-center space-x-1 text-gray-600 hover:text-gray-900">
-                  <span>{category.icon}</span>
-                  <span>{category.name}</span>
-                </button>
-
-                {/* Dropdown Menu */}
-                {expandedCategory === category.id && (
-                  <div className="absolute top-full left-0 w-64 bg-white shadow-lg rounded-lg mt-1 py-2 z-50">
-                    {category.subcategories.map((subcategory) => (
-                      <div key={subcategory.name} className="px-4 py-2">
-                        <div className="font-medium text-gray-900 mb-2">
-                          {subcategory.name}
-                        </div>
-                        <div className="space-y-2">
-                          {subcategory.items.map((item) => (
-                            <Link
-                              key={item}
-                              to={`/products?category=${category.id}&subcategory=${subcategory.name}&item=${item}`}
-                              className="block text-sm text-gray-600 hover:text-blue-600"
-                            >
-                              {item}
-                            </Link>
-                          ))}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
+                <User className="w-6 h-6" />
+              </Link>
+            )}
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="text-white/90 hover:text-white md:hidden"
+            >
+              <Menu className="h-6 w-6" />
+            </button>
           </div>
         </div>
 
-        {/* Mobile Categories Menu */}
-        {isMobileMenuOpen && (
-          <div className="md:hidden absolute top-16 left-0 right-0 bg-white border-t border-gray-200 shadow-lg">
-            {categories.map((category) => (
-              <div key={category.id}>
-                <button
-                  onClick={() => handleCategoryClick(category.id)}
-                  className="flex items-center justify-between w-full px-4 py-3 text-gray-600 hover:bg-gray-50"
-                >
-                  <div className="flex items-center space-x-2">
-                    <span>{category.icon}</span>
-                    <span>{category.name}</span>
-                  </div>
-                  <ChevronRight className="w-5 h-5" />
-                </button>
+        {/* Search Bar */}
+        <div className="py-2 border-t border-white/10">
+          <form 
+            onSubmit={handleSearch}
+            className="relative flex items-center w-full"
+          >
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder="Search for..."
+              className="w-full pl-4 pr-10 py-1.5 bg-white rounded text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm"
+            />
+            <button 
+              type="submit" 
+              className="absolute right-2 top-1/2 transform -translate-y-1/2"
+            >
+              <Search className="w-4 h-4 text-gray-400" />
+            </button>
+          </form>
+        </div>
 
-                {expandedCategory === category.id && (
-                  <div className="bg-gray-50 px-4 py-2">
-                    {category.subcategories.map((subcategory) => (
-                      <div key={subcategory.name} className="mb-4">
-                        <div className="font-medium text-gray-900 mb-2">
-                          {subcategory.name}
-                        </div>
-                        <div className="space-y-2">
-                          {subcategory.items.map((item) => (
-                            <Link
-                              key={item}
-                              to={`/products?category=${category.id}&subcategory=${subcategory.name}&item=${item}`}
-                              className="block text-sm text-gray-600 hover:text-blue-600 py-1"
-                            >
-                              {item}
-                            </Link>
-                          ))}
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
+        {/* Category Icons */}
+        <div className="relative border-t border-white/10">
+          <div className="flex overflow-x-auto scrollbar-hide py-2 space-x-8 px-2">
+            {categories.map((category) => (
+              <Link
+                key={category.id}
+                to={`/products?category=${category.id}`}
+                className="flex flex-col items-center group flex-shrink-0"
+              >
+                <div className="w-8 h-8 flex items-center justify-center text-lg mb-1">
+                  {category.icon}
+                </div>
+                <span className="text-xs text-white/80 group-hover:text-white whitespace-nowrap">
+                  {category.name}
+                </span>
+              </Link>
             ))}
           </div>
-        )}
+          
+          {/* Scroll indicators */}
+          <div className="absolute left-0 top-0 bottom-0 bg-gradient-to-r from-[#1e3a8a] w-8 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 bg-gradient-to-l from-[#1e3a8a] w-8 pointer-events-none" />
+        </div>
       </div>
     </div>
   );
 };
 
-// Add this CSS to your global styles or create a new CSS module
+// Update the CSS styles
 const styles = `
-  /* Hide scrollbar for Chrome, Safari and Opera */
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
 
-  /* Hide scrollbar for IE, Edge and Firefox */
   .scrollbar-hide {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Add smooth scrolling */
+  .scrollbar-hide {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
   }
 `;
 
