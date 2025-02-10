@@ -1,0 +1,20 @@
+.categories-navbar {
+  position: relative;  /* Change from fixed/absolute if it was set */
+  width: 100%;
+  z-index: 100;  /* Ensure proper stacking context */
+  background-color: white; /* Add background to prevent content showing through */
+  border-bottom: 1px solid #eee; /* Optional: adds subtle separation */
+}
+
+/* Ensure main content area has proper spacing */
+.main-content {
+  padding-top: 20px; /* Adjust based on your navbar height */
+  position: relative;
+  z-index: 1;
+}
+
+/* Fix for dropdown menus if they exist */
+.category-dropdown {
+  position: absolute;
+  z-index: 101;
+} 
