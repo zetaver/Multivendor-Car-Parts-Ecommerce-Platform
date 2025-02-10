@@ -70,17 +70,6 @@ const HeroCarousel = () => {
     <div className="relative bg-gray-100 h-auto md:h-[60vh] mt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
         <div className="flex flex-col md:grid md:grid-cols-3 h-full">
-          {/* Mobile Select Vehicle Button */}
-          <div className="md:hidden order-2 mb-4 px-4">
-            <button
-              onClick={() => setIsFilterOpen(true)}
-              className="w-full bg-secondary hover:bg-secondary/90 text-white py-4 px-6 rounded-lg flex items-center justify-center shadow-lg transition-all"
-            >
-              <Search className="w-5 h-5 mr-2" />
-              <span className="font-medium text-base">SELECT YOUR VEHICLE</span>
-            </button>
-          </div>
-
           {/* Vehicle Filter */}
           <div className={`
             fixed inset-x-0 bottom-0 md:relative md:static
@@ -92,16 +81,13 @@ const HeroCarousel = () => {
             md:transform-none
             order-last md:order-first
             shadow-lg
-            rounded-t-2xl md:rounded-lg
-            max-h-[90vh] md:max-h-full
-            overflow-auto
           `}>
             {/* Mobile Header */}
-            <div className="md:hidden flex items-center justify-between p-4 border-b border-white/10">
-              <h2 className="text-white text-xl font-semibold">Select Your Vehicle</h2>
+            <div className="md:hidden flex items-center justify-between p-4">
+              <h2 className="text-white text-xl font-semibold">Add a New Vehicle</h2>
               <button
                 onClick={() => setIsFilterOpen(false)}
-                className="text-white p-2 hover:bg-white/10 rounded-lg transition-colors"
+                className="text-white p-2"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -109,16 +95,16 @@ const HeroCarousel = () => {
               </button>
             </div>
             
-            <div className="px-6 py-6 md:p-6">
-              <h2 className="text-white text-xl font-bold mb-6 hidden md:block">Find Parts for Your Vehicle</h2>
-              <form onSubmit={handleSearch} className="flex flex-col gap-5">
+            <div className="px-4 pb-6 pt-2 md:p-6">
+              <h2 className="text-white text-xl font-bold mb-4 hidden md:block">Find Parts for Your Vehicle</h2>
+              <form onSubmit={handleSearch} className="flex flex-col gap-4">
                 {/* Year Selection */}
                 <div>
-                  <label className="block text-white text-sm font-medium mb-2">Year</label>
+                  <label className="block text-white text-sm mb-1">Year</label>
                   <select
                     value={selectedYear}
                     onChange={(e) => setSelectedYear(e.target.value)}
-                    className="w-full p-3.5 bg-white/10 rounded-lg text-white border-0 appearance-none focus:ring-2 focus:ring-primary focus:outline-none cursor-pointer hover:bg-white/20 transition-colors"
+                    className="w-full p-3 bg-[rgba(255,255,255,0.1)] rounded-lg text-white border-0 appearance-none focus:ring-2 focus:ring-white/20 focus:outline-none cursor-pointer"
                   >
                     <option value="">Select Year</option>
                     {Array.from({ length: 30 }, (_, i) => 2024 - i).map((year) => (
@@ -129,11 +115,11 @@ const HeroCarousel = () => {
 
                 {/* Brand Selection */}
                 <div>
-                  <label className="block text-white text-sm font-medium mb-2">Brand</label>
+                  <label className="block text-white text-sm mb-1">Brand</label>
                   <select
                     value={selectedBrand}
                     onChange={(e) => setSelectedBrand(e.target.value)}
-                    className="w-full p-3.5 bg-white/10 rounded-lg text-white border-0 appearance-none focus:ring-2 focus:ring-primary focus:outline-none cursor-pointer hover:bg-white/20 transition-colors"
+                    className="w-full p-3 bg-[rgba(255,255,255,0.1)] rounded-lg text-white border-0 appearance-none focus:ring-2 focus:ring-white/20 focus:outline-none cursor-pointer"
                   >
                     <option value="">Select Brand</option>
                     {popularBrands.map((brand) => (
@@ -144,11 +130,11 @@ const HeroCarousel = () => {
 
                 {/* Model Selection */}
                 <div>
-                  <label className="block text-white text-sm font-medium mb-2">Model</label>
+                  <label className="block text-white text-sm mb-1">Model</label>
                   <select
                     value={selectedModel}
                     onChange={(e) => setSelectedModel(e.target.value)}
-                    className="w-full p-3.5 bg-white/10 rounded-lg text-white border-0 appearance-none focus:ring-2 focus:ring-primary focus:outline-none cursor-pointer hover:bg-white/20 transition-colors"
+                    className="w-full p-3 bg-[rgba(255,255,255,0.1)] rounded-lg text-white border-0 appearance-none focus:ring-2 focus:ring-white/20 focus:outline-none cursor-pointer"
                   >
                     <option value="">Select Model</option>
                   </select>
@@ -157,7 +143,7 @@ const HeroCarousel = () => {
                 {/* Search Button */}
                 <button
                   type="submit"
-                  className="w-full bg-primary hover:bg-primary/90 text-white py-4 px-6 rounded-lg flex items-center justify-center mt-2 text-base font-medium transition-colors shadow-lg"
+                  className="w-full bg-primary text-secondary-dark py-3 px-4 rounded-lg hover:bg-primary-dark transition-colors flex items-center justify-center mt-1 text-base font-medium"
                 >
                   <Search className="w-5 h-5 mr-2" />
                   Search Parts
@@ -227,6 +213,16 @@ const HeroCarousel = () => {
                 />
               ))}
             </div>
+          </div>
+
+          {/* Mobile Select Vehicle Button */}
+          <div className="md:hidden order-2 mb-4">
+            <button
+              onClick={() => setIsFilterOpen(true)}
+              className="w-full bg-[#1e3a8a] text-white py-3 px-4 rounded-lg flex items-center justify-center"
+            >
+              <span className="mr-2">SELECT YOUR VEHICLE</span>
+            </button>
           </div>
         </div>
       </div>
