@@ -5,6 +5,7 @@ import { store } from './store/store';
 import Navbar from './components/Navbar';
 import Footer from './components/ui/Footer';
 import BottomNavigation from './components/BottomNavigation';
+import ScrollToTop from './components/ScrollToTop';
 
 // Pages
 import Home from './pages/Home';
@@ -71,12 +72,21 @@ const ProtectedRoute = ({ children, role, redirectTo = '/login' }: ProtectedRout
 
 const AppContent = () => {
   const location = useLocation();
+  const shouldHideNavbar = location.pathname.includes('/products/');
   const shouldHaveMargin = ['/', '/products'].includes(location.pathname);
+  const isMobile = window.innerWidth < 768;
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
-      <Navbar />
-      <main className={`flex-grow md:pb-0 ${shouldHaveMargin ? 'mt-[102px]' : 'mt-[150px]'}`}>
+      <ScrollToTop />
+      {(!shouldHideNavbar || !isMobile) && <Navbar />}
+      <main className={`flex-grow md:pb-0 ${
+        shouldHideNavbar && isMobile 
+          ? '' 
+          : shouldHaveMargin 
+            ? 'mt-[102px]' 
+            : 'mt-[150px]'
+      }`}>
         <Routes>
           {/* Public Routes */}
           <Route path="/" element={<Home />} />
@@ -91,10 +101,9 @@ const AppContent = () => {
           <Route path="/deals" element={<Deals />} />
           <Route path="/sell" element={<Sell />} />
           <Route path="/seller-guidelines" element={<SellerGuidelines />} />
-          <Route path="/shipping" element={<Shipping />} />
+          {/* <Route path="/shipping" element={<Shipping />} /> */}
           <Route path="/seller-support" element={<SellerSupport />} />
           <Route path="/help" element={<Help />} />
-          <Route path="/returns" element={<Returns />} />
           <Route path="/track-order" element={<TrackOrder />} />
           <Route path="/terms" element={<Terms />} />
           <Route path="/privacy" element={<Privacy />} />
@@ -204,7 +213,7 @@ const AppContent = () => {
       </main>
       <Footer className="hidden md:block" />
       <BottomNavigation 
-        className={`md:hidden ${location.pathname.includes('/products/') ? 'hidden' : ''}`} 
+        className={`md:hidden ${shouldHideNavbar ? 'hidden' : ''}`} 
       />
     </div>
   );

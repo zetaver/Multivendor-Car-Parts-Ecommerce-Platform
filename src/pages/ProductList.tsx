@@ -102,6 +102,7 @@ const ProductList = () => {
   }, []);
 
   const handleViewDetails = (productId: string) => {
+    window.scrollTo(0, 0);
     navigate(`/products/${productId}`);
   };
 

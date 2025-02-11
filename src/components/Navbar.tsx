@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../store/slices/authSlice";
@@ -321,10 +321,20 @@ const Navbar = () => {
   const [expandedCategory, setExpandedCategory] = useState<string | null>(null);
   const [expandedSubcategory, setExpandedSubcategory] = useState<string | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobileView, setIsMobileView] = useState(window.innerWidth < 768);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { isAuthenticated } = useSelector((state: RootState) => state.auth);
   const { t } = useTranslation();
+
+  // Add resize listener
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobileView(window.innerWidth < 768);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();
@@ -342,10 +352,6 @@ const Navbar = () => {
       setExpandedCategory(categoryId);
       setExpandedSubcategory(null);
     }
-  };
-
-  const handleSubcategoryClick = (subcategoryName: string) => {
-    setExpandedSubcategory(subcategoryName);
   };
 
   return (
@@ -386,7 +392,7 @@ const Navbar = () => {
             </Link>
 
             {/* Search Bar */}
-            <div className="flex-1 max-w-2xl mx-8">
+            <div className={`flex-1 ${isMobileView ? 'mx-2' : 'mx-8'}`}>
               <form 
                 onSubmit={handleSearch}
                 className="relative flex items-center"
@@ -407,8 +413,8 @@ const Navbar = () => {
               </form>
             </div>
 
-            {/* Right Navigation */}
-            <div className="flex items-center space-x-6">
+            {/* Right Navigation - Hidden on mobile */}
+            <div className="hidden md:flex items-center space-x-6">
               <Link 
                 to="/sell" 
                 className="bg-primary hover:bg-primary-dark text-secondary-dark px-4 py-2 rounded-lg font-medium transition-colors"
@@ -474,20 +480,68 @@ const Navbar = () => {
       {/* Categories Bar */}
       <div className="bg-secondary-light">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center space-x-8 h-12 text-sm">
-            {categories.map((category) => (
-              <Link
-                key={category.id}
-                to={`/products?category=${category.id}`}
-                className="text-gray-300 hover:text-primary transition-colors flex items-center"
-              >
-                <span className="mr-2">{category.icon}</span>
-                {category.name}
-              </Link>
-            ))}
+          <div className="relative">
+            <div className="flex items-center space-x-8 h-12 text-sm whitespace-nowrap overflow-x-auto scrollbar-hide">
+              {categories.map((category) => (
+                <div key={category.id} className="relative flex-shrink-0">
+                  <button
+                    onClick={() => handleCategoryClick(category.id)}
+                    className={`text-gray-300 hover:text-primary transition-colors flex items-center py-3 px-4 ${
+                      expandedCategory === category.id ? 'bg-secondary-dark text-primary' : ''
+                    }`}
+                  >
+                    <span className="mr-2">{category.icon}</span>
+                    {category.name}
+                    <ChevronDown 
+                      className={`w-4 h-4 ml-1 transition-transform duration-200 ${
+                        expandedCategory === category.id ? 'rotate-180' : ''
+                      }`} 
+                    />
+                  </button>
+                </div>
+              ))}
+            </div>
+
+            {/* Subcategories Panel - Always visible when category is selected */}
+            {expandedCategory && (
+              <div className="absolute left-0 right-0 top-12 bg-secondary-dark shadow-lg z-50">
+                <div className="max-w-7xl mx-auto px-4 py-4">
+                  {categories
+                    .find(cat => cat.id === expandedCategory)
+                    ?.subcategories.map((subcategory) => (
+                      <div key={subcategory.name} className="mb-4">
+                        <h3 className="text-primary font-medium mb-2 px-4">
+                          {subcategory.name}
+                        </h3>
+                        <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
+                          {subcategory.items.map((item) => (
+                            <Link
+                              key={item}
+                              to={`/products?category=${expandedCategory}&subcategory=${encodeURIComponent(item)}`}
+                              className="px-4 py-2 text-sm text-gray-300 hover:text-primary hover:bg-secondary/50 rounded-lg transition-colors"
+                              onClick={() => setExpandedCategory(null)}
+                            >
+                              {item}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    ))}
+                </div>
+              </div>
+            )}
           </div>
         </div>
       </div>
+
+      {/* Overlay when category is expanded */}
+      {expandedCategory && (
+        <div 
+          className="fixed inset-0 bg-black/50 z-40"
+          onClick={() => setExpandedCategory(null)}
+          style={{ top: '150px' }}
+        />
+      )}
     </div>
   );
 };
@@ -501,12 +555,21 @@ const styles = `
   .scrollbar-hide {
     -ms-overflow-style: none;
     scrollbar-width: none;
-  }
-
-  /* Add smooth scrolling */
-  .scrollbar-hide {
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
+    overflow-x: auto;
+  }
+
+  @media (max-width: 768px) {
+    .scrollbar-hide {
+      -webkit-overflow-scrolling: touch;
+      scroll-snap-type: x proximity;
+      padding-bottom: 1rem;
+    }
+    
+    .scrollbar-hide > div {
+      scroll-snap-align: start;
+    }
   }
 `;
 

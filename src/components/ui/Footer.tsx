@@ -85,11 +85,6 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/shipping" className="text-base text-gray-300 hover:text-[#FFB800]">
-                  Shipping
-                </Link>
-              </li>
-              <li>
                 <Link to="/seller-support" className="text-base text-gray-300 hover:text-[#FFB800]">
                   Seller Support
                 </Link>
@@ -109,16 +104,6 @@ const Footer = () => {
               <li>
                 <Link to="/contact" className="text-base text-gray-300 hover:text-[#FFB800]">
                   Contact Us
-                </Link>
-              </li>
-              <li>
-                <Link to="/returns" className="text-base text-gray-300 hover:text-[#FFB800]">
-                  Returns
-                </Link>
-              </li>
-              <li>
-                <Link to="/track-order" className="text-base text-gray-300 hover:text-[#FFB800]">
-                  Track Order
                 </Link>
               </li>
             </ul>
