@@ -219,7 +219,7 @@ const HeroCarousel = () => {
           <div className="md:hidden order-2 mb-4">
             <button
               onClick={() => setIsFilterOpen(true)}
-              className="w-full bg-[#1e3a8a] text-white py-3 px-4 rounded-lg flex items-center justify-center"
+              className="w-full bg-[#FFB800] text-white py-3 px-4 rounded-lg flex items-center justify-center"
             >
               <span className="mr-2">SELECT YOUR VEHICLE</span>
             </button>
