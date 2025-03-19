@@ -39,7 +39,7 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <div className="bg-[#1E1E2D] py-16">
+      <div className="bg-[#1E1E2D] py-16 mt-10 md:mt-0">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <MessageCircle className="w-16 h-16 text-[#FFB800] mx-auto mb-4" />
           <h1 className="text-4xl font-bold text-white mb-4">Contact Us</h1>

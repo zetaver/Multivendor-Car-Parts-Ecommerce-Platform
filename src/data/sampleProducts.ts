@@ -1,3 +1,17 @@
+interface Product {
+  id: string;
+  title: string;
+  description: string;
+  price: number;
+  oldPrice?: number;
+  discount?: number;
+  condition: string;
+  oemNumber: string;
+  images: string[];
+  rating: number;
+  stock: number;
+}
+
 const sampleProducts = [
   {
     feature: "Ski Touring Shoes",

@@ -14,7 +14,10 @@ class SocketService {
     }
 
     this.token = token;
-    this.socket = io(import.meta.env.VITE_API_URL || 'http://localhost:3000', {
+    // this.socket = io(import.meta.env.VITE_API_URL || 'https://easycase-api.onrender.com',
+    this.socket = io(import.meta.env.VITE_API_URL || 'http://localhost:3000',
+      
+      {
       auth: { token }
     });
 
@@ -42,7 +45,7 @@ class SocketService {
     this.socket.emit('join-conversations', conversations);
   }
 
-  sendMessage(data: { conversationId: string; content: string; receiverId: string }) {
+  sendMessage(data: { conversationId: string; content: string }) {
     if (!this.socket?.connected) return;
     this.socket.emit('send-message', data);
   }
@@ -85,6 +88,48 @@ class SocketService {
   onMessagesRead(callback: (data: { conversationId: string; userId: string }) => void) {
     if (!this.socket) return;
     this.socket.on('messages-read', callback);
+  }
+
+  // Add new event handlers for real-time updates
+  onConversationUpdate(callback: (conversation: any) => void) {
+    if (!this.socket) return;
+    this.socket.on('conversation-update', callback);
+  }
+
+  onConversationDelete(callback: (conversationId: string) => void) {
+    if (!this.socket) return;
+    this.socket.on('conversation-delete', callback);
+  }
+
+  onMessageDelete(callback: (data: { messageId: string; conversationId: string }) => void) {
+    if (!this.socket) return;
+    this.socket.on('message-delete', callback);
+  }
+
+  onConversationArchive(callback: (data: { conversationId: string; archived: boolean }) => void) {
+    if (!this.socket) return;
+    this.socket.on('conversation-archive', callback);
+  }
+
+  // Add new emit methods for real-time updates
+  emitConversationUpdate(conversation: any) {
+    if (!this.socket?.connected) return;
+    this.socket.emit('conversation-update', conversation);
+  }
+
+  emitConversationDelete(conversationId: string) {
+    if (!this.socket?.connected) return;
+    this.socket.emit('conversation-delete', conversationId);
+  }
+
+  emitMessageDelete(messageId: string, conversationId: string) {
+    if (!this.socket?.connected) return;
+    this.socket.emit('message-delete', { messageId, conversationId });
+  }
+
+  emitConversationArchive(conversationId: string, archived: boolean) {
+    if (!this.socket?.connected) return;
+    this.socket.emit('conversation-archive', { conversationId, archived });
   }
 
   disconnect() {

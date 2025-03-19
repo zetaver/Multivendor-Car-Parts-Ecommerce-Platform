@@ -3,14 +3,53 @@ const User = require('../models/User');
 const { createError } = require('../utils/error');
 const crypto = require('crypto');
 
+exports.checkEmail = async (req, res) => {
+  try {
+    const { email } = req.body;
+
+    if (!email) {
+      return res.status(400).json(createError('Email is required'));
+    }
+
+    // Check if user exists
+    const existingUser = await User.findOne({ email });
+
+    return res.json({
+      exists: !!existingUser,
+      email
+    });
+  } catch (error) {
+    console.error('Error checking email:', error);
+    return res.status(500).json(createError('Internal server error'));
+  }
+};
+
 exports.register = async (req, res) => {
   try {
-    const { email, password, name, role } = req.body;
+    const { email, password, title, firstName, lastName, countryCode, phone, role } = req.body;
+
+    // Validate required fields
+    const requiredFields = ['email', 'password', 'title', 'firstName', 'lastName', 'countryCode', 'phone'];
+    const missingFields = requiredFields.filter(field => !req.body[field]);
+    
+    if (missingFields.length > 0) {
+      return res.status(400).json(createError(`Missing required fields: ${missingFields.join(', ')}`));
+    }
+
+    // Validate title enum
+    if (!['Sir', 'Madam', 'Neutral'].includes(title)) {
+      return res.status(400).json(createError('Invalid title. Must be one of: Sir, Madam, Neutral'));
+    }
+
+    // Validate password length
+    if (password.length < 8) {
+      return res.status(400).json(createError('Password must be at least 8 characters long'));
+    }
 
     // Check if user already exists
     const existingUser = await User.findOne({ email });
     if (existingUser) {
-      return res.status(400).json(createError('User already exists'));
+      return res.status(400).json(createError('User with this email already exists'));
     }
 
     // Create verification token
@@ -21,8 +60,12 @@ exports.register = async (req, res) => {
     const user = new User({
       email,
       password,
-      name,
-      role,
+      title,
+      firstName,
+      lastName,
+      countryCode,
+      phone,
+      role: role || 'buyer', // Set default role if not provided
       verificationToken,
       verificationExpires
     });
@@ -43,7 +86,11 @@ exports.register = async (req, res) => {
       user: {
         id: user._id,
         email: user.email,
-        name: user.name,
+        title: user.title,
+        firstName: user.firstName,
+        lastName: user.lastName,
+        countryCode: user.countryCode,
+        phone: user.phone,
         role: user.role
       }
     });
@@ -76,17 +123,31 @@ exports.login = async (req, res) => {
     user.refreshToken = refreshToken;
     await user.save();
 
+    // Log user data to debug
+    console.log("User data from DB:", user);
+
+    // Create user object with all required fields, using empty strings as fallbacks
+    const userResponse = {
+      id: user._id,
+      email: user.email || "",
+      firstName: user.firstName || "",
+      lastName: user.lastName || "",
+      title: user.title || "",
+      countryCode: user.countryCode || "",
+      phone: user.phone || "",
+      role: user.role || "buyer"
+    };
+
+    // Log the response object
+    console.log("Sending user response:", userResponse);
+
     res.json({
       accessToken,
       refreshToken,
-      user: {
-        id: user._id,
-        email: user.email,
-        name: user.name,
-        role: user.role
-      }
+      user: userResponse
     });
   } catch (error) {
+    console.error("Login error:", error);
     res.status(500).json(createError('Error logging in'));
   }
 };
@@ -200,7 +261,7 @@ const generateAccessToken = (user) => {
   return jwt.sign(
     { id: user._id, role: user.role },
     process.env.ACCESS_TOKEN_SECRET,
-    { expiresIn: '15m' }
+    { expiresIn: '30d' }
   );
 };
 

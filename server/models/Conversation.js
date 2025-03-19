@@ -14,9 +14,9 @@ const conversationSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Product'
   },
-  isActive: {
+  isArchived: {
     type: Boolean,
-    default: true
+    default: false
   }
 }, {
   timestamps: true
