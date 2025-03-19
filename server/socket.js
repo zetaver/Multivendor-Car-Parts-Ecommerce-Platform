@@ -49,13 +49,28 @@ const setupSocket = (server) => {
     // Send message
     socket.on('send-message', async (data) => {
       try {
-        const { conversationId, content, receiverId } = data;
+        const { conversationId, content } = data;
+
+        // Verify the conversation exists and user is a participant
+        const conversation = await Conversation.findById(conversationId);
+        if (!conversation) {
+          return socket.emit('message-error', { error: 'Conversation not found' });
+        }
+
+        if (!conversation.participants.includes(socket.userId)) {
+          return socket.emit('message-error', { error: 'Not authorized to send messages in this conversation' });
+        }
+        
+        // Get the receiver (the other participant)
+        const receiver = conversation.participants.find(
+          p => p.toString() !== socket.userId
+        );
 
         // Create and save message
         const message = new Message({
           conversation: conversationId,
           sender: socket.userId,
-          receiver: receiverId,
+          receiver: receiver,
           content
         });
         await message.save();
@@ -66,13 +81,13 @@ const setupSocket = (server) => {
         });
 
         // Populate message with sender details
-        await message.populate('sender', 'name avatar');
+        await message.populate('sender', 'name avatar email firstName lastName');
 
         // Emit message to conversation room
         io.to(`conversation:${conversationId}`).emit('new-message', message);
 
-        // Send notification to receiver if they're not in the conversation room
-        const receiverSocketId = onlineUsers.get(receiverId);
+        // Send notification to receiver if they're online
+        const receiverSocketId = onlineUsers.get(receiver.toString());
         if (receiverSocketId) {
           io.to(receiverSocketId).emit('message-notification', {
             message,

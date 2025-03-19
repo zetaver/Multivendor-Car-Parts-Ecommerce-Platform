@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { Save, User, Bell, Lock, Globe, Palette, Mail, Package, Shield } from 'lucide-react';
-
+import React, { useEffect, useState } from 'react';
+import { Save, User, Bell, Lock, Globe, Palette, Mail, Package, Shield, Check } from 'lucide-react';
+import { API_URL } from '../../config';
 const Settings = () => {
   const [generalSettings, setGeneralSettings] = useState({
     siteName: 'EasyCasse',
@@ -8,13 +8,81 @@ const Settings = () => {
     supportEmail: 'support@easycasse.com',
     timezone: 'Europe/Paris',
   });
-
   const [notificationSettings, setNotificationSettings] = useState({
     orderNotifications: true,
     productAlerts: true,
     newsletterUpdates: false,
     securityAlerts: true,
   });
+  const [autoApproveEnabled, setAutoApproveEnabled] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const [message, setMessage] = useState<string | null>(null);
+
+  useEffect(() => {
+    const fetchAutoApproveSettings = async () => {
+      try {
+        setIsLoading(true);
+        setError(null);
+        
+        const token = localStorage.getItem('accessToken');
+        const response = await fetch(`${API_URL}/api/admin/settings/auto-approve`, {
+          headers: {
+            'Authorization': `Bearer ${token}`
+          }
+        });
+
+        if (!response.ok) {
+          throw new Error(`API error: ${response.status}`);
+        }
+
+        const data = await response.json();
+        setAutoApproveEnabled(data.autoApprove);
+      } catch (error) {
+        console.error('Error fetching auto-approve settings:', error);
+        setError('Failed to load auto-approve settings');
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchAutoApproveSettings();
+  }, []);
+
+  const handleAutoApproveToggle = async (value: boolean) => {
+    try {
+      setIsLoading(true);
+      setError(null);
+      
+      const response = await fetch(`${API_URL}/api/admin/settings/auto-approve`, {
+        method: 'PATCH',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${localStorage.getItem('accessToken')}`
+        },
+        body: JSON.stringify({ autoApprove: value }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`API error: ${response.status}`);
+      }
+
+      const data = await response.json();
+      setAutoApproveEnabled(data.setting.autoApprove);
+      setMessage('Settings updated successfully');
+    } catch (error) {
+      console.error('Error updating auto-approve setting:', error);
+      setError('Failed to update auto-approve setting');
+      setAutoApproveEnabled(!value);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleSaveChanges = () => {
+    console.log('Saving all settings...');
+    // Save general settings, notification settings, etc.
+  };
 
   return (
     <div>
@@ -86,7 +154,31 @@ const Settings = () => {
             </div>
           </div>
         </div>
-
+         {/* Auto-Approve Settings */}
+         <div className="bg-white shadow rounded-lg">
+          <div className="p-6">
+            <h2 className="text-lg font-medium text-gray-900 mb-4">Product Settings</h2>
+            <div className="flex items-center justify-between py-2">
+              <div className="flex items-center">
+                <Check className="h-5 w-5 text-gray-500 mr-2" />
+                <div>
+                  <span className="text-sm font-medium text-gray-700">Auto-Approve Products</span>
+                  <p className="text-xs text-gray-500 mt-1">Automatically approve new product listings</p>
+                </div>
+              </div>
+              <label className="relative inline-flex items-center cursor-pointer">
+                <input
+                  type="checkbox"
+                  checked={autoApproveEnabled}
+                  onChange={(e) => handleAutoApproveToggle(e.target.checked)}
+                  className="sr-only peer"
+                  disabled={isLoading}
+                />
+                <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+              </label>
+            </div>
+          </div>
+        </div>
         {/* Notification Settings */}
         <div className="bg-white shadow rounded-lg">
           <div className="p-6">
@@ -185,6 +277,7 @@ const Settings = () => {
           </div>
         </div>
       </div>
+      {error && <p className="text-red-600">{error}</p>}
     </div>
   );
 };

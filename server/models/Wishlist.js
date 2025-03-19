@@ -1,61 +1,33 @@
 const mongoose = require('mongoose');
 
 const wishlistSchema = new mongoose.Schema({
-  user: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'User',
-    required: true,
-    unique: true
+  user: { 
+    type: mongoose.Schema.Types.ObjectId, 
+    ref: 'User', 
+    required: true 
   },
-  products: [{
-    product: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'Product',
-      required: true
-    },
-    addedAt: {
-      type: Date,
-      default: Date.now
-    },
-    priceAtAdd: {
-      type: Number,
-      required: true
-    }
-  }]
-}, {
-  timestamps: true
-});
-
-// Add index for better query performance
-wishlistSchema.index({ user: 1 });
-
-// Method to check if product exists in wishlist
-wishlistSchema.methods.hasProduct = function(productId) {
-  return this.products.some(item => item.product.toString() === productId.toString());
-};
-
-// Method to add product to wishlist
-wishlistSchema.methods.addProduct = function(productId, price) {
-  if (!this.hasProduct(productId)) {
-    this.products.push({
-      product: productId,
-      priceAtAdd: price
-    });
+  products: [{ 
+    type: mongoose.Schema.Types.ObjectId, 
+    ref: 'Product' 
+  }],
+  createdAt: { 
+    type: Date, 
+    default: Date.now 
+  },
+  updatedAt: { 
+    type: Date, 
+    default: Date.now 
   }
-  return this;
-};
-
-// Method to remove product from wishlist
-wishlistSchema.methods.removeProduct = function(productId) {
-  this.products = this.products.filter(
-    item => item.product.toString() !== productId.toString()
-  );
-  return this;
-};
-
-// Virtual for total items count
-wishlistSchema.virtual('totalItems').get(function() {
-  return this.products.length;
 });
 
-module.exports = mongoose.model('Wishlist', wishlistSchema);
+// Update the updatedAt timestamp when there's a change
+wishlistSchema.pre('save', function(next) {
+  this.updatedAt = Date.now();
+  next();
+});
+
+// Create a compound index to ensure a user can have only one wishlist
+wishlistSchema.index({ user: 1 }, { unique: true });
+
+const Wishlist = mongoose.model('Wishlist', wishlistSchema);
+module.exports = Wishlist; 

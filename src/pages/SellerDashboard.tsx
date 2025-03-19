@@ -135,7 +135,7 @@ const SellerDashboard = () => {
               className="flex items-center justify-center p-4 bg-[#FFB800] text-[#1E1E2D] rounded-lg hover:bg-[#e6a600] transition-colors"
             >
               <Plus className="w-5 h-5 mr-2" />
-              Add New Listing
+              Post New Ad
 
             </button>
             <Link

@@ -4,8 +4,6 @@ import { useTranslation } from 'react-i18next';
 
 const Notifications = () => {
   const { t } = useTranslation();
-
-  // Mock notifications data - Replace with actual data from your state/API
   const notifications = [
     {
       id: 1,
