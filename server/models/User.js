@@ -14,19 +14,47 @@ const userSchema = new mongoose.Schema({
     required: true,
     minlength: 8
   },
-  name: {
+  title: {
+    type: String,
+    enum: ['Mr', 'Mrs', 'Ms', 'Sir', 'Madam', 'Neutral'],
+    required: true
+  },
+  firstName: {
+    type: String,
+    required: true,
+    trim: true
+  },
+  lastName: {
+    type: String,
+    required: true,
+    trim: true
+  },
+  countryCode: {
+    type: String,
+    required: true,
+    trim: true
+  },
+  phone: {
     type: String,
     required: true,
     trim: true
   },
   role: {
     type: String,
-    enum: ['buyer', 'seller', 'admin'],
+    enum: ['buyer', 'seller', 'admin', 'user'],
     default: 'buyer'
   },
   avatar: String,
   location: String,
-  phone: String,
+  storeName: {
+    type: String,
+    trim: true,
+    default: null
+  },
+  banner: {
+    type: String,
+    default: null
+  },
   rating: {
     type: Number,
     default: 0,
@@ -48,6 +76,20 @@ const userSchema = new mongoose.Schema({
   isVerified: {
     type: Boolean,
     default: false
+  },
+  verificationToken: String,
+  verificationExpires: Date,
+  resetPasswordToken: String,
+  resetPasswordExpires: Date,
+  refreshToken: String,
+  stripeCustomerId: String,
+  roles: {
+    type: [String],
+    default: ['user']
+  },
+  isSeller: {
+    type: Boolean,
+    default: false
   }
 }, {
   timestamps: true
@@ -65,6 +107,15 @@ userSchema.pre('save', async function(next) {
     next(error);
   }
 });
+
+// Add virtual field for full name
+userSchema.virtual('name').get(function() {
+  return `${this.firstName} ${this.lastName}`;
+});
+
+// Ensure virtuals are included when converting to JSON
+userSchema.set('toJSON', { virtuals: true });
+userSchema.set('toObject', { virtuals: true });
 
 // Compare password method
 userSchema.methods.comparePassword = async function(candidatePassword) {

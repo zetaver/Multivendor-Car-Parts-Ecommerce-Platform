@@ -40,6 +40,19 @@ const orderSchema = new mongoose.Schema({
     postalCode: String,
     country: String
   },
+  pickupPoint: {
+    id: String,
+    name: String,
+    provider: String,
+    address: String,
+    city: String,
+    state: String,
+    postalCode: String,
+    country: String,
+    price: Number,
+    deliveryDays: String,
+    distance: String
+  },
   status: {
     type: String,
     enum: ['pending', 'processing', 'shipped', 'delivered', 'cancelled'],
@@ -47,15 +60,37 @@ const orderSchema = new mongoose.Schema({
   },
   paymentStatus: {
     type: String,
-    enum: ['pending', 'completed', 'failed', 'refunded'],
+    enum: ['pending', 'completed', 'failed', 'refunded', 'cancelled'],
     default: 'pending'
   },
   paymentMethod: {
     type: String,
     required: true
   },
+  paymentIntentId: {
+    type: String,
+    default: null
+  },
+  shippingMethod: {
+    type: String,
+    enum: ['pickup', 'home', 'standard', 'express'],
+    default: 'standard'
+  },
   trackingNumber: String,
-  estimatedDelivery: Date
+  estimatedDelivery: Date,
+  isOfferPurchase: {
+    type: Boolean,
+    default: false
+  },
+  offerDetails: {
+    offerId: String,
+    originalPrice: Number,
+    offerAmount: Number,
+    conversationId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Conversation'
+    }
+  }
 }, {
   timestamps: true
 });

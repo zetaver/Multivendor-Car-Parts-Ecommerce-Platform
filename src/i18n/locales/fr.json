@@ -19,33 +19,48 @@
     "specifications": "Spécifications",
     "compatibility": "Compatibilité",
     "reviews": "Avis",
-    "relatedProducts": "Produits similaires",
+    "relatedProducts": "Produits connexes",
     "messages": "Messages",
     "notifications": "Notifications",
     "settings": "Paramètres",
     "online": "En ligne",
     "typeMessage": "Tapez un message...",
     "noMessageSelected": "Aucun message sélectionné",
-    "selectConversation": "Sélectionnez une conversation pour commencer",
+    "selectConversation": "Sélectionnez une conversation pour commencer à échanger",
     "searchMessages": "Rechercher des messages...",
     "newArrivals": "Nouveautés",
     "bestSellers": "Meilleures ventes",
-    "deals": "Promotions",
+    "deals": "Offres",
     "makeOffer": "Faire une offre",
     "buyNow": "Acheter maintenant",
     "viewStore": "Voir la boutique",
     "contactSeller": "Contacter le vendeur",
+    "contactSupport": "Contacter le support",
     "totalListings": "Total des annonces",
     "returnRate": "Taux de retour",
     "searchInStore": "Rechercher dans les produits du vendeur...",
     "filters": "Filtres",
     "sort": "Trier",
-    "lowStock": "Stock faible",
+    "lowStock": "Stock bas",
     "emptyWishlist": "Votre liste de souhaits est vide",
-    "emptyWishlistMessage": "Sauvegardez les articles que vous aimez en cliquant sur l'icône cœur",
+    "emptyWishlistMessage": "Sauvegardez les articles que vous aimez en cliquant sur l'icône en forme de cœur",
     "removeFromWishlist": "Retirer de la liste de souhaits",
     "addedToWishlist": "Ajouté à la liste de souhaits",
-    "removedFromWishlist": "Retiré de la liste de souhaits"
+    "removedFromWishlist": "Retiré de la liste de souhaits",
+    "loading": "Chargement...",
+    "category": "Catégorie",
+    "help": "Aide",
+    "modify": "Modifier",
+    "back": "Retour",
+    "goBack": "Retourner",
+    "cancel": "Annuler",
+    "save": "Sauvegarder",
+    "confirm": "Confirmer",
+    "confirmDelete": "Confirmer la suppression",
+    "confirmDeleteProduct": "Êtes-vous sûr de vouloir supprimer ce produit ? Cette action ne peut pas être annulée.",
+    "confirmDeleteAddress": "Êtes-vous sûr de vouloir supprimer cette adresse ?",
+    "confirmClear": "Confirmer l'effacement",
+    "confirmClearWishlist": "Êtes-vous sûr de vouloir vider toute votre liste de souhaits ?"
   },
   "nav": {
     "products": "Produits",
@@ -66,5 +81,2211 @@
     "sales": "ventes",
     "responseTime": "Temps de réponse",
     "location": "Localisation"
+  },
+  "contact": {
+    "title": "Contactez-nous",
+    "subtitle": "Nous sommes là pour vous aider. Contactez-nous et nous vous répondrons dans les plus brefs délais.",
+    "getInTouch": "Nous Contacter",
+    "sendMessage": "Envoyez-nous un message",
+    "info": {
+      "phone": {
+        "title": "Téléphone",
+        "content": "+33 1 23 45 67 89",
+        "description": "Du lundi au vendredi, de 9h à 18h"
+      },
+      "email": {
+        "title": "Email",
+        "content": "support@easycasse.com",
+        "description": "Nous répondrons sous 24 heures"
+      },
+      "office": {
+        "title": "Bureau",
+        "content": "123 Avenue des Champs-Élysées",
+        "description": "75008 Paris, France"
+      }
+    },
+    "businessHours": {
+      "title": "Heures d'ouverture",
+      "weekdays": "Lundi - Vendredi",
+      "weekdayHours": "9h00 - 18h00",
+      "saturday": "Samedi",
+      "saturdayHours": "10h00 - 16h00",
+      "sunday": "Dimanche",
+      "sundayHours": "Fermé"
+    },
+    "form": {
+      "name": "Votre nom",
+      "email": "Adresse email",
+      "subject": "Sujet",
+      "message": "Message",
+      "send": "Envoyer le message"
+    }
+  },
+  "help": {
+    "title": "Comment pouvons-nous vous aider ?",
+    "searchPlaceholder": "Rechercher de l'aide...",
+    "categories": {
+      "title": "Catégories d'aide",
+      "shipping": "Expédition & Livraison",
+      "returns": "Retours & Remboursements",
+      "account": "Compte & Commandes",
+      "payment": "Paiement & Prix"
+    },
+    "faq": {
+      "title": "Questions Fréquemment Posées",
+      "trackOrder": {
+        "question": "Comment suivre ma commande ?",
+        "answer": "Vous pouvez suivre votre commande en vous connectant à votre compte et en visitant la section Commandes. Vous pouvez également utiliser le numéro de suivi fourni dans l'e-mail de confirmation d'expédition.",
+        "link": "En savoir plus"
+      },
+      "returnPolicy": {
+        "question": "Quelle est votre politique de retour ?",
+        "answer": "Nous offrons une politique de retour de 30 jours pour la plupart des articles. Les articles doivent être inutilisés et dans leur emballage d'origine.",
+        "link": "En savoir plus"
+      },
+      "sellerSupport": {
+        "question": "Comment contacter le support vendeur ?",
+        "answer": "Les vendeurs peuvent contacter notre équipe de support dédiée via le tableau de bord du vendeur ou en envoyant un e-mail à seller.support@easycasse.com",
+        "link": "En savoir plus"
+      }
+    },
+    "contactSection": {
+      "title": "Besoin d'aide supplémentaire ?",
+      "call": {
+        "title": "Appelez-nous",
+        "description": "Disponible du lundi au vendredi, de 9h à 18h",
+        "phone": "+33 1 23 45 67 89"
+      },
+      "email": {
+        "title": "Support par e-mail",
+        "description": "Recevez une réponse sous 24 heures",
+        "address": "support@easycasse.com"
+      },
+      "chat": {
+        "title": "Chat en direct",
+        "description": "Discutez avec notre équipe de support",
+        "button": "Démarrer le chat"
+      }
+    }
+  },
+  "categories": {
+    "title": "Parcourir les Catégories",
+    "subtitle": "Explorez notre large gamme de catégories et trouvez exactement ce que vous cherchez. Chaque catégorie propose des produits de haute qualité à des prix compétitifs.",
+    "searchPlaceholder": "Rechercher des catégories...",
+    "filters": {
+      "all": "Toutes les Catégories",
+      "popular": "Populaires",
+      "newArrivals": "Nouveautés"
+    },
+    "showing": "Affichage de",
+    "category": "catégorie",
+    "categories": "catégories",
+    "for": "pour",
+    "noMatching": "Aucune catégorie correspondante",
+    "couldntFind": "Nous n'avons trouvé aucune catégorie correspondant à",
+    "clearSearch": "Effacer la recherche",
+    "categoryTag": "Catégorie",
+    "defaultDescription": "Explorez notre collection de produits {categoryName}",
+    "browseCategory": "Parcourir la Catégorie"
+  },
+  "newArrivals": {
+    "title": "Nouveautés",
+    "updatedDaily": "Mis à jour quotidiennement",
+    "noArrivals": "Aucune nouveauté disponible pour le moment.",
+    "timeLabels": {
+      "today": "Aujourd'hui",
+      "yesterday": "Hier",
+      "daysAgo": "Il y a {days} jours",
+      "weekAgo": "Il y a 1 semaine",
+      "weeksAgo": "Il y a {weeks} semaines",
+      "added": "Ajouté :"
+    },
+    "by": "par"
+  },
+  "bestSellers": {
+    "title": "Meilleures Ventes",
+    "subtitle": "Produits les plus populaires basés sur les ventes",
+    "noProducts": "Aucun produit best-seller disponible pour le moment.",
+    "filters": {
+      "sales": "Plus Vendus",
+      "views": "Plus Consultés",
+      "rating": "Mieux Notés"
+    },
+    "metrics": {
+      "sold": "vendus",
+      "views": "vues",
+      "rating": "note"
+    },
+    "filterBy": "Filtrer par :",
+    "limit": "Afficher :",
+    "items": "articles"
+  },
+  "footer": {
+    "tagline": "Votre marketplace de confiance pour des pièces auto de qualité",
+    "sections": {
+      "products": {
+        "title": "Produits",
+        "allParts": "Toutes les Pièces",
+        "categories": "Catégories",
+        "newArrivals": "Nouveautés",
+        "bestSellers": "Meilleures Ventes"
+      },
+      "sell": {
+        "title": "Vendre",
+        "startSelling": "Commencer à Vendre",
+        "sellerGuidelines": "Guide du Vendeur",
+        "sellerSupport": "Support Vendeur"
+      },
+      "support": {
+        "title": "Support",
+        "helpCenter": "Centre d'Aide",
+        "contactUs": "Nous Contacter"
+      },
+      "legal": {
+        "title": "Mentions Légales",
+        "termsOfService": "Conditions d'Utilisation",
+        "privacyPolicy": "Politique de Confidentialité",
+        "cookiePolicy": "Politique des Cookies"
+      }
+    },
+    "copyright": "© 2024 EasyCasse. Tous droits réservés."
+  },
+  "settings": {
+    "title": "Paramètres",
+    "enabled": "Activé",
+        "disabled": "Désactivé",
+    "saveChanges": "Enregistrer les Modifications",
+    "general": {
+      "title": "Paramètres Généraux",
+      "siteName": "Nom du Site",
+      "siteDescription": "Description du Site",
+      "supportEmail": "Email de Support",
+      "timezone": "Fuseau Horaire"
+    },
+    "product": {
+      "title": "Paramètres des Produits",
+      "autoApprove": "Approbation Automatique des Produits",
+      "autoApproveDescription": "Approuver automatiquement les nouvelles annonces de produits",
+      
+      "successMessage": "Paramètre d'approbation automatique mis à jour avec succès",
+      "errorMessage": "Échec de la mise à jour du paramètre d'approbation automatique"
+    },
+    "notification": {
+      "title": "Paramètres de Notification",
+      "orderNotifications": "Notifications de Commande",
+      "productAlerts": "Alertes de Produit",
+      "newsletterUpdates": "Mises à Jour de la Newsletter",
+      "securityAlerts": "Alertes de Sécurité"
+    },
+    "security": {
+      "title": "Paramètres de Sécurité",
+      "changePassword": "Changer le Mot de Passe",
+      "twoFactorAuthentication": "Authentification à Deux Facteurs"
+    },
+    "settings": {
+      "title": "Paramètres du Compte",
+      "language": "Langue",
+      "languageDescription": "Sélectionnez votre langue préférée",
+      "french": "Français",
+      "english": "Anglais",
+      "dangerZone": "Zone de Danger",
+      "dangerZoneDescription": "Déconnectez-vous de votre compte",
+      "selectLanguage": "Sélectionner la langue"
+    }
+  },
+  "home": {
+    "welcome": "Bienvenue sur EasyCasse",
+    "findParts": "Trouvez les bonnes pièces auto pour votre véhicule",
+    "searchPlaceholder": "Rechercher par nom de pièce, marque ou modèle",
+    "popularCategories": "Catégories Populaires",
+    "viewAll": "Voir Tout",
+    "featuredProducts": "Produits en Vedette",
+    "newArrivals": "Nouveautés",
+    "viewMore": "Voir Plus",
+    "aboutUs": "À Propos de Nous",
+    "aboutText": "EasyCasse est votre marketplace de confiance pour des pièces auto de qualité. Notre plateforme connecte acheteurs et vendeurs pour rendre la recherche des bonnes pièces simple et abordable.",
+    "whyChooseUs": "Pourquoi Nous Choisir",
+    "shopByCategory": "Parcourir par Catégorie",
+    "popularProducts": "Produits Populaires",
+    "reasons": {
+      "quality": {
+        "title": "Assurance Qualité",
+        "description": "Toutes les pièces listées sur notre plateforme sont vérifiées et contrôlées"
+      },
+      "sellers": {
+        "title": "Vendeurs de Confiance",
+        "description": "Nous vérifions tous les vendeurs pour garantir que vous achetez auprès de sources fiables"
+      },
+      "shipping": {
+        "title": "Livraison Rapide",
+        "description": "Recevez vos pièces rapidement et suivez votre commande en temps réel"
+      },
+      "support": {
+        "title": "Service Client",
+        "description": "Notre équipe dédiée est là pour vous aider avec toutes vos questions ou problèmes"
+      }
+    }
+  },
+  "menu": {
+    "products": "Produits",
+    "categories": "Catégories",
+    "sell": "Vendre",
+    "brands": "Marques",
+    "support": "Support",
+    "about": "À Propos",
+    "contact": "Contact"
+  },
+  "productSuccess": {
+    "title": "Produit Publié avec Succès !",
+    "description": "Votre produit a été publié avec succès et est maintenant visible par les acheteurs potentiels.",
+    "goToHomepage": "Aller à l'Accueil",
+    "viewMyProducts": "Voir Mes Produits"
+  },
+  "login": {
+    "title": "Bon Retour",
+    "subtitle": "Connectez-vous à votre compte pour continuer",
+    "email": "Adresse Email",
+    "password": "Mot de Passe",
+    "rememberMe": "Se souvenir de moi",
+    "forgotPassword": "Mot de Passe Oublié ?",
+    "signIn": "Se Connecter",
+    "noAccount": "Vous n'avez pas de compte ?",
+    "signUp": "S'inscrire",
+    "orContinueWith": "Ou continuer avec",
+    "errorMessage": "Email ou mot de passe invalide"
+  },
+  "messages": {
+    "title": "Messages",
+    "noConversations": "Aucune conversation trouvée",
+    "startConversation": "Démarrer une nouvelle conversation",
+    "searchPlaceholder": "Rechercher des messages...",
+    "newMessage": "Nouveau Message",
+    "loading": "Chargement des messages...",
+    "today": "Aujourd'hui",
+    "yesterday": "Hier",
+    "typingMessage": "est en train d'écrire...",
+    "messageInput": "Tapez un message...",
+    "send": "Envoyer",
+    "back": "Retour à la Liste",
+    "noMessages": "Aucun message dans cette conversation",
+    "startMessaging": "Démarrez la conversation en envoyant un message",
+    "deleteMessage": "Supprimer le message",
+    "archiveConversation": "Archiver la conversation",
+    "deleteConversation": "Supprimer la conversation",
+    "restoreConversation": "Restaurer la conversation",
+    "archivedMessages": "Archivés",
+    "activeMessages": "Actifs",
+    "productInfo": "Info Produit",
+    "offerMessage": "a fait une offre de",
+    "acceptOffer": "Accepter l'Offre",
+    "declineOffer": "Refuser l'Offre",
+    "offerAccepted": "Offre Acceptée",
+    "offerDeclined": "Offre Refusée",
+    "viewOrder": "Voir la Commande",
+    "checkout": "Passer à la Caisse"
+  },
+  "orderDetails": {
+    "title": "Détails de la Commande",
+    "orderNumber": "Commande #",
+    "orderDate": "Date de Commande",
+    "backToOrders": "Retour à Mes Commandes",
+    "backToSellerOrders": "Retour aux Commandes Vendeur",
+    "loading": "Chargement des détails de la commande...",
+    "notFound": "Commande introuvable",
+    "confirmCancel": "Êtes-vous sûr de vouloir annuler cette commande ?",
+    "shipping": "Livraison",
+    "tax": "Taxe",
+    "free": "Gratuit",
+    "included": "Inclus",
+    "total": "Total",
+    "updateStatus": "Mettre à Jour le Statut",
+    "updating": "Mise à jour du statut de la commande...",
+    "lastUpdated": "Dernière Mise à Jour",
+    "note": "Remarque",
+    "updateStatusNote": "La mise à jour du statut de la commande informera le client. Assurez-vous de mettre à jour les informations de suivi si vous marquez une commande comme expédiée.",
+    "orderActions": "Actions de Commande",
+    "cancelOrder": "Annuler la Commande",
+    "cancelOrderNote": "Vous ne pouvez annuler que les commandes en statut \"en attente\".",
+    "requestPickup": "Demander un Enlèvement",
+    "track": "Suivre",
+    "printLabel": "Imprimer l'Étiquette",
+    "trackParcel": "Suivre le Colis",
+    "na": "N/A",
+    "shippingAddress": "Adresse de Livraison",
+    "paymentMethod": "Méthode de Paiement",
+    "shippingInformation": "Informations de Livraison",
+    "shippingMethod": "Méthode",
+    "estimatedDelivery": "Livraison Estimée",
+    "businessDays": "jours ouvrables",
+    "contactInformation": "Informations de Contact",
+    "sellerInformation": "Informations du Vendeur",
+    "noImage": "Pas d'image",
+    "product": "Produit",
+    "rating": "Comment évalueriez-vous cet achat ?",
+    "comment": "Votre Avis (Facultatif)",
+    "reviewPlaceholder": "Partagez votre expérience avec ce vendeur et ce produit...",
+    "submitting": "Envoi en cours...",
+    "close": "Fermer",
+    "download": "Télécharger",
+    "trackingNumber": "N° de Suivi",
+    "zoomIn": "Zoom avant",
+    "zoomOut": "Zoom arrière",
+    "resetZoom": "Réinitialiser le zoom",
+    "label": {
+      "info": "Cette étiquette est automatiquement pivotée pour une visualisation optimale. Utilisez les commandes de zoom pour ajuster la vue. Lors de l'impression, assurez-vous que les paramètres de votre imprimante sont définis sur \"Taille réelle\" et non sur \"Ajuster à la page\" pour de meilleurs résultats.",
+      "closePreview": "Fermer l'aperçu",
+      "clickToEnlarge": "Cliquez pour agrandir",
+      "missing": "Aucune Étiquette d'Expédition Disponible"
+    },
+    "status": {
+      "title": "Statut",
+      "pending": "En Attente",
+      "processing": "En Traitement",
+      "shipped": "Expédiée",
+      "delivered": "Livrée",
+      "cancelled": "Annulée",
+      "updating": "Mise à jour du statut de la commande...",
+      "updateSuccess": "Statut de la commande mis à jour avec succès"
+    },
+    "paymentStatus": {
+      "title": "Statut de Paiement",
+      "paid": "Payé",
+      "unpaid": "Non Payé",
+      "refunded": "Remboursé",
+      "completed": "Terminé"
+    },
+    "shipping": {
+      "title": "Informations de Livraison",
+      "method": "Méthode",
+      "status": "Statut",
+      "trackingNumber": "Numéro de Suivi",
+      "pickup": "Point Relais",
+      "homeDelivery": "Livraison à Domicile",
+      "address": "Adresse de Livraison",
+      "management": "Gestion de la Livraison",
+      "showForm": "Afficher le Formulaire",
+      "hideForm": "Masquer le Formulaire",
+      "requestPickup": "Demander un Enlèvement",
+      "noTrackingInfo": "Aucune information de suivi disponible pour le moment. Utilisez le formulaire d'expédition ci-dessous pour créer une expédition.",
+      "noInfo": "Aucune information d'expédition disponible",
+      "label": {
+        "title": "Étiquette d'Expédition",
+        "noData": "Aucune Étiquette Disponible",
+        "missing": "Aucune Étiquette d'Expédition Disponible",
+        "missingMessage": "Cette commande a un numéro de suivi mais les données de l'étiquette sont manquantes. Vous pouvez régénérer l'étiquette en utilisant le formulaire d'expédition.",
+        "generate": "Générer l'Étiquette",
+        "print": "Imprimer l'Étiquette",
+        "download": "Télécharger l'Étiquette",
+        "preview": "Aperçu",
+        "missingImage": "Données d'étiquette trouvées mais l'image est manquante. Essayez de régénérer l'étiquette."
+      }
+    },
+    "order": {
+      "summary": "Résumé de la Commande",
+      "information": "Informations de la Commande",
+      "quantity": "Qté",
+      "subtotal": "Sous-total",
+      "total": "Total",
+      "placedOn": "Passée le"
+    },
+    "seller": {
+      "title": "Informations du Vendeur",
+      "updateStatus": "Mettre à Jour le Statut",
+      "updating": "Mise à jour..."
+    },
+    "support": {
+      "title": "Besoin d'Aide ?",
+      "message": "Si vous avez des questions ou des préoccupations concernant votre commande, veuillez contacter notre équipe de support client.",
+      "contact": "Contacter le Support"
+    },
+    "review": {
+      "title": "Évaluer Votre Achat",
+      "success": "Merci pour votre avis !",
+      "submit": "Soumettre l'Avis",
+      "cancel": "Annuler"
+    },
+    "actions": {
+      "track": "Suivre le Colis",
+      "updateStatus": "Mettre à Jour le Statut"
+    },
+    "cancel": "Annuler"
+  },
+  "productAdd": {
+    "title": "Ajouter un Produit",
+    "categorySelection": "Sélectionner une Catégorie",
+    "searchCategories": "Rechercher des catégories...",
+    "backToCategories": "Retour aux Catégories",
+    "yourAd": "Votre annonce",
+    "productType": "Type de produit",
+    "activities": "Activités",
+    "types": "Types",
+    "sellingForQuestion": "Vendez-vous un produit pour ?",
+    "sellingItemQuestion": "Que voulez-vous vendre ?",
+    "errors": {
+      "fetchCategories": "Échec de récupération des catégories",
+      "createProduct": "Échec de création du produit"
+    },
+    "title": "Titre",
+    "enterTitle": "Entrez le titre du produit",
+    "description": "Description",
+    "enterDescription": "Entrez la description du produit",
+    "addPhotos": "Ajouter des photos",
+    "minPhotos": "3 minimum",
+    "photoHelp": "Consultez l'aide pour gérer correctement vos images",
+    "oemNumber": "Numéro OEM",
+    "enterOem": "Entrez le numéro OEM",
+    "price": "Prix",
+    "vehicleCompatibility": "Compatibilité Véhicule",
+    "addVehicle": "Ajouter un Véhicule",
+    "vehicle": "Véhicule",
+    "make": "Marque",
+    "model": "Modèle",
+    "year": "Année",
+    "selectBrand": "Sélectionner une marque",
+    "selectModel": "Sélectionner un modèle",
+    "selectYear": "Sélectionner une année",
+    "selectBrandFirst": "Veuillez d'abord sélectionner une marque",
+    "selectModelFirst": "Veuillez d'abord sélectionner un modèle",
+    "loadingBrands": "Chargement des marques...",
+    "loadingModels": "Chargement des modèles...",
+    "noBrands": "Aucune marque disponible",
+    "noModels": "Aucun modèle disponible pour cette marque",
+    "version": "version",
+    "versions": "versions",
+    "versionYears": "Années de Version",
+    "acceptTerms": {
+      "prefix": "J'accepte les",
+      "terms": "CGU/CGV"
+    },
+    "publish": "Publier",
+    "form": {
+      "title": "Titre du Produit",
+      "description": "Description du Produit",
+      "price": "Prix",
+      "condition": "État",
+      "conditions": {
+        "new": "Neuf",
+        "likeNew": "Comme Neuf",
+        "good": "Bon",
+        "fair": "Correct",
+        "forParts": "Pour Pièces"
+      },
+      "oemNumber": "Numéro OEM",
+      "compatibility": "Compatibilité",
+      "add": "Ajouter une Compatibilité",
+      "delete": "Supprimer",
+      "images": "Images du Produit",
+      "uploadImages": "Télécharger des Images",
+      "dragDrop": "Glissez et déposez des images ici, ou cliquez pour sélectionner des fichiers",
+      "maxFiles": "Vous pouvez télécharger jusqu'à 6 images",
+      "publish": "Publier le Produit",
+      "errors": {
+        "title": "Le titre est requis",
+        "description": "La description est requise",
+        "price": "Un prix valide est requis",
+        "condition": "L'état est requis",
+        "oemNumber": "Le numéro OEM est requis",
+        "compatibility": "Au moins une option de compatibilité est requise",
+        "images": "Au moins une image est requise"
+      }
+    },
+    "compatibilityForm": {
+      "brand": "Marque",
+      "model": "Modèle",
+      "version": "Version",
+      "selectBrand": "Sélectionner une Marque",
+      "selectModel": "Sélectionner un Modèle",
+      "selectVersion": "Sélectionner une Version"
+    }
+  },
+  "productDetail": {
+    "condition": "État",
+    "oemNumber": "Numéro OEM",
+    "compatibility": "Compatibilité",
+    "compatibleVehicles": "Véhicules Compatibles",
+    "description": "Description",
+    "sellerInfo": "Informations sur le Vendeur",
+    "contactSeller": "Contacter le Vendeur",
+    "makeOffer": "Faire une Offre",
+    "buyNow": "Acheter Maintenant",
+    "addToWishlist": "Ajouter aux Favoris",
+    "removeFromWishlist": "Retirer des Favoris",
+    "addedToWishlist": "Ajouté aux favoris",
+    "removedFromWishlist": "Retiré des favoris",
+    "share": "Partager",
+    "shareMessage": "Découvrez ce produit: {title}",
+    "views": {
+      "singular": "personne a",
+      "plural": "personnes ont"
+    },
+    "favorites": {
+      "singular": "personne a",
+      "plural": "personnes ont"
+    },
+    "viewedProduct": "consulté ce produit",
+    "viewStore": "Voir la Boutique",
+    "productDetails": "détails du produit",
+    "errorLoading": "Erreur de Chargement du Produit",
+    "productNotFound": "Produit non trouvé ou supprimé",
+    "afterApprovalMessage": "Les produits apparaissent généralement dans les 24 heures suivant l'approbation",
+    "offerSent": "Votre offre a été envoyée!",
+    "offerError": "Impossible d'envoyer votre offre pour le moment. Veuillez réessayer plus tard.",
+    "offerModal": {
+      "title": "Faire une Offre",
+      "price": "Prix affiché",
+      "yourOffer": "Votre Offre",
+      "message": "Message (Optionnel)",
+      "messagePlaceholder": "Ajoutez un message au vendeur...",
+      "submit": "Envoyer l'Offre",
+      "cancel": "Annuler",
+      "ofListing": "du prix affiché",
+      "serviceFee": "Frais de Service",
+      "youllPay": "Vous Paierez"
+    },
+    "shareModal": {
+      "title": "Partager ce Produit",
+      "copyLink": "Copier le Lien",
+      "copied": "Copié!",
+      "shareOn": "Partager sur"
+    },
+    "contactModal": {
+      "title": "Contacter le Vendeur",
+      "message": "Message",
+      "messagePlaceholder": "Écrivez votre message ici...",
+      "send": "Envoyer le Message",
+      "cancel": "Annuler"
+    }
+  },
+  "productList": {
+    "title": "Pièces Auto",
+    "searchPlaceholder": "Rechercher des produits...",
+    "filters": {
+      "title": "Filtres",
+      "clear": "Effacer Tout",
+      "apply": "Appliquer les Filtres",
+      "categories": "Catégories",
+      "brands": "Marques",
+      "condition": "État",
+      "price": "Fourchette de Prix",
+      "sort": {
+        "title": "Trier Par",
+        "newest": "Plus Récent",
+        "priceAsc": "Prix: Croissant",
+        "priceDesc": "Prix: Décroissant",
+        "popular": "Plus Populaire"
+      }
+    },
+    "noResults": "Aucun produit trouvé",
+    "noResultsMessage": "Nous n'avons trouvé aucun produit correspondant à vos critères.",
+    "suggestions": {
+      "title": "Suggestions",
+      "clearFilters": "Effacez vos filtres et réessayez",
+      "broadenSearch": "Essayez un terme de recherche plus large",
+      "browseCategories": "Parcourez nos catégories pour des produits similaires"
+    },
+    "results": "Affichage de {count} résultats",
+    "viewedProducts": "Récemment Consultés",
+    "wishlist": {
+      "add": "Ajouter aux Favoris",
+      "added": "Ajouté aux Favoris",
+      "removing": "Suppression...",
+      "addedToast": "Ajouté aux favoris",
+      "removedToast": "Retiré des favoris"
+    },
+    "breadcrumb": {
+      "home": "Accueil",
+      "all": "Toutes les Catégories"
+    },
+    "loading": "Chargement des produits...",
+    "loadingMore": "Chargement de plus de produits...",
+    "categoryFilter": "Filtre de Catégorie",
+    "selectCategory": "Sélectionner une catégorie",
+    "allCategories": "Toutes les Catégories",
+    "priceRange": {
+      "min": "Min",
+      "max": "Max",
+      "apply": "Appliquer",
+      "reset": "Réinitialiser",
+      "rangeLabel": "${min} - ${max}"
+    },
+    "inStock": "En Stock",
+    "outOfStock": "Rupture de Stock",
+    "viewDetails": "Voir Détails",
+    "condition": {
+      "new": "Neuf",
+      "likeNew": "Comme Neuf",
+      "good": "Bon",
+      "fair": "Correct",
+      "poor": "Mauvais"
+    },
+    "loadMore": "Charger Plus",
+    "errorLoading": "Erreur lors du chargement des produits",
+    "errorLoadingCategories": "Erreur lors du chargement des catégories",
+    "retry": "Réessayer"
+  },
+  "bottomNav": {
+    "home": "Accueil",
+    "search": "Recherche",
+    "sell": "Vendre",
+    "messages": "Messages",
+    "profile": "Profil"
+  },
+  "terms": {
+    "title": "Conditions d'Utilisation",
+    "subtitle": "Veuillez lire attentivement ces conditions avant d'utiliser notre plateforme",
+    "lastUpdated": "Dernière mise à jour : 10 mars 2024",
+    "introduction": "Bienvenue sur EasyCasse. En accédant ou en utilisant notre plateforme, vous acceptez de vous conformer et d'être lié par ces Conditions d'Utilisation. Si vous n'acceptez pas ces conditions, veuillez ne pas utiliser nos services.",
+    "sections": {
+      "acceptance": {
+        "title": "Acceptation des Conditions",
+        "content": "En créant un compte ou en utilisant les services fournis par EasyCasse, vous reconnaissez avoir lu, compris et accepté d'être lié par ces Conditions d'Utilisation, ainsi que par notre Politique de Confidentialité et toute autre politique référencée ici."
+      },
+      "accounts": {
+        "title": "Comptes Utilisateurs",
+        "content": "Vous devez créer un compte pour utiliser certaines fonctionnalités de notre plateforme. Vous êtes responsable de maintenir la confidentialité de vos informations de compte, y compris votre mot de passe, et de toute activité qui se produit sous votre compte. Vous acceptez de nous informer immédiatement de toute utilisation non autorisée de votre compte."
+      },
+      "listings": {
+        "title": "Annonces de Produits",
+        "content": "Les vendeurs doivent s'assurer que toutes les annonces de produits sont précises, complètes et non trompeuses. Les produits doivent être conformes à toutes les lois et réglementations applicables. EasyCasse se réserve le droit de supprimer toute annonce qui enfreint ces conditions ou que nous jugeons inappropriée à notre seule discrétion."
+      },
+      "payment": {
+        "title": "Paiement et Frais",
+        "content": "Les acheteurs acceptent de payer le prix d'achat total des articles tels qu'ils sont indiqués, plus les frais d'expédition applicables. Les vendeurs recevront le paiement après la livraison réussie du produit, moins les frais de plateforme applicables. Notre structure tarifaire est disponible dans la section Guide du Vendeur."
+      },
+      "shipping": {
+        "title": "Expédition et Livraison",
+        "content": "Les vendeurs sont responsables de l'expédition des produits dans le délai spécifié dans leurs annonces. Les acheteurs recevront les informations de suivi une fois l'article expédié. Le risque de perte et le titre pour les articles achetés passent à l'acheteur lors de la livraison des articles au transporteur d'expédition."
+      },
+      "returns": {
+        "title": "Retours et Remboursements",
+        "content": "Notre politique de retour permet aux acheteurs de retourner les articles dans les 30 jours suivant la livraison si le produit ne correspond pas à la description ou est défectueux. Les procédures de retour spécifiques sont décrites dans notre section Politique de Retour."
+      }
+    },
+    "importantNotices": {
+      "title": "Avis Importants",
+      "items": [
+        "EasyCasse se réserve le droit de modifier ces conditions à tout moment sans préavis.",
+        "Nous pouvons suspendre temporairement ou définitivement l'accès à nos services en cas de violation de ces conditions.",
+        "Les litiges entre utilisateurs doivent d'abord être traités via notre centre de résolution avant d'engager une action en justice.",
+        "Ces conditions sont régies par et interprétées conformément aux lois de la France."
+      ]
+    },
+    "contact": {
+      "title": "Contactez-Nous",
+      "text": "Si vous avez des questions sur ces Conditions d'Utilisation, veuillez nous contacter à :",
+      "email": "Email : legal@easycasse.com",
+      "address": "Adresse : 123 Avenue des Champs-Élysées, 75008 Paris, France",
+      "phone": "Téléphone : +33 1 23 45 67 89"
+    }
+  },
+  "privacy": {
+    "title": "Politique de Confidentialité",
+    "subtitle": "Nous nous engageons à protéger votre vie privée et vos informations personnelles",
+    "lastUpdated": "Dernière mise à jour : 10 mars 2024",
+    "introduction": "Chez EasyCasse, nous prenons votre vie privée au sérieux. Cette Politique de Confidentialité explique comment nous collectons, utilisons et protégeons vos informations personnelles lorsque vous utilisez notre site web et nos services. En utilisant EasyCasse, vous consentez aux pratiques décrites dans cette politique.",
+    "sections": {
+      "informationWeCollect": {
+        "title": "Informations Que Nous Collectons",
+        "content": [
+          "Informations personnelles telles que nom, adresse e-mail et numéro de téléphone lorsque vous créez un compte",
+          "Données de transaction, y compris l'historique des achats, les détails de paiement et les informations d'expédition",
+          "Données d'utilisation telles que la façon dont vous interagissez avec notre plateforme, y compris l'historique de navigation et les requêtes de recherche",
+          "Informations sur l'appareil, y compris l'adresse IP, le type de navigateur et le système d'exploitation",
+          "Données de localisation pour fournir des services basés sur la localisation et des prix régionaux",
+          "Enregistrements de communication lorsque vous contactez notre équipe de service client"
+        ]
+      },
+      "howWeUseInformation": {
+        "title": "Comment Nous Utilisons Vos Informations",
+        "content": [
+          "Pour fournir et améliorer nos services, y compris le traitement des transactions et le support client",
+          "Pour personnaliser votre expérience avec des recommandations de produits pertinentes et des résultats de recherche",
+          "Pour communiquer avec vous au sujet de votre compte, de vos commandes et des offres promotionnelles",
+          "Pour détecter et prévenir la fraude, les violations de sécurité et les activités potentiellement interdites",
+          "Pour analyser les modèles d'utilisation et optimiser les performances de notre site web",
+          "Pour respecter les obligations légales et appliquer nos conditions d'utilisation"
+        ]
+      },
+      "dataProtection": {
+        "title": "Protection des Données",
+        "content": [
+          "Nous mettons en œuvre des mesures techniques et organisationnelles appropriées pour protéger vos informations personnelles",
+          "Toutes les informations de paiement sont cryptées à l'aide de la technologie SSL standard de l'industrie",
+          "Nous révisons régulièrement nos pratiques de collecte, de stockage et de traitement des données pour empêcher tout accès non autorisé",
+          "Nous limitons l'accès aux informations personnelles aux employés qui en ont besoin pour exercer leurs fonctions",
+          "Bien que nous prenions des précautions pour protéger vos informations, aucun système n'est complètement sécurisé"
+        ]
+      },
+      "yourPrivacyRights": {
+        "title": "Vos Droits à la Vie Privée",
+        "content": [
+          "Accéder et mettre à jour vos informations personnelles via les paramètres de votre compte",
+          "Demander une copie des données personnelles que nous détenons à votre sujet",
+          "Nous demander de supprimer vos informations personnelles dans certaines circonstances",
+          "Vous désinscrire des communications marketing à tout moment",
+          "Configurer votre navigateur pour refuser les cookies, bien que cela puisse affecter votre expérience utilisateur",
+          "Déposer une plainte auprès d'une autorité de protection des données si vous estimez que vos droits ont été violés"
+        ]
+      },
+      "cookiePolicy": {
+        "title": "Politique des Cookies",
+        "content": [
+          "Nous utilisons des cookies pour améliorer votre expérience de navigation et fournir des services personnalisés",
+          "Les cookies essentiels permettent les fonctionnalités de base et les fonctions de sécurité de notre site web",
+          "Les cookies analytiques nous aident à comprendre comment les visiteurs interagissent avec notre plateforme",
+          "Les cookies marketing suivent votre activité en ligne pour diffuser des publicités ciblées",
+          "Vous pouvez gérer vos préférences de cookies via les paramètres de votre navigateur"
+        ]
+      },
+      "contactUs": {
+        "title": "Nous Contacter au Sujet de la Confidentialité",
+        "content": [
+          "Si vous avez des questions ou des préoccupations concernant cette Politique de Confidentialité ou nos pratiques en matière de données, veuillez contacter notre Délégué à la Protection des Données à privacy@easycasse.com",
+          "Adresse postale : 123 Avenue des Champs-Élysées, 75008 Paris, France",
+          "Téléphone : +33 1 23 45 67 89"
+        ]
+      },
+      "updates": {
+        "title": "Mises à Jour de la Politique de Confidentialité",
+        "content": [
+          "Nous pouvons mettre à jour cette Politique de Confidentialité de temps à autre pour refléter des changements dans nos pratiques ou les exigences légales",
+          "La politique mise à jour sera publiée sur notre site web avec une date de 'dernière mise à jour' révisée",
+          "Nous vous encourageons à consulter régulièrement cette Politique de Confidentialité pour rester informé de la façon dont nous protégeons vos informations"
+        ]
+      }
+    }
+  },
+  "cookies": {
+    "title": "Politique des Cookies",
+    "subtitle": "Comment nous utilisons les cookies et technologies similaires",
+    "introduction": "Cette Politique des Cookies explique comment EasyCasse utilise les cookies et technologies similaires pour vous reconnaître lorsque vous visitez notre site web. Elle explique ce que sont ces technologies et pourquoi nous les utilisons, ainsi que vos droits pour contrôler notre utilisation de celles-ci.",
+    "sections": {
+      "whatAreCookies": {
+        "title": "Que Sont les Cookies ?",
+        "content": "Les cookies sont de petits fichiers de données qui sont placés sur votre ordinateur ou appareil mobile lorsque vous visitez un site web. Les cookies sont largement utilisés par les propriétaires de sites web pour faire fonctionner leurs sites, ou pour les faire fonctionner plus efficacement, ainsi que pour fournir des informations de reporting. Ils nous aident à vous offrir une meilleure expérience en nous permettant de comprendre quelles pages et fonctionnalités sont les plus populaires."
+      },
+      "typesOfCookies": {
+        "title": "Types de Cookies Que Nous Utilisons",
+        "types": [
+          {
+            "name": "Cookies Essentiels",
+            "description": "Ces cookies sont nécessaires au bon fonctionnement du site web. Ils permettent des fonctions de base comme la navigation dans les pages et l'accès aux zones sécurisées du site web. Le site web ne peut pas fonctionner correctement sans ces cookies."
+          },
+          {
+            "name": "Cookies de Performance/Analytiques",
+            "description": "Ces cookies nous aident à comprendre comment les visiteurs interagissent avec notre site web en collectant et en rapportant des informations de manière anonyme. Ils nous aident à compter les visites et les sources de trafic afin que nous puissions mesurer et améliorer les performances de notre site."
+          },
+          {
+            "name": "Cookies de Fonctionnalité",
+            "description": "Ces cookies permettent au site web de se souvenir des choix que vous faites (comme votre nom d'utilisateur, votre langue ou la région dans laquelle vous vous trouvez) et fournissent des fonctionnalités améliorées et plus personnelles."
+          },
+          {
+            "name": "Cookies de Ciblage/Publicité",
+            "description": "Ces cookies sont utilisés pour diffuser des publicités plus pertinentes pour vous et vos intérêts. Ils sont également utilisés pour limiter le nombre de fois que vous voyez une publicité ainsi que pour aider à mesurer l'efficacité des campagnes publicitaires."
+          }
+        ]
+      },
+      "managingCookies": {
+        "title": "Gestion des Cookies",
+        "intro": "Vous avez le droit de décider d'accepter ou de rejeter les cookies. Vous pouvez définir ou modifier les contrôles de votre navigateur web pour accepter ou refuser les cookies. Si vous choisissez de rejeter les cookies, vous pouvez toujours utiliser notre site web bien que votre accès à certaines fonctionnalités et zones de notre site web puisse être limité.",
+        "options": [
+          "La plupart des navigateurs web permettent un certain contrôle de la plupart des cookies via les paramètres du navigateur. Pour en savoir plus sur les cookies, y compris pour voir quels cookies ont été définis, visitez www.aboutcookies.org ou www.allaboutcookies.org.",
+          "Découvrez comment gérer les cookies sur les navigateurs populaires: Google Chrome, Microsoft Edge, Mozilla Firefox, Microsoft Internet Explorer, Opera, Apple Safari.",
+          "Pour vous désinscrire du suivi par Google Analytics sur tous les sites web, visitez http://tools.google.com/dlpage/gaoptout."
+        ]
+      },
+      "importantNotice": {
+        "title": "Avis Important",
+        "content": "Si vous désactivez ou refusez les cookies, veuillez noter que certaines parties de ce site web peuvent devenir inaccessibles ou ne pas fonctionner correctement. Pour plus d'informations sur les cookies que nous utilisons, veuillez nous contacter à privacy@easycasse.com."
+      },
+      "updatesPolicy": {
+        "title": "Mises à Jour de Cette Politique des Cookies",
+        "content": "Nous pouvons mettre à jour cette Politique des Cookies de temps à autre afin de refléter, par exemple, des changements dans les cookies que nous utilisons ou pour d'autres raisons opérationnelles, légales ou réglementaires. Veuillez donc revisiter régulièrement cette Politique des Cookies pour rester informé de notre utilisation des cookies et technologies connexes."
+      },
+      "contactUs": {
+        "title": "Contactez-Nous",
+        "intro": "Si vous avez des questions sur notre utilisation des cookies ou d'autres technologies, veuillez nous envoyer un e-mail à :",
+        "email": "privacy@easycasse.com",
+        "phone": "+33 1 23 45 67 89"
+      }
+    }
+  },
+  "topCategories": {
+    "title": "Catégories Populaires",
+    "viewAll": "Voir Tout",
+    "browseCategory": "Explorer la Catégorie",
+    "orderCount": {
+      "singular": "commande",
+      "plural": "commandes"
+    },
+    "defaultDescription": "Explorez notre collection de produits {categoryName}",
+    "errorLoading": "Erreur lors du chargement des catégories populaires: {error}",
+    "noCategories": "Aucune catégorie trouvée avec des données de commande."
+  },
+  "profile": {
+    "title": "Profil",
+    "editProfile": "Modifier le Profil",
+    "saveProfile": "Enregistrer le Profil",
+    "cancelEdit": "Annuler",
+    "userInfoUpdated": "Profil mis à jour avec succès",
+    "updateError": "Échec de la mise à jour du profil",
+    "personalInfo": "Informations Personnelles",
+    "contactInfo": "Coordonnées",
+    "accountSettings": "Paramètres du Compte",
+    "tabs": {
+      "profile": "Profil",
+      "orders": "Commandes",
+      "addresses": "Adresses",
+      "wishlist": "Liste de Souhaits",
+      "wardrobe": "Mes Produits",
+      "cards": "Moyens de Paiement",
+      "seller": "Tableau de Bord Vendeur",
+      "sellerOrders": "Commandes du vendeur",
+      "messages": "Messages",
+      "settings": "Paramètres",
+      "reviews": "Avis"
+    },
+    "fields": {
+      "firstName": "Prénom",
+      "lastName": "Nom",
+      "email": "Adresse Email",
+      "phone": "Numéro de Téléphone",
+      "address": "Adresse",
+      "state": "État",
+      "zipCode": "Code Postal",
+      "countryCode": "Code Pays",
+      "location": "Emplacement",
+      "memberSince": "Membre depuis",
+      "removeImage": "Supprimer l'image",
+      "selectBannerImage": "Sélectionner l'image de bannière",
+      "uploading": "Téléchargement...",
+      "storeName": "Nom de la Boutique",
+      "sellerAccountAccess": "Accès au compte vendeur",
+      "storeDescription": "Devenez vendeur pour référencer et vendre vos produits sur notre plateforme. Mettez à niveau votre compte pour accéder aux fonctionnalités réservées aux vendeurs.",
+
+      "storeNamePlaceholder": "Entrez le nom de votre boutique",
+      "updateSuccess": "Profil mis à jour avec succès !",
+      "saveChanges": "Enregistrer les modifications",
+      "cancel": "Annuler",
+      "role": "Type de Compte",
+      "sales": "ventes",
+      "reviews": "avis",
+      "editProfile": "Modifier le Profil",
+      "activeListings": "Annonces Active",
+      "quickActions": "Actions Rapides",
+      "becomeASeller": "Devenir Vendeur",
+      "upgrade": "Upgrade"
+    },
+    "orders": {
+      "title": "Mes Commandes",
+      "noOrders": "Vous n'avez pas encore passé de commande",
+      "startShopping": "Commencer les Achats",
+      "browseProducts": "Parcourir les produits",
+      "loading": "Chargement de vos commandes...",
+      "errorLoading": "Échec du chargement des commandes. Veuillez réessayer plus tard.",
+      "orderId": "Numéro de commande",
+      "customer": "Cliente",
+      "orderNumber": "Commande #",
+      "orderDate": "Date de Commande",
+      "amount": "Montante",
+      "total": "Total",
+      "status": "Statut",
+      "items": "Articles",
+      "actions": "Actions",
+      "viewDetails": "Voir les Détails",
+      "trackOrder": "Suivre la Commande"
+    },
+    "addresses": {
+      "title": "Mes Adresses",
+      "noAddresses": "Vous n'avez pas encore ajouté d'adresse",
+      "addNew": "Ajouter une Nouvelle Adresse",
+      "loading": "Chargement de vos adresses...",
+      "errorLoading": "Échec du chargement des adresses. Veuillez réessayer plus tard.",
+      "defaultAddress": "Adresse par Défaut",
+      "makeDefault": "Définir par Défaut",
+      "edit": "Modifier",
+      "delete": "Supprimer",
+      "deleteConfirmation": "Êtes-vous sûr de vouloir supprimer cette adresse ?",
+      "fields": {
+        "street": "Adresse",
+        "city": "Ville",
+        "state": "État/Province",
+        "postalCode": "Code Postal",
+        "country": "Pays",
+        "isDefault": "Définir comme adresse par défaut"
+      },
+      "save": "Enregistrer l'Adresse",
+      "cancel": "Annuler",
+      "updateSuccess": "Adresse mise à jour avec succès",
+      "updateError": "Échec de la mise à jour de l'adresse",
+      "deleteSuccess": "Adresse supprimée avec succès",
+      "deleteError": "Échec de la suppression de l'adresse"
+    },
+    "wishlist": {
+      "title": "Ma Liste de Souhaits",
+      "noItems": "Votre liste de souhaits est vide",
+      "startAdding": "Commencez à ajouter des produits à votre liste de souhaits",
+      "browseProducts": "Parcourir les Produits",
+      "loading": "Chargement de votre liste de souhaits...",
+      "errorLoading": "Échec du chargement de la liste de souhaits. Veuillez réessayer plus tard.",
+      "removeItem": "Retirer de la liste de souhaits",
+      "removeConfirmation": "Êtes-vous sûr de vouloir retirer cet article de votre liste de souhaits ?",
+      "clearWishlist": "Vider la Liste de Souhaits",
+      "clearConfirmation": "Êtes-vous sûr de vouloir vider toute votre liste de souhaits ?",
+      "removeSuccess": "Article retiré de la liste de souhaits",
+      "removeError": "Échec du retrait de l'article de la liste de souhaits",
+      "clearSuccess": "Liste de souhaits vidée avec succès",
+      "clearError": "Échec du vidage de la liste de souhaits"
+    },
+    "wardrobe": {
+      "title": "Mes Produits Listés",
+      "addNew": "Ajouter un Nouveau Produit",
+      "noProducts": "Vous n'avez pas encore listé de produits",
+      "startSelling": "Commencez par créer une nouvelle annonce de produit",
+      "loading": "Chargement de vos produits...",
+      "errorLoading": "Échec du chargement des produits. Veuillez réessayer plus tard.",
+      "tryagain": "Essayer à nouveau",
+      "filters": {
+        "total": "Total",
+        "approved": "Approuvés",
+        "pending": "En Attente",
+        "rejected": "Rejetés"
+      },
+      "productDetails": {
+        "price": "Prix",
+        "oem": "OEM",
+        "category": "Catégorie",
+        "listedOn": "Listé le",
+        "status": "Statut"
+      },
+      "actions": {
+        "view": "Voir",
+        "edit": "Modifier",
+        "delete": "Supprimer"
+      },
+      "deleteConfirmation": "Êtes-vous sûr de vouloir supprimer ce produit ? Cette action ne peut pas être annulée.",
+      "deleteSuccess": "Produit supprimé avec succès",
+      "deleteError": "Échec de la suppression du produit. Veuillez réessayer."
+    },
+    "payments": {
+      "title": "Moyens de Paiement",
+      "noCards": "Vous n'avez pas encore ajouté de moyen de paiement",
+      "addNew": "Ajouter un Nouveau Moyen de Paiement",
+      "loading": "Chargement de vos moyens de paiement...",
+      "errorLoading": "Échec du chargement des moyens de paiement. Veuillez réessayer plus tard.",
+      "defaultMethod": "Moyen par Défaut",
+      "makeDefault": "Définir par Défaut",
+      "cardEnding": "Carte se terminant par",
+      "expires": "Expire",
+      "billingDetails": "Détails de Facturation",
+      "deleteMethod": "Supprimer ce Moyen",
+      "deleteConfirmation": "Êtes-vous sûr de vouloir supprimer ce moyen de paiement ?",
+      "deleteSuccess": "Moyen de paiement supprimé avec succès",
+      "deleteError": "Échec de la suppression du moyen de paiement"
+    },
+    "seller": {
+      "title": "Tableau de Bord Vendeur",
+      "becomeSeller": "Devenir Vendeur",
+      "processing": "Traitement en cours...",
+      "sellerProfile": "Profil Vendeur",
+      "storeName": "Nom de la Boutique",
+      "stats": {
+        "title": "Statistiques de Ventes",
+        "totalSales": "Ventes Totales",
+        "totalRevenue": "Revenu Total",
+        "pendingOrders": "Commandes en Attente"
+      },
+      "sellerOrders": {
+        "title": "Commandes Vendeur",
+        "noOrders": "Vous n'avez pas encore reçu de commandes",
+        "loading": "Chargement des commandes...",
+        "orderStatistics": "Statistiques des commandes",
+        "totalOrders": "Total des commandes",
+        "filterAll": "Toutes les Commandes",
+        "filterPending": "En Attente",
+        "filterProcessing": "En Traitement",
+        "filterShipped": "Expédiées",
+        "filterDelivered": "Livrées",
+        "filterCancelled": "Annulées"
+      }
+    },
+    "reviews": {
+      "title": "Avis",
+      "reviewdes": "Évaluez les vendeurs et gérez vos avis",
+      "tabs": {
+        "write": "Écrire un Avis",
+        "myReviews": "Mes Avis"
+      },
+      "writeReview": {
+        "title": "Écrire un Avis",
+        "selectOrder": "Sélectionner une Commande",
+        "selectProduct": "Sélectionner un Produit",
+        "noreview": "Chargement des commandes éligibles à la révision...",
+        "noreviewdes": "Aucune commande livrée ne peut être évaluée. Après réception de vos commandes, vous pourrez partager votre expérience ici.",
+        "noOrders": "Aucune commande disponible pour avis",
+        "orderComplete": "Commande Terminée",
+        "rating": "Note",
+        "comment": "Votre Avis",
+        "commentPlaceholder": "Partagez votre expérience avec ce produit et ce vendeur...",
+        "submit": "Soumettre l'Avis",
+        "success": "Avis soumis avec succès",
+        "error": "Échec de la soumission de l'avis"
+      },
+      "myReviews": {
+        "title": "Mes Avis",
+        "noReviews": "Vous n'avez pas encore écrit d'avis",
+        "loading": "Chargement de vos avis...",
+        "errorLoading": "Échec du chargement des avis",
+        "product": "Produit",
+        "seller": "Vendeur",
+        "date": "Date",
+        "edit": "Modifier",
+        "delete": "Supprimer",
+        "deleteConfirmation": "Êtes-vous sûr de vouloir supprimer cet avis ?",
+        "updateSuccess": "Avis mis à jour avec succès",
+        "updateError": "Échec de la mise à jour de l'avis",
+        "deleteSuccess": "Avis supprimé avec succès",
+        "deleteError": "Échec de la suppression de l'avis"
+      }
+    },
+    "messages": {
+      "title": "Messages",
+      "noMessages": "Vous n'avez aucun nouveau message",
+      "startmessage": "Commencez une conversation pour voir les messages ici.",
+      "loading": "Chargement de vos messages...",
+      "errorLoading": "Échec du chargement des messages. Veuillez réessayer plus tard.",
+      "newMessage": "Nouveau message",
+      "reply": "Répondre",
+      "deleteMessage": "Supprimer le message",
+      "deleteConfirmation": "Êtes-vous sûr de vouloir supprimer ce message ?",
+      "deleteSuccess": "Message supprimé avec succès",
+      "deleteError": "Échec de la suppression du message"
+    },
+    "settings": {
+      "title": "Paramètres du Compte",
+      "language": "Langue",
+      "languageDescription": "Sélectionnez votre langue préférée",
+      "french": "Français",
+      "english": "Anglais",
+      "dangerZone": "Zone de Danger",
+      "dangerZoneDescription": "Déconnectez-vous de votre compte",
+      "selectLanguage": "Sélectionner la langue"
+    },
+    "logout": {
+      "button": "Se Déconnecter",
+      "confirmation": "Êtes-vous sûr de vouloir vous déconnecter ?"
+    }
+  },
+  "checkout": {
+    "title": "Paiement",
+    "processing": "Traitement en cours...",
+    "payAmount": "Payer €{{amount}}",
+    "billingInformation": "Informations de facturation",
+    "shippingInformation": "Informations de livraison",
+    "paymentMethod": "Méthode de paiement",
+    "orderSummary": "Récapitulatif de la commande",
+    "subtotal": "Sous-total",
+    "shipping": "Livraison",
+    "tax": "TVA",
+    "total": "Total",
+    "placeOrder": "Passer la commande",
+    "cardDetails": "Détails de la carte",
+    "selectAddress": "Sélectionner une adresse",
+    "addNewAddress": "Ajouter une nouvelle adresse",
+    "homeDelivery": "Livraison à domicile",
+    "paymentOptions": {
+      "card": "Carte de crédit/débit",
+      "paypal": "PayPal",
+      "bankTransfer": "Virement bancaire"
+    },
+    "errors": {
+      "invalidCard": "Les informations de votre carte sont invalides",
+      "paymentFailed": "Le paiement a échoué, veuillez réessayer",
+      "addressRequired": "Veuillez sélectionner ou ajouter une adresse de livraison",
+      "authRequired": "Authentification requise. Veuillez vous reconnecter.",
+      "paymentIntentFailed": "Échec de la création de l'intention de paiement",
+      "cardElementNotFound": "Élément de carte non trouvé",
+      "paymentProcessingFailed": "Le traitement du paiement a échoué",
+      "fetchAddressesFailed": "Échec de la récupération des adresses",
+      "fetchContactFailed": "Échec de la récupération des coordonnées de l'utilisateur",
+      "noProductData": "Aucune donnée de produit disponible",
+      "createOrderFailed": "Échec de la création de la commande",
+      "invalidPaymentInfo": "Informations de paiement reçues invalides",
+      "noOrderIdReturned": "La commande a été créée mais aucun ID de commande n'a été renvoyé",
+      "paymentProcessingProblem": "Un problème est survenu lors du traitement de votre paiement."
+    },
+    "address": "Adresse",
+    "order": "Commande",
+    "buyerProtectionFee": "Frais de protection acheteur",
+    "postage": "Frais de port",
+    "totalToPay": "Total à payer",
+    "securePayment": "Ce paiement est crypté et sécurisé",
+    "noPhoneProvided": "Aucun numéro de téléphone fourni",
+    "noProductSelected": "Aucun produit sélectionné",
+    "pleaseSelectProduct": "Veuillez sélectionner un produit pour passer à la caisse",
+    "returnToHome": "Retour à l'accueil",
+    "completeOfferPurchase": "Finaliser votre achat par offre",
+    "acceptedOffer": "Offre acceptée",
+    "newWithTags": "Neuf avec étiquettes",
+    "offerAccepted": "Offre acceptée !",
+    "offerSavings": "Vous payez €{{offerAmount}} au lieu du prix original €{{originalPrice}}.",
+    "noSavedAddresses": "Aucune adresse enregistrée",
+    "deliveryOption": "Option de livraison",
+    "shipToPickup": "Expédier vers un point de retrait",
+    "shipToHome": "Expédier à domicile",
+    "fromPrice": "À partir de €{{price}}",
+    "pickupService": "Vinted Go",
+    "pickupLocation": "CONSIGNE, Carrefour",
+    "pickupAddress": "4 Place Du Caquet, 92300, Saint Denis",
+    "pickupTimeframe": "Au point de retrait dans 5 à 7 jours ouvrables",
+    "directDelivery": "Livraison Directe",
+    "deliveryToAddress": "Livraison à votre adresse",
+    "estimatedDelivery": "Livraison estimée : 3 à 5 jours ouvrables",
+    "yourContactDetails": "Vos coordonnées",
+    "editContactInfo": "Modifier les informations de contact",
+    "noContactInfo": "Aucune information de contact disponible",
+    "addContactInfo": "Ajouter des informations de contact",
+    "paymentSuccess": "Paiement réussi !",
+    "paymentFailed": "Paiement échoué",
+    "orderId": "Numéro de commande",
+    "viewOrder": "Voir la commande",
+    "continueShopping": "Continuer vos achats",
+    "tryAgain": "Réessayer",
+    "messages": {
+      "paymentSuccessful": "Votre paiement a été effectué avec succès et votre commande a été passée !",
+      "paymentSuccessOrderFailed": "Votre paiement a été effectué avec succès, mais nous avons rencontré un problème lors de la création de votre commande. Notre équipe vous contactera sous peu.",
+      "orderPlacedSuccess": "Votre commande a été passée avec succès !"
+    },
+    "offerConfirmationMessage": "Commande terminée ! J'ai acheté {{title}} pour ${{amount}}. Numéro de commande : {{orderId}}",
+    "choosePickupPoint": "Choisir un point de retrait",
+    "map": "Carte",
+    "list": "Liste",
+    "mapPlaceholder": "Vue cartographique des points de retrait",
+    "atPickupPointIn": "Au point de retrait dans {{days}} jours ouvrables",
+    "chooseThisPickupPoint": "Choisir ce point de retrait",
+    "loadingPickupPoints": "Chargement des points de retrait...",
+    "errorLoadingPickupPoints": "Erreur lors du chargement des points de retrait",
+    "tryAgainLoading": "Réessayer",
+    "noPickupPointsFound": "Aucun point de retrait trouvé",
+    "tryDifferentAddress": "Essayez avec une adresse différente",
+    "noPickupPointSelected": "Aucun point de retrait sélectionné",
+    "pleaseSelectPickupPoint": "Veuillez sélectionner un point de retrait pour continuer",
+    "enterAddressToFind": "Entrez une adresse pour trouver des points relais",
+    "homeDelivery": "Livraison à domicile",
+    "changePickupPoint": "Changer de point de retrait"
+  },
+  "tracking": {
+    "title": "Suivre Votre Colis",
+    "subtitle": "Entrez votre numéro de suivi pour obtenir des mises à jour en temps réel",
+    "enterTrackingNumber": "Entrez le numéro de suivi",
+    "track": "Suivre",
+    "tracking": "Suivi en cours...",
+    "back": "Retour",
+    "error": "Échec de la récupération des informations de suivi.",
+    "pleaseEnter": "Veuillez entrer un numéro de suivi",
+    "trackingDetails": "Détails du Suivi",
+    "packageDetails": {
+      "title": "Détails du Colis",
+      "trackingNumber": "Numéro de Suivi",
+      "packageCount": "Nombre de Colis",
+      "service": "Service",
+      "weight": "Poids",
+      "dimensions": "Dimensions (L × l × H)",
+      "smartPackage": "Colis Intelligent"
+    },
+    "status": {
+      "delivered": "Livré",
+      "inTransit": "En Transit",
+      "exception": "Exception",
+      "pending": "En Attente"
+    }
+  },
+  "pickup": {
+    "title": "Demander un Enlèvement UPS",
+    "backToOrder": "Retour aux Détails de la Commande",
+    "trackingNumber": "N° de Suivi",
+    "orderId": "Commande N°",
+    "schedulePickup": "Planifier un Enlèvement UPS",
+    "scheduleDescription": "Sélectionnez une date et une heure pour qu'UPS récupère votre colis. Assurez-vous que le colis est prêt avec l'étiquette d'expédition apposée.",
+    "addressUpdate": {
+      "title": "Mise à Jour Rapide de l'Adresse",
+      "street": "Adresse",
+      "city": "Ville",
+      "state": "État/Région",
+      "postalCode": "Code Postal",
+      "phone": "Numéro de Téléphone",
+      "countryCode": "Code Pays",
+      "useTestAddress": "Utiliser l'Adresse Test",
+      "clearAddress": "Effacer l'Adresse",
+      "enterStreet": "Entrez l'adresse",
+      "enterCity": "Entrez la ville",
+      "enterState": "Entrez l'état/la région",
+      "enterPostal": "Entrez le code postal",
+      "enterPhone": "Entrez le numéro de téléphone",
+      "enterCountry": "Entrez le code pays (ex: FR)"
+    },
+    "warnings": {
+      "addressIncomplete": "Les informations d'adresse du vendeur sont incomplètes. Veuillez mettre à jour le profil du vendeur avec les détails d'adresse complets.",
+      "phoneRequired": "Le numéro de téléphone du vendeur est manquant. UPS exige un numéro de téléphone valide pour les demandes d'enlèvement. Un numéro par défaut sera utilisé, mais il est recommandé de mettre à jour votre profil avec un numéro valide."
+    },
+    "dateTime": {
+      "pickupDate": "Date d'Enlèvement",
+      "timeWindow": "Créneau Horaire",
+      "timeSlots": {
+        "morning": "10h00 - 14h00",
+        "afternoon": "14h00 - 18h00",
+        "allDay": "10h00 - 18h00"
+      }
+    },
+    "rates": {
+      "getRates": "Obtenir les Tarifs",
+      "gettingRates": "Calcul des tarifs...",
+      "availableOptions": "Options d'Enlèvement Disponibles",
+      "between": "Enlèvement entre",
+      "schedule": "Planifier l'Enlèvement",
+      "processing": "Traitement en cours..."
+    },
+    "status": {
+      "title": "Statut de l'Enlèvement",
+      "loading": "Chargement du statut...",
+      "prn": "Numéro de Référence d'Enlèvement (PRN)",
+      "status": "Statut",
+      "serviceDate": "Date de Service",
+      "details": "Détails de l'Enlèvement",
+      "readyTime": "Heure de Disponibilité",
+      "closeTime": "Heure de Fin",
+      "note": "Note : Les informations de statut sont mises à jour périodiquement par UPS. Actualisez cette page pour obtenir le dernier statut.",
+      "refreshStatus": "Actualiser le Statut",
+      "processing": "UPS traite votre demande d'enlèvement. Les informations de statut seront bientôt disponibles.",
+      "checkStatus": "Vérifier le Statut",
+      "noStatus": "Aucune information de statut disponible."
+    },
+    "success": {
+      "title": "Demande d'Enlèvement Réussie",
+      "confirmation": "Numéro de Confirmation",
+      "rate": "Tarif d'Enlèvement",
+      "date": "Date d'Enlèvement",
+      "window": "Créneau Horaire",
+      "note": "Important : Un chauffeur UPS arrivera pendant le créneau horaire prévu. Assurez-vous que votre colis est prêt avec l'étiquette d'expédition apposée.",
+      "returnToOrder": "Retour à la Commande"
+    },
+    "info": {
+      "title": "Informations d'Enlèvement",
+      "guidelines": "Directives UPS pour l'Enlèvement",
+      "guidelinesList": [
+        "Assurez-vous que votre colis est correctement emballé et étiqueté.",
+        "Le colis doit être prêt au début de votre créneau horaire sélectionné.",
+        "Le chauffeur UPS fournira un reçu pour le colis enlevé.",
+        "Si vous devez annuler, veuillez le faire au moins 2 heures avant l'heure d'enlèvement prévue.",
+        "Des frais supplémentaires peuvent s'appliquer pour les services d'enlèvement selon votre localisation et les détails du colis."
+      ],
+      "note": "Note : Les heures limites d'enlèvement standard peuvent varier selon l'emplacement. Pour les demandes d'enlèvement le jour même, veuillez planifier avant 16h00 heure locale."
+    },
+    "loading": {
+      "orderDetails": "Chargement des détails de la commande...",
+      "authentication": "Veuillez vous connecter pour continuer",
+      "redirecting": "Redirection vers la connexion..."
+    },
+    "authentication": {
+      "required": "Authentification requise",
+      "loginRequired": "Veuillez vous connecter pour demander un enlèvement"
+    },
+    "address": {
+      "form": {
+        "title": "Mise à Jour Rapide de l'Adresse",
+        "labels": {
+          "street": "Adresse",
+          "city": "Ville",
+          "state": "État/Région",
+          "postalCode": "Code Postal",
+          "phone": "Numéro de Téléphone",
+          "countryCode": "Code Pays"
+        },
+        "placeholders": {
+          "street": "Entrez l'adresse",
+          "city": "Entrez la ville",
+          "state": "Entrez l'état/la région",
+          "postalCode": "Entrez le code postal",
+          "phone": "Entrez le numéro de téléphone",
+          "countryCode": "Entrez le code pays (ex: FR)"
+        }
+      },
+      "buttons": {
+        "useTest": "Utiliser l'Adresse Test",
+        "clear": "Effacer l'Adresse"
+      }
+    },
+    "errors": {
+      "generic": "Une erreur s'est produite. Veuillez réessayer.",
+      "addressIncomplete": "Les informations d'adresse sont incomplètes",
+      "phoneRequired": "Le numéro de téléphone est requis",
+      "invalidResponse": "Réponse invalide du serveur",
+      "networkError": "Erreur de réseau"
+    }
+  },
+  "order": {
+    "details": "Détails de la Commande",
+    "orderNumber": "Commande #",
+    "placedOn": "Passée le",
+    "loadingDetails": "Chargement des détails de la commande...",
+    "orderNotFound": "Commande introuvable",
+    "backToMyOrders": "Retour à Mes Commandes",
+    "backToSellerOrders": "Retour aux Commandes Vendeur",
+
+    "status": {
+      "pending": "En attente",
+      "processing": "En traitement",
+      "shipped": "Expédiée",
+      "delivered": "Livrée",
+      "cancelled": "Annulée",
+      "currentStatus": "Statut actuel",
+      "lastUpdated": "Dernière mise à jour",
+      "updateStatus": "Mettre à jour le statut",
+      "statusUpdated": "Statut de la commande mis à jour avec succès.",
+      "updateFailed": "Échec de la mise à jour du statut. Veuillez réessayer.",
+      "note": "Remarque",
+      "statusUpdateNote": "La mise à jour du statut de la commande notifiera le client. Assurez-vous de mettre à jour les informations de suivi si vous marquez une commande comme expédiée."
+    },
+
+    "cancellation": {
+      "cancelOrder": "Annuler la Commande",
+      "onlyPendingCancel": "Seules les commandes en attente peuvent être annulées.",
+      "confirmCancel": "Êtes-vous sûr de vouloir annuler cette commande ?",
+      "cancelSuccess": "Commande annulée avec succès.",
+      "cancelFailed": "Échec de l'annulation de la commande. Veuillez réessayer.",
+      "cancelNote": "Vous ne pouvez annuler que les commandes ayant le statut \"en attente\"."
+    },
+
+    "orderSummary": "Récapitulatif de la Commande",
+    "products": "Produits",
+    "product": "Produit",
+    "status": "Statut",
+    "quantity": "Quantité",
+    "subtotal": "Sous-total",
+    "actions": "Actions",
+    "shipping": "Livraison",
+    "tax": "Taxe",
+    "total": "Total",
+    "free": "Gratuit",
+    "included": "Inclus",
+
+    "orderInfo": "Informations sur la Commande",
+    "orderActions": "Actions sur la Commande",
+    "shippingManagement": "Gestion de l'Expédition",
+    "showShippingForm": "Afficher le Formulaire d'Expédition",
+    "hideShippingForm": "Masquer le Formulaire d'Expédition",
+    "requestPickup": "Demander un Enlèvement",
+
+    "deliveryDestination": "Destination de Livraison",
+    "pickupPoint": "Point de Retrait",
+    "homeDelivery": "Livraison à Domicile",
+    "pickup": "Retrait",
+    "standardDelivery": "Livraison Standard",
+    "distance": "Distance",
+    "fullAddress": "Adresse complète",
+
+    "tracking": {
+      "trackingNumber": "Numéro de Suivi",
+      "trackParcel": "Suivre le Colis",
+      "noTrackingInfo": "Aucune information de suivi disponible pour le moment. Utilisez le formulaire d'expédition ci-dessous pour créer une expédition.",
+      "trackingUpdated": "Informations de suivi mises à jour avec succès.",
+      "missingTrackingNumber": "Numéro de suivi manquant dans la réponse d'expédition"
+    },
+
+    "shippingLabel": {
+      "title": "Étiquette d'Expédition",
+      "noLabel": "Aucune Étiquette d'Expédition Disponible",
+      "noLabelMessage": "Cette commande a un numéro de suivi mais les données de l'étiquette d'expédition sont manquantes. Vous pouvez régénérer l'étiquette en utilisant le formulaire d'expédition.",
+      "generateLabel": "Générer une Étiquette d'Expédition",
+      "printLabel": "Imprimer l'Étiquette",
+      "downloadLabel": "Télécharger l'Étiquette",
+      "preview": "Aperçu",
+      "previewTitle": "Aperçu de l'Étiquette d'Expédition",
+      "labelMissing": "Données d'étiquette trouvées mais l'image est manquante. Essayez de régénérer l'étiquette.",
+      "labelNote": "Cette étiquette est automatiquement pivotée pour une visualisation optimale. Utilisez les commandes de zoom pour ajuster la vue. Lors de l'impression, assurez-vous que les paramètres de votre imprimante sont définis sur \"Taille réelle\" et non sur \"Ajuster à la page\" pour de meilleurs résultats."
+    },
+
+    "shippingInfo": {
+      "title": "Informations d'Expédition",
+      "method": "Méthode",
+      "status": "Statut",
+      "trackingNumber": "Numéro de Suivi",
+      "estimatedDelivery": "Livraison Estimée",
+      "businessDays": "jours ouvrables"
+    },
+
+    "shippingAddress": "Adresse de Livraison",
+    "paymentMethod": "Méthode de Paiement",
+    "paymentStatus": "Statut du Paiement",
+    "contactInfo": "Coordonnées",
+    "sellerInfo": "Informations sur le Vendeur",
+
+    "review": {
+      "writeReview": "Écrire un Avis",
+      "reviewPurchase": "Évaluer Votre Achat",
+      "ratingQuestion": "Comment évalueriez-vous cet achat ?",
+      "reviewOptional": "Votre Avis (Facultatif)",
+      "reviewPlaceholder": "Partagez votre expérience avec ce vendeur et ce produit...",
+      "submitting": "Envoi en cours...",
+      "submitReview": "Soumettre l'Avis",
+      "cancel": "Annuler",
+      "close": "Fermer",
+      "thankYou": "Merci pour votre avis !",
+      "loginRequired": "Vous devez être connecté pour laisser un avis",
+      "submitFailed": "Échec de l'envoi de l'avis"
+    },
+
+    "needHelp": "Besoin d'Aide ?",
+    "helpMessage": "Si vous avez des questions ou des préoccupations concernant votre commande, veuillez contacter notre équipe de support client.",
+    "contactSupport": "Contacter le Support"
+  },
+  "sell": {
+    "title": "Commencez à Vendre des Pièces Auto Aujourd'hui",
+    "subtitle": "Rejoignez des milliers de vendeurs à succès sur la principale marketplace de pièces auto en France",
+    "startSelling": "Commencer à Vendre",
+    "learnMore": "En Savoir Plus",
+    "whyWithUs": "Pourquoi Vendre avec Nous ?",
+    "marketSuccessDescription": "Tout ce dont vous avez besoin pour réussir sur le marché des pièces auto",
+    "benefits": {
+      "accessToMillions": {
+        "title": "Accès à des Millions",
+        "description": "Touchez des millions d'acheteurs potentiels en France"
+      },
+      "growthPotential": {
+        "title": "Potentiel de Croissance",
+        "description": "Développez votre activité avec notre plateforme"
+      },
+      "securePayments": {
+        "title": "Paiements Sécurisés",
+        "description": "Traitement des paiements sûr et fiable"
+      },
+      "shippingSolutions": {
+        "title": "Solutions d'Expédition",
+        "description": "Support intégré pour l'expédition et la logistique"
+      }
+    },
+    "readyToBoost": "Prêt à booster vos ventes ?",
+    "joinSellerCommunity": "Rejoignez notre communauté de vendeurs dès aujourd'hui.",
+    "getStarted": "Commencer",
+    "autoPartsBackground": "Fond de pièces auto"
+  },
+  "sellerGuidelines": {
+    "title": "Règles pour les Vendeurs",
+    "subtitle": "Tout ce que vous devez savoir sur la vente sur EasyCasse",
+    "guidelines": {
+      "productQuality": {
+        "title": "Normes de Qualité des Produits",
+        "items": [
+          "Toutes les pièces doivent être d'origine ou de rechange de haute qualité",
+          "Inclure des photos claires sous plusieurs angles",
+          "Descriptions précises des produits avec spécifications",
+          "Emballage approprié pour une expédition sécurisée"
+        ]
+      },
+      "prohibitedItems": {
+        "title": "Articles Interdits",
+        "items": [
+          "Pièces contrefaites ou répliques",
+          "Équipements de sécurité usagés",
+          "Articles rappelés",
+          "Pièces d'origine incertaine"
+        ]
+      },
+      "pricingFees": {
+        "title": "Prix et Frais",
+        "items": [
+          "Prix compétitifs sur le marché",
+          "Structure de frais transparente",
+          "Taux de commission par catégorie",
+          "Frais de traitement des paiements"
+        ]
+      },
+      "shippingRequirements": {
+        "title": "Exigences d'Expédition",
+        "items": [
+          "Traitement rapide (sous 48 heures)",
+          "Numéro de suivi obligatoire",
+          "Directives d'emballage appropriées",
+          "Assurance pour les articles de valeur"
+        ]
+      }
+    },
+    "detailedGuidelines": {
+      "title": "Directives Détaillées",
+      "accountRequirements": {
+        "title": "Exigences du Compte",
+        "description": "Pour devenir vendeur sur EasyCasse, vous devez répondre aux exigences suivantes :",
+        "items": [
+          "Enregistrement d'entreprise valide en France",
+          "Expérience professionnelle en pièces auto",
+          "Compte bancaire valide pour les paiements",
+          "Numéro de téléphone et adresse valides"
+        ]
+      },
+      "performanceMetrics": {
+        "title": "Indicateurs de Performance",
+        "description": "Les vendeurs sont évalués sur la base des indicateurs suivants :",
+        "items": [
+          "Taux de traitement des commandes (minimum 95%)",
+          "Respect des délais d'expédition",
+          "Indice de satisfaction client",
+          "Temps de réponse aux demandes des clients"
+        ]
+      },
+      "productListings": {
+        "title": "Annonces de Produits",
+        "description": "Vos annonces de produits doivent inclure :",
+        "items": [
+          "Images de haute qualité (minimum 3 par produit)",
+          "Descriptions précises des produits",
+          "Catégorisation correcte",
+          "Informations sur les véhicules compatibles",
+          "Informations claires sur les prix et l'expédition"
+        ]
+      }
+    },
+    "cta": {
+      "readyToStart": "Prêt à Commencer à Vendre ?",
+      "joinCommunity": "Rejoignez notre communauté de vendeurs de pièces auto à succès dès aujourd'hui",
+      "createAccount": "Créer un Compte",
+      "contactSupport": "Contacter le Support"
+    }
+  },
+  "sellerSupport": {
+    "title": "Centre de Support Vendeur",
+    "subtitle": "Nous sommes là pour vous aider à réussir sur EasyCasse",
+    "back": "Retour",
+    "supportChannels": {
+      "phoneSupport": {
+        "title": "Support Téléphonique",
+        "description": "Parlez directement avec notre équipe de support vendeur",
+        "action": "Appeler Maintenant",
+        "availability": "Lun-Ven, 9h00-18h00"
+      },
+      "liveChat": {
+        "title": "Chat en Direct",
+        "description": "Obtenez une aide instantanée de nos agents de support",
+        "action": "Démarrer le Chat",
+        "availability": "24h/24, 7j/7"
+      },
+      "emailSupport": {
+        "title": "Support par Email",
+        "description": "Envoyez-nous vos demandes détaillées",
+        "action": "Envoyer un Email",
+        "availability": "Réponse sous 24h"
+      },
+      "availablePrefix": "Disponible : "
+    },
+    "commonIssues": {
+      "title": "Problèmes Courants",
+      "accountManagement": {
+        "title": "Gestion de Compte",
+        "items": [
+          "Réinitialiser le mot de passe",
+          "Mettre à jour les informations commerciales",
+          "Gérer les paramètres de paiement",
+          "Modifier les coordonnées"
+        ]
+      },
+      "listingIssues": {
+        "title": "Problèmes d'Annonces",
+        "items": [
+          "Créer de nouvelles annonces",
+          "Mettre à jour les informations produit",
+          "Gérer l'inventaire",
+          "Directives de tarification"
+        ]
+      },
+      "orderProcessing": {
+        "title": "Traitement des Commandes",
+        "items": [
+          "Traiter les commandes",
+          "Imprimer les étiquettes d'expédition",
+          "Gérer les retours",
+          "Résoudre les litiges"
+        ]
+      }
+    },
+    "videoTutorials": {
+      "title": "Tutoriels Vidéo",
+      "gettingStarted": "Tutoriel de Démarrage",
+      "advancedTips": "Conseils Avancés de Vente"
+    }
+  },
+  "admin": {
+    "panel": "Panneau d'Administration",
+    "menu": "Menu",
+    "dashboard": {
+      "title": "Tableau de bord",
+      "totalUsers": "Utilisateurs totaux",
+      "totalCategories": "Catégories totales",
+      "totalProducts": "Produits totaux",
+      "sellerOrders": "Commandes vendeurs",
+      "totalOrders": "Commandes totales",
+      "viewAnalytics": "Voir les analyses",
+      "recentOrders": "Commandes récentes",
+      "viewAll": "Voir tout",
+      "loadingOrders": "Chargement des commandes récentes...",
+      "errorLoadingOrders": "Erreur de chargement des commandes",
+      "noOrdersFound": "Aucune commande récente trouvée.",
+      "alertsActivity": "Alertes et activités",
+      "alerts": {
+        "newOrders": "Nouvelles commandes",
+        "newOrdersMessage": "3 nouvelles commandes à traiter",
+        "newSellerOrders": "Nouvelles commandes vendeurs",
+        "newSellerOrdersMessage": "Vérifiez les commandes vendeurs à traiter"
+      },
+      "orderTable": {
+        "orderId": "ID de commande",
+        "customer": "Client",
+        "date": "Date",
+        "amount": "Montant",
+        "status": "Statut"
+      }
+    },
+    "users": {
+      "title": "Utilisateurs",
+      "addUser": "Ajouter un utilisateur",
+      "searchPlaceholder": "Rechercher des utilisateurs...",
+      "filters": {
+        "allRoles": "Tous les rôles",
+        "allStatus": "Tous les statuts"
+      },
+      "table": {
+        "user": "Utilisateur",
+        "role": "Rôle",
+        "status": "Statut",
+        "joinDate": "Date d'inscription",
+        "actions": "Actions"
+      },
+      "roles": {
+        "buyer": "Acheteur",
+        "seller": "Vendeur",
+        "admin": "Administrateur"
+      },
+      "status": {
+        "active": "Actif",
+        "inactive": "Inactif",
+        "suspended": "Suspendu"
+      },
+      "pagination": {
+        "previous": "Précédent",
+        "next": "Suivant",
+        "showing": "Page",
+        "of": "sur"
+      },
+      "modals": {
+        "add": {
+          "title": "Ajouter un nouvel utilisateur",
+          "success": "Utilisateur créé avec succès !",
+          "submit": "Ajouter l'utilisateur"
+        },
+        "edit": {
+          "title": "Modifier l'utilisateur",
+          "success": "Utilisateur mis à jour avec succès !",
+          "submit": "Mettre à jour",
+          "updating": "Mise à jour..."
+        },
+        "delete": {
+          "title": "Supprimer l'utilisateur",
+          "confirmation": "Êtes-vous sûr de vouloir supprimer",
+          "warning": "Cette action ne peut pas être annulée.",
+          "submit": "Supprimer l'utilisateur",
+          "deleting": "Suppression..."
+        },
+        "cancel": "Annuler"
+      },
+      "form": {
+        "firstName": "Prénom",
+        "lastName": "Nom",
+        "email": "Email",
+        "password": "Mot de passe",
+        "role": "Rôle",
+        "status": "Statut"
+      },
+      "loading": "Chargement...",
+      "refreshing": "Actualisation des données..."
+    },
+    "categories": {
+      "title": "Catégories",
+      "addCategory": "Ajouter une catégorie",
+      "searchPlaceholder": "Rechercher des catégories...",
+      "loading": "Chargement des catégories...",
+      "searching": "Recherche des catégories...",
+      "noCategories": "Aucune catégorie trouvée. Ajoutez votre première catégorie !",
+      "noSearchResults": "Aucune catégorie ne correspond à votre recherche.",
+      "imagePreview": "Aperçu de l'image",
+      "table": {
+        "categoryName": "Nom de la catégorie",
+        "actions": "Actions"
+      },
+      "form": {
+        "name": "Nom de la catégorie",
+        "description": "Description",
+        "parentCategory": "Catégorie parente (Optionnel)",
+        "image": "Image",
+        "chooseFile": "Choisir un fichier",
+        "none": "Aucune (Catégorie de premier niveau)"
+      },
+      "errors": {
+        "fetchFailed": "Échec de récupération des catégories",
+        "searchFailed": "Échec de recherche des catégories",
+        "createFailed": "Échec de création de la catégorie",
+        "updateFailed": "Échec de mise à jour de la catégorie",
+        "deleteFailed": "Échec de suppression de la catégorie",
+        "imageRequired": "Veuillez sélectionner une image à télécharger",
+        "imageUploadFailed": "Échec du téléchargement de l'image"
+      },
+      "success": {
+        "created": "Catégorie ajoutée avec succès !",
+        "updated": "Catégorie mise à jour avec succès !",
+        "deleted": "Catégorie supprimée avec succès !"
+      },
+      "modals": {
+        "add": {
+          "title": "Ajouter une catégorie",
+          "submit": "Ajouter la catégorie",
+          "adding": "Ajout en cours..."
+        },
+        "edit": {
+          "title": "Modifier la catégorie",
+          "submit": "Mettre à jour la catégorie",
+          "updating": "Mise à jour..."
+        },
+        "delete": {
+          "title": "Supprimer la catégorie",
+          "confirmation": "Êtes-vous sûr de vouloir supprimer",
+          "submit": "Supprimer la catégorie",
+          "deleting": "Suppression..."
+        },
+        "cancel": "Annuler"
+      }
+    },
+    "categoryAnalytics": {
+      "title": "Analytique des Catégories",
+      "sortBySales": "Trier par Ventes",
+      "sortByOrders": "Trier par Commandes",
+      "timeRanges": {
+        "week": "Cette Semaine",
+        "month": "Ce Mois",
+        "year": "Cette Année"
+      },
+      "noData": "Aucune donnée disponible. Il se peut qu'il n'y ait pas encore de commandes terminées.",
+      "orderDistribution": "Distribution des Commandes par Catégorie",
+      "salesDistribution": "Distribution des Ventes par Catégorie",
+      "categoryOrderComparison": "Comparaison des Commandes par Catégorie",
+      "categorySalesComparison": "Comparaison des Ventes par Catégorie",
+      "detailedData": "Données Détaillées des Catégories",
+      "metrics": {
+        "orders": "commandes",
+        "sales": "ventes",
+        "orderCount": "Nombre de Commandes",
+        "salesCount": "Nombre de Ventes"
+      },
+      "table": {
+        "category": "Catégorie",
+        "orderCount": "Nombre de Commandes",
+        "salesCount": "Nombre de Ventes",
+        "revenue": "Revenus",
+        "ofTotal": "du Total"
+      },
+      "noImage": "Pas d'Image",
+      "products": "produits",
+      "clickTo": "Cliquer pour",
+      "hide": "masquer",
+      "show": "afficher",
+      "productsIn": "Produits dans",
+      "noProductsFound": "Aucun produit trouvé pour cette catégorie.",
+      "errors": {
+        "fetchFailed": "Échec de récupération des analyses de catégories",
+        "productsFetchFailed": "Échec de récupération des produits",
+        "unknown": "Une erreur inconnue s'est produite"
+      }
+    },
+    "products": {
+      "title": "Tableau de bord des produits",
+      "stats": {
+        "total": "Produits totaux",
+        "approved": "Approuvés",
+        "pending": "En attente",
+        "rejected": "Rejetés"
+      },
+      "searchPlaceholder": "Rechercher des produits...",
+      "noProducts": "Aucun produit trouvé",
+      "confirmDelete": "Êtes-vous sûr de vouloir supprimer ce produit ?",
+      "uncategorized": "Sans catégorie",
+      "status": {
+        "approved": "Approuvé",
+        "pending": "En attente",
+        "rejected": "Rejeté"
+      },
+      "table": {
+        "image": "Image",
+        "product": "Produit",
+        "category": "Catégorie",
+        "price": "Prix",
+        "status": "Statut",
+        "actions": "Actions"
+      },
+      "modals": {
+        "status": {
+          "title": "Mettre à jour le statut du produit",
+          "updateFor": "Mettre à jour le statut pour :",
+          "approve": "Approuver",
+          "pending": "Mettre en attente",
+          "reject": "Rejeter"
+        }
+      },
+      "errors": {
+        "fetchFailed": "Échec du chargement des produits. Veuillez réessayer plus tard.",
+        "updateFailed": "Échec de la mise à jour du statut du produit. Veuillez réessayer.",
+        "deleteFailed": "Échec de la suppression du produit. Veuillez réessayer.",
+        "unexpectedResponse": "Structure de réponse API inattendue."
+      }
+    },
+    "sellerOrders": {
+      "title": "Commandes des Vendeurs",
+      "refreshData": "Actualiser les Données",
+      "stats": {
+        "totalOrders": "Commandes Totales",
+        "pendingOrders": "Commandes en Attente",
+        "completedPayments": "Paiements Terminés",
+        "activeSellers": "Vendeurs Actifs"
+      },
+      "sellerDistribution": "Distribution des Commandes par Vendeur",
+      "noStoreName": "N/D",
+      "searchPlaceholder": "Rechercher par ID, client, vendeur...",
+      "clearSellerFilter": "Effacer le Filtre Vendeur",
+      "loading": "Chargement des commandes...",
+      "noOrdersFound": "Aucune commande trouvée",
+      "adjustFilters": "Essayez d'ajuster vos critères de recherche ou de filtrage.",
+      "noOrdersInSystem": "Il n'y a pas encore de commandes vendeur dans le système.",
+      "showingOrders": "Affichage de {{count}} commandes",
+      "deleteOrder": "Supprimer la Commande",
+      "table": {
+        "seller": "Vendeur",
+        "storeName": "Nom de la Boutique",
+        "email": "Email",
+        "orderCount": "Nombre de Commandes",
+        "actions": "Actions",
+        "orderId": "ID Commande",
+        "customer": "Client",
+        "date": "Date",
+        "total": "Total",
+        "status": "Statut",
+        "payment": "Paiement"
+      },
+      "status": {
+        "pending": "En Attente",
+        "processing": "En Traitement",
+        "shipped": "Expédiée",
+        "delivered": "Livrée",
+        "cancelled": "Annulée"
+      },
+      "paymentStatus": {
+        "pending": "En Attente",
+        "completed": "Terminé",
+        "refunded": "Remboursé",
+        "failed": "Échoué",
+        "cancelled": "Annulé"
+      },
+      "filters": {
+        "allStatus": "Tous les Statuts"
+      },
+      "modals": {
+        "delete": {
+          "title": "Supprimer la Commande",
+          "confirmation": "Êtes-vous sûr de vouloir supprimer cette commande ?",
+          "orderId": "ID Commande",
+          "customer": "Client",
+          "seller": "Vendeur",
+          "total": "Montant Total",
+          "warning": "Attention : Cette action ne peut pas être annulée. La commande sera définitivement supprimée du système.",
+          "success": "Commande supprimée avec succès !",
+          "cancel": "Annuler",
+          "deleting": "Suppression en cours...",
+          "confirm": "Supprimer la Commande"
+        }
+      },
+      "errors": {
+        "fetchFailed": "Échec du chargement des commandes. Veuillez réessayer plus tard.",
+        "fetchCountsFailed": "Échec de la récupération des compteurs de commandes.",
+        "deleteFailed": "Échec de la suppression de la commande. Veuillez réessayer."
+      }
+    },
+    "bannerManagement": {
+      "title": "Gestion des Bannières",
+      "addBanner": "Ajouter une Bannière",
+      "cancel": "Annuler",
+      "editBanner": "Modifier la Bannière",
+      "addNewBanner": "Ajouter une Nouvelle Bannière",
+      "confirmDelete": "Êtes-vous sûr de vouloir supprimer cette bannière ?",
+      "loadingBanners": "Chargement des bannières...",
+      "noBannersFound": "Aucune bannière trouvée. Créez votre première bannière !",
+      "form": {
+        "title": "Titre",
+        "link": "Lien",
+        "linkPlaceholder": "ex: /produits?categorie=promotion",
+        "position": "Position",
+        "status": "Statut",
+        "active": "Active",
+        "startDate": "Date de Début",
+        "endDate": "Date de Fin",
+        "image": "Image",
+        "bannerPreview": "Aperçu de la bannière",
+        "orEnterImageUrl": "Ou entrez l'URL de l'image :",
+        "imageUrlPlaceholder": "http://exemple.com/image.jpg",
+        "cancel": "Annuler",
+        "updateBanner": "Mettre à Jour la Bannière",
+        "createBanner": "Créer la Bannière"
+      },
+      "positions": {
+        "homeTop": "Haut de Page d'Accueil",
+        "homeMiddle": "Milieu de Page d'Accueil",
+        "homeBottom": "Bas de Page d'Accueil",
+        "categoryPage": "Page de Catégorie",
+        "sidebar": "Barre Latérale"
+      },
+      "status": {
+        "active": "Active",
+        "inactive": "Inactive"
+      },
+      "table": {
+        "image": "Image",
+        "title": "Titre",
+        "position": "Position",
+        "status": "Statut",
+        "dateRange": "Période",
+        "actions": "Actions"
+      },
+      "actions": {
+        "edit": "Modifier",
+        "activate": "Activer",
+        "deactivate": "Désactiver",
+        "delete": "Supprimer"
+      },
+      "errors": {
+        "fetchFailed": "Échec de récupération des bannières",
+        "fetchError": "Erreur lors de la récupération des bannières",
+        "uploadFailed": "Échec du téléchargement de l'image",
+        "uploadError": "Erreur lors du téléchargement de l'image",
+        "createFailed": "Échec de création de la bannière",
+        "createError": "Erreur lors de la création de la bannière",
+        "updateFailed": "Échec de mise à jour de la bannière",
+        "updateError": "Erreur lors de la mise à jour de la bannière",
+        "deleteFailed": "Échec de suppression de la bannière",
+        "deleteError": "Erreur lors de la suppression de la bannière",
+        "toggleStatusFailed": "Échec de changement du statut de la bannière",
+        "toggleStatusError": "Erreur lors du changement du statut de la bannière"
+      }
+    },
+    "brandManagement": {
+      "title": "Gestion des Marques",
+      "addBrand": "Ajouter une Marque",
+      "editBrand": "Modifier la Marque",
+      "brandName": "Nom de la Marque",
+      "enterBrandName": "Entrez le nom de la marque",
+      "addModel": "Ajouter un Modèle",
+      "editModel": "Modifier le Modèle",
+      "modelName": "Nom du Modèle",
+      "enterModelName": "Entrez le nom du modèle",
+      "addVersion": "Ajouter une Version",
+      "editVersion": "Modifier la Version",
+      "versionName": "Nom de la Version",
+      "enterVersionName": "Entrez le nom de la version",
+      "cancel": "Annuler",
+      "save": "Enregistrer",
+      "update": "Mettre à jour",
+      "noBrandsFound": "Aucune marque trouvée",
+      "noModelsAvailable": "Aucun modèle disponible",
+      "noVersionsAvailable": "Aucune version disponible",
+      "initializeSampleData": "Ou initialiser avec des données d'exemple",
+      "dataPopulatedSuccess": "Données initiales remplies avec succès",
+      "confirmDeleteBrand": "Êtes-vous sûr de vouloir supprimer cette marque ? Cela supprimera tous les modèles et versions associés.",
+      "confirmDeleteModel": "Êtes-vous sûr de vouloir supprimer ce modèle ? Cela supprimera toutes les versions associées.",
+      "confirmDeleteVersion": "Êtes-vous sûr de vouloir supprimer cette version ?",
+      "confirmPopulateData": "Êtes-vous sûr de vouloir remplir la base de données avec des données initiales ? Cela ne fonctionnera que s'il n'y a pas de marques.",
+      "errors": {
+        "fetchFailed": "Échec du chargement des marques",
+        "saveBrandFailed": "Échec de l'enregistrement de la marque",
+        "deleteBrandFailed": "Échec de la suppression de la marque",
+        "saveModelFailed": "Échec de l'enregistrement du modèle",
+        "deleteModelFailed": "Échec de la suppression du modèle",
+        "saveVersionFailed": "Échec de l'enregistrement de la version",
+        "deleteVersionFailed": "Échec de la suppression de la version",
+        "populateDataFailed": "Échec du remplissage des données initiales",
+        "brandNameRequired": "Le nom de la marque est requis",
+        "modelNameRequired": "Le nom du modèle est requis",
+        "versionNameRequired": "Le nom de la version est requis"
+      }
+    },
+    "contactMessages": {
+      "title": "Messages de Contact",
+      "subtitle": "Gérer et répondre aux demandes des clients",
+      "error": "Erreur",
+      "searchPlaceholder": "Rechercher des messages...",
+      "refresh": "Rafraîchir",
+      "selectedCount": "{{count}} message(s) sélectionné(s)",
+      "noMessages": "Aucun message trouvé",
+      "tryChangingSearch": "Essayez de modifier votre recherche ou filtre",
+      "emptyMessage": "Lorsque les clients envoient des messages, ils apparaîtront ici",
+      "messageDetails": "Détails du Message",
+      "fromLabel": "De :",
+      "readAt": "Lu",
+      "repliedAt": "Répondu",
+      "reply": "Répondre",
+      "sendAnotherReply": "Envoyer une autre réponse",
+      "replyTo": "Répondre à {{name}}",
+      "yourMessage": "Votre Message",
+      "replyPlaceholder": "Cher/Chère {{name}},\n\nMerci de nous avoir contactés.\n\n",
+      "sendReply": "Envoyer la Réponse",
+      "cancel": "Annuler",
+      "confirm": "Confirmer",
+      "confirmDelete": "Êtes-vous sûr de vouloir supprimer le(s) message(s) sélectionné(s) ?",
+      "deleteConfirmTitle": "Supprimer {{count}} Message(s)",
+      "deleteConfirmSingular": "Êtes-vous sûr de vouloir supprimer ce message ?",
+      "deleteConfirmPlural": "Êtes-vous sûr de vouloir supprimer ces {{count}} messages ?",
+      "deleteWarning": "Cette action ne peut pas être annulée et toutes les données des messages seront définitivement supprimées de nos serveurs.",
+      "replySuccess": "Réponse envoyée avec succès à {{email}}",
+      "filters": {
+        "allStatus": "Tous les Statuts",
+        "new": "Nouveau",
+        "read": "Lu",
+        "replied": "Répondu",
+        "archived": "Archivé"
+      },
+      "actions": {
+        "markRead": "Marquer comme Lu",
+        "archive": "Archiver",
+        "delete": "Supprimer"
+      },
+      "table": {
+        "from": "De",
+        "subject": "Sujet",
+        "date": "Date",
+        "status": "Statut",
+        "actions": "Actions"
+      },
+      "status": {
+        "new": "Nouveau",
+        "read": "Lu",
+        "replied": "Répondu",
+        "archived": "Archivé"
+      },
+      "pagination": {
+        "previous": "Précédent",
+        "next": "Suivant",
+        "showing": "Affichage de {{start}} à {{end}} sur {{total}} résultats",
+        "pageOf": "Page {{page}} sur {{total}}"
+      },
+      "errors": {
+        "fetchFailed": "Échec de la récupération des messages de contact",
+        "updateStatusFailed": "Échec de la mise à jour du statut du message",
+        "deleteFailed": "Échec de la suppression des messages",
+        "sendReplyFailed": "Échec de l'envoi de la réponse par e-mail",
+        "unexpectedError": "Une erreur inattendue s'est produite",
+        "replyUnexpectedError": "Une erreur inattendue s'est produite lors de l'envoi de la réponse"
+      }
+    },
+    "sellerAnalytics": {
+      "title": "Analytique du Vendeur",
+      "timePeriod": "Période",
+      "loading": "Chargement des données analytiques...",
+      "timeFilters": {
+        "weekly": "Hebdomadaire",
+        "monthly": "Mensuel",
+        "yearly": "Annuel"
+      },
+      "stats": {
+        "totalSales": "Ventes Totales",
+        "weekSales": "Ventes Hebdomadaires",
+        "monthSales": "Ventes Mensuelles",
+        "yearSales": "Ventes Annuelles",
+        "totalOrders": "Commandes Totales",
+        "pendingOrders": "Commandes en Attente"
+      },
+      "salesTrend": "Tendance des Ventes",
+      "salesEuro": "Ventes (€)",
+      "topProducts": "Produits Populaires",
+      "unitsSold": "Unités Vendues",
+      "customerDemographics": "Démographie des Clients",
+      "demographicsComingSoon": "Les données démographiques des clients seront bientôt disponibles",
+      "orderStatus": {
+        "title": "Statut des Commandes",
+        "pending": "En Attente",
+        "processing": "En Traitement",
+        "shipped": "Expédié",
+        "delivered": "Livré",
+        "cancelled": "Annulé"
+      },
+      "orderStatusLabel": "Statut des Commandes",
+      "months": {
+        "jan": "Jan",
+        "feb": "Fév",
+        "mar": "Mar",
+        "apr": "Avr",
+        "may": "Mai",
+        "jun": "Juin",
+        "jul": "Juil",
+        "aug": "Août",
+        "sep": "Sep",
+        "oct": "Oct",
+        "nov": "Nov",
+        "dec": "Déc"
+      },
+      "errors": {
+        "authTokenNotFound": "Jeton d'authentification non trouvé",
+        "fetchFailed": "Échec de la récupération des données analytiques"
+      }
+    },
+    "settings": {
+      "title": "Paramètres",
+      "enabled": "Activé",
+        "disabled": "Désactivé",
+      "saveChanges": "Enregistrer les Modifications",
+      "general": {
+        "title": "Paramètres Généraux",
+        "siteName": "Nom du Site",
+        "siteDescription": "Description du Site",
+        "supportEmail": "Email de Support",
+        "timezone": "Fuseau Horaire"
+      },
+      "product": {
+        "title": "Paramètres des Produits",
+        "autoApprove": "Approbation Automatique des Produits",
+        "autoApproveDescription": "Approuver automatiquement les nouvelles annonces de produits",
+        
+        "successMessage": "Paramètre d'approbation automatique mis à jour avec succès",
+        "errorMessage": "Échec de la mise à jour du paramètre d'approbation automatique"
+      },
+      "notification": {
+        "title": "Paramètres de Notification",
+        "orderNotifications": "Notifications de Commande",
+        "productAlerts": "Alertes de Produit",
+        "newsletterUpdates": "Mises à Jour de la Newsletter",
+        "securityAlerts": "Alertes de Sécurité"
+      },
+      "security": {
+        "title": "Paramètres de Sécurité",
+        "changePassword": "Changer le Mot de Passe",
+        "twoFactorAuthentication": "Authentification à Deux Facteurs"
+      },
+      "settings": {
+        "title": "Paramètres du Compte",
+        "language": "Langue",
+        "languageDescription": "Sélectionnez votre langue préférée",
+        "french": "Français",
+        "english": "Anglais",
+        "dangerZone": "Zone de Danger",
+        "dangerZoneDescription": "Déconnectez-vous de votre compte",
+        "selectLanguage": "Sélectionner la langue"
+      }
+    },
+    "logout": {
+      "button": "Se Déconnecter",
+      "confirmation": "Êtes-vous sûr de vouloir vous déconnecter ?"
+    },
+    "loading": "Chargement...",
+    "unauthorized": "Accès non autorisé au panneau d'administration. Redirection vers la page d'accueil."
   }
 }

@@ -1,48 +1,31 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { CheckCircle, AlertCircle, Book, Shield, Truck, DollarSign } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const SellerGuidelines = () => {
+  const { t } = useTranslation();
+
   const guidelines = [
     {
-      title: 'Product Quality Standards',
+      title: t('sellerGuidelines.guidelines.productQuality.title'),
       icon: <CheckCircle className="w-6 h-6 text-green-500" />,
-      items: [
-        'All parts must be genuine or high-quality aftermarket',
-        'Include clear photos from multiple angles',
-        'Accurate product descriptions with specifications',
-        'Proper packaging for safe shipping',
-      ],
+      items: t('sellerGuidelines.guidelines.productQuality.items', { returnObjects: true }) as string[],
     },
     {
-      title: 'Prohibited Items',
+      title: t('sellerGuidelines.guidelines.prohibitedItems.title'),
       icon: <AlertCircle className="w-6 h-6 text-red-500" />,
-      items: [
-        'Counterfeit or replica parts',
-        'Used safety equipment',
-        'Recalled items',
-        'Parts with unclear origin',
-      ],
+      items: t('sellerGuidelines.guidelines.prohibitedItems.items', { returnObjects: true }) as string[],
     },
     {
-      title: 'Pricing & Fees',
+      title: t('sellerGuidelines.guidelines.pricingFees.title'),
       icon: <DollarSign className="w-6 h-6 text-blue-500" />,
-      items: [
-        'Competitive market pricing',
-        'Transparent fee structure',
-        'Commission rates by category',
-        'Payment processing fees',
-      ],
+      items: t('sellerGuidelines.guidelines.pricingFees.items', { returnObjects: true }) as string[],
     },
     {
-      title: 'Shipping Requirements',
+      title: t('sellerGuidelines.guidelines.shippingRequirements.title'),
       icon: <Truck className="w-6 h-6 text-purple-500" />,
-      items: [
-        'Fast processing (within 48 hours)',
-        'Tracking number required',
-        'Proper packaging guidelines',
-        'Insurance for valuable items',
-      ],
+      items: t('sellerGuidelines.guidelines.shippingRequirements.items', { returnObjects: true }) as string[],
     },
   ];
 
@@ -54,10 +37,10 @@ const SellerGuidelines = () => {
           <div className="text-center">
             <Book className="w-12 h-12 text-[#FFB800] mx-auto mb-4" />
             <h1 className="text-4xl font-bold text-white mb-4">
-              Seller Guidelines
+              {t('sellerGuidelines.title')}
             </h1>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              Everything you need to know about selling on EasyCasse
+              {t('sellerGuidelines.subtitle')}
             </p>
           </div>
         </div>
@@ -74,13 +57,13 @@ const SellerGuidelines = () => {
               <div className="flex items-center mb-4">
                 {React.cloneElement(section.icon, {
                   className: `w-6 h-6 ${
-                    section.title === 'Prohibited Items' ? 'text-red-500' : 'text-[#FFB800]'
+                    section.title === t('sellerGuidelines.guidelines.prohibitedItems.title') ? 'text-red-500' : 'text-[#FFB800]'
                   }`
                 })}
                 <h2 className="text-xl font-semibold ml-2 text-[#1E1E2D]">{section.title}</h2>
               </div>
               <ul className="space-y-3">
-                {section.items.map((item, itemIndex) => (
+                {section.items.map((item: string, itemIndex: number) => (
                   <li key={itemIndex} className="flex items-start">
                     <span className="text-[#FFB800] mr-2">•</span>
                     <span className="text-gray-600">{item}</span>
@@ -97,53 +80,49 @@ const SellerGuidelines = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="prose prose-lg mx-auto">
             <h2 className="text-3xl font-bold text-[#1E1E2D] mb-8">
-              Detailed Guidelines
+              {t('sellerGuidelines.detailedGuidelines.title')}
             </h2>
             
             <div className="space-y-12">
               <section>
                 <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-                  Account Requirements
+                  {t('sellerGuidelines.detailedGuidelines.accountRequirements.title')}
                 </h3>
                 <p className="text-gray-600 mb-4">
-                  To become a seller on EasyCasse, you must meet the following requirements:
+                  {t('sellerGuidelines.detailedGuidelines.accountRequirements.description')}
                 </p>
                 <ul className="list-disc pl-6 text-gray-600">
-                  <li>Valid business registration in France</li>
-                  <li>Professional auto parts experience</li>
-                  <li>Valid bank account for payments</li>
-                  <li>Valid phone number and address</li>
+                  {(t('sellerGuidelines.detailedGuidelines.accountRequirements.items', { returnObjects: true }) as string[]).map((item: string, index: number) => (
+                    <li key={index}>{item}</li>
+                  ))}
                 </ul>
               </section>
 
               <section>
                 <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-                  Performance Metrics
+                  {t('sellerGuidelines.detailedGuidelines.performanceMetrics.title')}
                 </h3>
                 <p className="text-gray-600 mb-4">
-                  Sellers are evaluated based on the following metrics:
+                  {t('sellerGuidelines.detailedGuidelines.performanceMetrics.description')}
                 </p>
                 <ul className="list-disc pl-6 text-gray-600">
-                  <li>Order fulfillment rate (minimum 95%)</li>
-                  <li>Shipping time compliance</li>
-                  <li>Customer satisfaction rating</li>
-                  <li>Response time to customer inquiries</li>
+                  {(t('sellerGuidelines.detailedGuidelines.performanceMetrics.items', { returnObjects: true }) as string[]).map((item: string, index: number) => (
+                    <li key={index}>{item}</li>
+                  ))}
                 </ul>
               </section>
 
               <section>
                 <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-                  Product Listings
+                  {t('sellerGuidelines.detailedGuidelines.productListings.title')}
                 </h3>
                 <p className="text-gray-600 mb-4">
-                  Your product listings must include:
+                  {t('sellerGuidelines.detailedGuidelines.productListings.description')}
                 </p>
                 <ul className="list-disc pl-6 text-gray-600">
-                  <li>High-quality images (minimum 3 per product)</li>
-                  <li>Accurate product descriptions</li>
-                  <li>Correct categorization</li>
-                  <li>Compatible vehicle information</li>
-                  <li>Clear pricing and shipping information</li>
+                  {(t('sellerGuidelines.detailedGuidelines.productListings.items', { returnObjects: true }) as string[]).map((item: string, index: number) => (
+                    <li key={index}>{item}</li>
+                  ))}
                 </ul>
               </section>
             </div>
@@ -155,23 +134,23 @@ const SellerGuidelines = () => {
       <div className="bg-[#1E1E2D] py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">
-            Ready to Start Selling?
+            {t('sellerGuidelines.cta.readyToStart')}
           </h2>
           <p className="text-xl text-gray-300 mb-8">
-            Join our community of successful auto parts sellers today
+            {t('sellerGuidelines.cta.joinCommunity')}
           </p>
           <div className="flex justify-center space-x-4">
             <Link
               to="/register"
               className="inline-flex items-center px-6 py-3 border border-transparent text-base font-bold rounded-md text-[#1E1E2D] bg-[#FFB800] hover:bg-[#e6a600]"
             >
-              Create Account
+              {t('sellerGuidelines.cta.createAccount')}
             </Link>
             <Link
               to="/contact"
               className="inline-flex items-center px-6 py-3 border border-[#FFB800] text-base font-bold rounded-md text-[#FFB800] hover:bg-[#FFB800] hover:text-[#1E1E2D]"
             >
-              Contact Support
+              {t('sellerGuidelines.cta.contactSupport')}
             </Link>
           </div>
         </div>

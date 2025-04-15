@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import {
   HelpCircle,
   Search,
@@ -14,42 +15,44 @@ import {
 } from 'lucide-react';
 
 const Help = () => {
+  const { t } = useTranslation();
+
   const commonQuestions = [
     {
-      question: 'How do I track my order?',
-      answer: 'You can track your order by logging into your account and visiting the Orders section. Alternatively, use the tracking number provided in your shipping confirmation email.',
+      question: t('help.faq.trackOrder.question'),
+      answer: t('help.faq.trackOrder.answer'),
       link: '/track-order',
     },
     {
-      question: 'What is your return policy?',
-      answer: 'We offer a 30-day return policy for most items. Items must be unused and in their original packaging.',
+      question: t('help.faq.returnPolicy.question'),
+      answer: t('help.faq.returnPolicy.answer'),
       link: '/returns',
     },
     {
-      question: 'How do I contact seller support?',
-      answer: 'Sellers can reach our dedicated support team through the seller dashboard or by emailing seller.support@easycasse.com',
+      question: t('help.faq.sellerSupport.question'),
+      answer: t('help.faq.sellerSupport.answer'),
       link: '/seller-support',
     },
   ];
 
   const categories = [
     {
-      title: 'Shipping & Delivery',
+      title: t('help.categories.shipping'),
       icon: <Truck className="w-6 h-6" />,
       link: '/shipping',
     },
     {
-      title: 'Returns & Refunds',
+      title: t('help.categories.returns'),
       icon: <RefreshCw className="w-6 h-6" />,
       link: '/returns',
     },
     {
-      title: 'Account & Orders',
+      title: t('help.categories.account'),
       icon: <User className="w-6 h-6" />,
       link: '/account',
     },
     {
-      title: 'Payment & Pricing',
+      title: t('help.categories.payment'),
       icon: <CreditCard className="w-6 h-6" />,
       link: '/payment',
     },
@@ -62,25 +65,24 @@ const Help = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <HelpCircle className="w-16 h-16 text-[#FFB800] mx-auto mb-4" />
           <h1 className="text-4xl font-bold text-white mb-4">
-
-            How can we help you?
+            {t('help.title')}
           </h1>
           <div className="max-w-xl mx-auto">
             <div className="relative">
               <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-5 h-5" />
               <input
                 type="text"
-                placeholder="Search for help..."
+                placeholder={t('help.searchPlaceholder')}
                 className="w-full pl-10 pr-4 py-3 rounded-lg border-none focus:ring-2 focus:ring-[#FFB800]"
               />
             </div>
           </div>
-
         </div>
       </div>
 
       {/* Help Categories */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <h2 className="text-2xl font-bold text-gray-900 mb-6">{t('help.categories.title')}</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {categories.map((category, index) => (
             <Link
@@ -91,7 +93,6 @@ const Help = () => {
               <div className="flex items-center text-[#FFB800] mb-3">
                 {category.icon}
                 <h3 className="text-lg font-semibold ml-2">{category.title}</h3>
-
               </div>
             </Link>
           ))}
@@ -102,7 +103,7 @@ const Help = () => {
       <div className="bg-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-gray-900 mb-8">
-            Frequently Asked Questions
+            {t('help.faq.title')}
           </h2>
           <div className="grid gap-6">
             {commonQuestions.map((item, index) => (
@@ -118,9 +119,8 @@ const Help = () => {
                   to={item.link}
                   className="text-[#FFB800] hover:text-[#e6a600] font-medium"
                 >
-                  Learn more →
+                  {t('help.faq.trackOrder.link')} →
                 </Link>
-
               </div>
             ))}
           </div>
@@ -131,44 +131,38 @@ const Help = () => {
       <div className="bg-gray-50 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-gray-900 mb-8">
-            Still Need Help?
+            {t('help.contactSection.title')}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="bg-white p-6 rounded-lg shadow-md text-center">
               <Phone className="w-8 h-8 text-[#FFB800] mx-auto mb-4" />
-              <h3 className="text-lg font-semibold mb-2">Call Us</h3>
-              <p className="text-gray-600">Available Mon-Fri, 9am-6pm</p>
+              <h3 className="text-lg font-semibold mb-2">{t('help.contactSection.call.title')}</h3>
+              <p className="text-gray-600">{t('help.contactSection.call.description')}</p>
               <a
-
                 href="tel:+33123456789"
                 className="mt-4 inline-block text-[#FFB800] hover:text-[#e6a600]"
               >
-                +33 1 23 45 67 89
+                {t('help.contactSection.call.phone')}
               </a>
-
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md text-center">
               <Mail className="w-8 h-8 text-[#FFB800] mx-auto mb-4" />
-              <h3 className="text-lg font-semibold mb-2">Email Support</h3>
-              <p className="text-gray-600">Get a response within 24 hours</p>
+              <h3 className="text-lg font-semibold mb-2">{t('help.contactSection.email.title')}</h3>
+              <p className="text-gray-600">{t('help.contactSection.email.description')}</p>
               <a
-
                 href="mailto:support@easycasse.com"
                 className="mt-4 inline-block text-[#FFB800] hover:text-[#e6a600]"
               >
-                support@easycasse.com
+                {t('help.contactSection.email.address')}
               </a>
-
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md text-center">
               <MessageCircle className="w-8 h-8 text-[#FFB800] mx-auto mb-4" />
-              <h3 className="text-lg font-semibold mb-2">Live Chat</h3>
-              <p className="text-gray-600">Chat with our support team</p>
-
+              <h3 className="text-lg font-semibold mb-2">{t('help.contactSection.chat.title')}</h3>
+              <p className="text-gray-600">{t('help.contactSection.chat.description')}</p>
               <button className="mt-4 text-[#FFB800] hover:text-[#e6a600]">
-                Start Chat
+                {t('help.contactSection.chat.button')}
               </button>
-
             </div>
           </div>
         </div>

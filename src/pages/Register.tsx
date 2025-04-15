@@ -2,15 +2,20 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { setCredentials } from '../store/slices/authSlice';
-import { Mail, Lock, User, UserPlus } from 'lucide-react';
+import { Mail, Lock, User, UserPlus, Phone } from 'lucide-react';
+import { API_URL } from '../config';
 
 const Register = () => {
   const [formData, setFormData] = useState({
-    name: '',
+    firstName: '',
+    lastName: '',
     email: '',
     password: '',
     confirmPassword: '',
-    role: 'buyer',
+    role: 'seller',
+    phone: '',
+    countryCode: '+1',
+    title: 'Sir'
   });
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
@@ -29,25 +34,85 @@ const Register = () => {
     setLoading(true);
 
     try {
-      // TODO: Implement actual API call
-      const response = await fetch('/api/auth/register', {
+      // Prepare data for API
+      const userData = {
+        email: formData.email,
+        password: formData.password,
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+        role: formData.role,
+        phone: formData.phone || '+33123456789', // Default phone if not provided
+        countryCode: formData.countryCode,
+        title: formData.title
+      };
+
+      console.log('Submitting registration with data:', userData);
+
+      // Make API call to register
+      const response = await fetch(`${API_URL}/api/auth/register`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(userData),
       });
 
-      const data = await response.json();
+      // Log the raw response for debugging
+      console.log('Registration response status:', response.status);
+      
+      // Get the response text first to see if it's valid JSON
+      const responseText = await response.text();
+      console.log('Registration response text:', responseText);
+      
+      // Try to parse as JSON
+      let data;
+      try {
+        data = JSON.parse(responseText);
+        console.log('Registration response data:', data);
+      } catch (parseError) {
+        console.error('Error parsing response as JSON:', parseError);
+        throw new Error('Server returned invalid JSON');
+      }
+      
       if (response.ok) {
-        dispatch(setCredentials(data));
-        navigate('/');
+        // Store tokens
+        localStorage.setItem('token', data.accessToken);
+        localStorage.setItem('refreshToken', data.refreshToken);
+        localStorage.setItem('userRole', data.user.role);
+        
+        // Update Redux state
+        dispatch(setCredentials({
+          user: data.user,
+          token: data.accessToken
+        }));
+
+        // Navigate based on role
+        if (data.user.role === 'admin') {
+          navigate('/admin');
+        } else if (data.user.role === 'seller') {
+          navigate('/seller/dashboard');
+        } else {
+          navigate('/');
+        }
       } else {
-        setError(data.message || 'Registration failed');
+        // More detailed error handling
+        if (data.error) {
+          setError(data.error.message || data.message || 'Registration failed');
+        } else if (data.message) {
+          setError(data.message);
+        } else {
+          setError(`Registration failed with status ${response.status}`);
+        }
       }
     } catch (err) {
-      setError('An error occurred. Please try again.');
+      console.error('Registration error:', err);
+      setError(err instanceof Error ? err.message : 'An error occurred. Please try again.');
     } finally {
       setLoading(false);
     }
+  };
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
   };
 
   return (
@@ -73,24 +138,44 @@ const Register = () => {
               </div>
             )}
 
-            <div>
-              <label htmlFor="name" className="block text-sm font-medium text-gray-700">
-                Full Name
-              </label>
-              <div className="mt-1 relative rounded-md shadow-sm">
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <User className="h-5 w-5 text-gray-400" />
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <label htmlFor="firstName" className="block text-sm font-medium text-gray-700">
+                  First Name
+                </label>
+                <div className="mt-1 relative rounded-md shadow-sm">
+                  <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    <User className="h-5 w-5 text-gray-400" />
+                  </div>
+                  <input
+                    id="firstName"
+                    name="firstName"
+                    type="text"
+                    required
+                    value={formData.firstName}
+                    onChange={handleInputChange}
+                    className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-[#FFB800] focus:border-[#FFB800]"
+                    placeholder="John"
+                  />
                 </div>
-                <input
-                  id="name"
-                  name="name"
-                  type="text"
-                  required
-                  value={formData.name}
-                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-[#FFB800] focus:border-[#FFB800]"
-                  placeholder="John Doe"
-                />
+              </div>
+
+              <div>
+                <label htmlFor="lastName" className="block text-sm font-medium text-gray-700">
+                  Last Name
+                </label>
+                <div className="mt-1 relative rounded-md shadow-sm">
+                  <input
+                    id="lastName"
+                    name="lastName"
+                    type="text"
+                    required
+                    value={formData.lastName}
+                    onChange={handleInputChange}
+                    className="block w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-[#FFB800] focus:border-[#FFB800]"
+                    placeholder="Doe"
+                  />
+                </div>
               </div>
             </div>
 
@@ -108,10 +193,68 @@ const Register = () => {
                   type="email"
                   required
                   value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  onChange={handleInputChange}
                   className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-[#FFB800] focus:border-[#FFB800]"
                   placeholder="you@example.com"
                 />
+              </div>
+            </div>
+
+            <div>
+              <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
+                Phone Number
+              </label>
+              <div className="mt-1 relative rounded-md shadow-sm">
+                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                  <Phone className="h-5 w-5 text-gray-400" />
+                </div>
+                <input
+                  id="phone"
+                  name="phone"
+                  type="tel"
+                  value={formData.phone}
+                  onChange={handleInputChange}
+                  className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-[#FFB800] focus:border-[#FFB800]"
+                  placeholder="+33123456789"
+                />
+              </div>
+            </div>
+
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <label htmlFor="title" className="block text-sm font-medium text-gray-700">
+                  Title
+                </label>
+                <select
+                  id="title"
+                  name="title"
+                  value={formData.title}
+                  onChange={handleInputChange}
+                  className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-[#FFB800] focus:border-[#FFB800]"
+                >
+                  <option value="Sir">Sir</option>
+                  <option value="Madam">Madam</option>
+                  <option value="Neutral">Neutral</option>
+                </select>
+              </div>
+
+              <div>
+                <label htmlFor="countryCode" className="block text-sm font-medium text-gray-700">
+                  Country Code
+                </label>
+                <select
+                  id="countryCode"
+                  name="countryCode"
+                  value={formData.countryCode}
+                  onChange={handleInputChange}
+                  className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-[#FFB800] focus:border-[#FFB800]"
+                >
+                  <option value="+1">US (+1)</option>
+                  <option value="+44">UK (+44)</option>
+                  <option value="+33">France (+33)</option>
+                  <option value="+49">Germany (+49)</option>
+                  <option value="+91">India (+91)</option>
+                </select>
               </div>
             </div>
 
@@ -129,7 +272,7 @@ const Register = () => {
                   type="password"
                   required
                   value={formData.password}
-                  onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+                  onChange={handleInputChange}
                   className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-[#FFB800] focus:border-[#FFB800]"
                 />
               </div>
@@ -149,7 +292,7 @@ const Register = () => {
                   type="password"
                   required
                   value={formData.confirmPassword}
-                  onChange={(e) => setFormData({ ...formData, confirmPassword: e.target.value })}
+                  onChange={handleInputChange}
                   className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-[#FFB800] focus:border-[#FFB800]"
                 />
               </div>
@@ -163,11 +306,11 @@ const Register = () => {
                 id="role"
                 name="role"
                 value={formData.role}
-                onChange={(e) => setFormData({ ...formData, role: e.target.value })}
+                onChange={handleInputChange}
                 className="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-[#FFB800] focus:border-[#FFB800]"
               >
-                <option value="buyer">Buy Parts</option>
                 <option value="seller">Sell Parts</option>
+                {/* <option value="user">Buy Parts</option> */}
               </select>
             </div>
 
