@@ -1,0 +1,33 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "axios": "^1.8.3",
+    "bcryptjs": "^3.0.2",
+    "cloudinary": "^2.5.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-validator": "^7.2.1",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.11.0",
+    "nodemailer": "^6.10.0",
+    "nodemon": "^3.1.9",
+    "request": "^2.88.2",
+    "soap": "^1.1.10",
+    "socket": "^0.14.48",
+    "socket.io": "^4.8.1",
+    "stripe": "^17.7.0",
+    "strong-soap": "^4.1.10",
+    "xml2js": "^0.6.2"
+  }
+}

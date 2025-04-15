@@ -1,32 +1,40 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { setCredentials } from '../store/slices/authSlice';
-import { Mail, Lock, LogIn, Info } from 'lucide-react';
+import { Mail, Lock, LogIn } from 'lucide-react';
+import { API_URL } from '../config';
+import { useTranslation } from 'react-i18next';
 
 const Login = () => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     email: '',
     password: '',
   });
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
+  const [rememberMe, setRememberMe] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  // Demo credentials
-  const demoCredentials = {
-    admin: {
-      email: 'admin@easycasse.com',
-      password: 'admin123',
-      role: 'admin'
-    },
-    seller: {
-      email: 'seller@easycasse.com',
-      password: 'seller123',
-      role: 'seller'
+  // Check if user is already logged in on component mount
+  useEffect(() => {
+    const token = localStorage.getItem('accessToken');
+    if (token) {
+      // User is already logged in, redirect
+      const userRole = localStorage.getItem('userRole') || '';
+      if (userRole === 'admin') {
+        console.log('Admin user detected, redirecting to admin panel');
+        navigate('/admin');
+        return;
+      } else if (userRole === 'seller') {
+        navigate('/products/add');
+      } else {
+        navigate('/');
+      }
     }
-  };
+  }, [navigate]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -34,105 +42,102 @@ const Login = () => {
     setLoading(true);
 
     try {
-      // Check if credentials match demo accounts
-      let user = null;
-      if (formData.email === demoCredentials.admin.email && 
-          formData.password === demoCredentials.admin.password) {
-        user = {
-          id: '1',
-          email: demoCredentials.admin.email,
-          role: demoCredentials.admin.role,
-          name: 'Admin User'
-        };
-      } else if (formData.email === demoCredentials.seller.email && 
-                 formData.password === demoCredentials.seller.password) {
-        user = {
-          id: '2',
-          email: demoCredentials.seller.email,
-          role: demoCredentials.seller.role,
-          name: 'Seller User'
-        };
+      // Attempt API authentication
+      const response = await fetch(`${API_URL}/api/auth/login`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        throw new Error(errorData.message || 'Invalid credentials');
       }
 
-      if (user) {
-        const token = `demo-token-${user.role}`;
-        
-        // Save to localStorage
-        localStorage.setItem('token', token);
-        localStorage.setItem('userRole', user.role);
-        
-        // Update Redux state
-        dispatch(setCredentials({ user, token }));
+      const data = await response.json();
+      
+      if (!data.accessToken || !data.user) {
+        throw new Error('Invalid server response');
+      }
 
-        // Navigate based on role
-        if (user.role === 'admin') {
-          navigate('/admin');
-        } else if (user.role === 'seller') {
-          navigate('/seller/dashboard');
-        } else {
-          navigate('/');
-        }
+      // Save to localStorage with "Remember me" consideration
+      if (rememberMe) {
+        // For "Remember me", store in localStorage
+        localStorage.setItem('accessToken', data.accessToken);
+        localStorage.setItem('refreshToken', data.refreshToken);
+        localStorage.setItem('userRole', data.user.role);
+        localStorage.setItem('rememberMe', 'true');
+        localStorage.setItem('user', JSON.stringify({
+          id: data.user.id,
+          email: data.user.email,
+          firstName: data.user.firstName,
+          lastName: data.user.lastName,
+          name: `${data.user.firstName} ${data.user.lastName}`,
+          role: data.user.role
+        }));
       } else {
-        setError('Invalid credentials');
+        // For regular session, use sessionStorage
+        sessionStorage.setItem('accessToken', data.accessToken);
+        sessionStorage.setItem('refreshToken', data.refreshToken);
+        sessionStorage.setItem('userRole', data.user.role);
+        sessionStorage.setItem('user', JSON.stringify({
+          id: data.user.id,
+          email: data.user.email,
+          name: `${data.user.firstName} ${data.user.lastName}`,
+          role: data.user.role
+        }));
+        
+        // Still keep in localStorage for compatibility
+        localStorage.setItem('accessToken', data.accessToken);
+        localStorage.setItem('refreshToken', data.refreshToken);
+        localStorage.setItem('userRole', data.user.role);
+        localStorage.setItem('user', JSON.stringify({
+          id: data.user.id,
+          email: data.user.email,
+          name: `${data.user.firstName} ${data.user.lastName}`,
+          role: data.user.role
+        }));
+      }
+      
+      // Update Redux state
+      dispatch(setCredentials({
+        user: data.user,
+        token: data.accessToken
+      }));
+
+      // Navigate based on role
+      if (data.user.role === 'admin') {
+        navigate('/admin');
+      } else if (data.user.role === 'seller') {
+        navigate('/products/add');
+      } else {
+        navigate('/');
       }
     } catch (err) {
-      setError('An error occurred. Please try again.');
+      setError(t('login.errorMessage'));
     } finally {
       setLoading(false);
     }
   };
 
-  const fillDemoCredentials = (type: 'admin' | 'seller') => {
-    setFormData({
-      email: demoCredentials[type].email,
-      password: demoCredentials[type].password
-    });
-  };
-
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 sm:px-6 lg:px-8">
-      <div className="sm:mx-auto sm:w-full sm:max-w-md">
+      <div className="sm:mx-auto sm:w-full sm:max-w-md mt-8 md:mt-0 mb-4 md:mb-0">
         <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-          Sign in to your account
+          {t('login.title')}
         </h2>
         <p className="mt-2 text-center text-sm text-gray-600">
-          Or{' '}
+          {t('login.noAccount')}{' '}
           <Link to="/register" className="font-medium text-[#FFB800] hover:text-[#e6a600]">
-            create a new account
+            {t('login.signUp')}
           </Link>
         </p>
-
       </div>
 
-      <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
+      <div className=" sm:mx-auto sm:w-full sm:max-w-md">
         <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
-          {/* Demo Credentials Info */}
-          <div className="mb-6 bg-blue-50 rounded-lg p-4">
-            <div className="flex items-center">
-              <Info className="h-5 w-5 text-[#FFB800] mr-2" />
-              <h3 className="text-sm font-medium text-[#FFB800]">Demo Credentials</h3>
-            </div>
-            <div className="mt-2 space-y-2">
-              <button
-
-                onClick={() => fillDemoCredentials('admin')}
-                className="w-full text-left text-sm px-3 py-2 rounded bg-white hover:bg-gray-50"
-              >
-                <div className="font-medium text-gray-900">Admin Account</div>
-                <div className="text-gray-500">Email: {demoCredentials.admin.email}</div>
-                <div className="text-gray-500">Password: {demoCredentials.admin.password}</div>
-              </button>
-              <button
-                onClick={() => fillDemoCredentials('seller')}
-                className="w-full text-left text-sm px-3 py-2 rounded bg-white hover:bg-gray-50"
-              >
-                <div className="font-medium text-gray-900">Seller Account</div>
-                <div className="text-gray-500">Email: {demoCredentials.seller.email}</div>
-                <div className="text-gray-500">Password: {demoCredentials.seller.password}</div>
-              </button>
-            </div>
-          </div>
-
           <form className="space-y-6" onSubmit={handleSubmit}>
             {error && (
               <div className="bg-red-50 border border-red-200 text-red-600 px-4 py-3 rounded-md">
@@ -142,7 +147,7 @@ const Login = () => {
 
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                Email address
+                {t('login.email')}
               </label>
               <div className="mt-1 relative rounded-md shadow-sm">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -163,7 +168,7 @@ const Login = () => {
 
             <div>
               <label htmlFor="password" className="block text-sm font-medium text-gray-700">
-                Password
+                {t('login.password')}
               </label>
               <div className="mt-1 relative rounded-md shadow-sm">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -187,16 +192,18 @@ const Login = () => {
                   id="remember-me"
                   name="remember-me"
                   type="checkbox"
+                  checked={rememberMe}
+                  onChange={(e) => setRememberMe(e.target.checked)}
                   className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
                 />
                 <label htmlFor="remember-me" className="ml-2 block text-sm text-gray-900">
-                  Remember me
+                  {t('login.rememberMe')}
                 </label>
               </div>
 
               <div className="text-sm">
                 <a href="#" className="font-medium text-blue-600 hover:text-blue-500">
-                  Forgot your password?
+                  {t('login.forgotPassword')}
                 </a>
               </div>
             </div>
@@ -206,14 +213,13 @@ const Login = () => {
                 type="submit"
                 disabled={loading}
                 className="w-full flex justify-center items-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-bold text-[#1E1E2D] bg-[#FFB800] hover:bg-[#e6a600] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#FFB800] disabled:opacity-50"
-
               >
                 {loading ? (
                   'Signing in...'
                 ) : (
                   <>
                     <LogIn className="w-5 h-5 mr-2" />
-                    Sign in
+                    {t('login.signIn')}
                   </>
                 )}
               </button>

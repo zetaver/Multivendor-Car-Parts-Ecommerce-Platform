@@ -5,6 +5,8 @@ interface AuthState {
   token: string | null;
   isAuthenticated: boolean;
   loading: boolean;
+  userRole: string | null;
+  error: string | null;
 }
 
 const initialState: AuthState = {
@@ -12,6 +14,8 @@ const initialState: AuthState = {
   token: localStorage.getItem('token'),
   isAuthenticated: false,
   loading: true,
+  userRole: null,
+  error: null,
 };
 
 const authSlice = createSlice({
@@ -32,8 +36,16 @@ const authSlice = createSlice({
       state.loading = false;
       localStorage.removeItem('token');
     },
+    restoreSession: (state, action) => {
+      state.isAuthenticated = true;
+      state.user = action.payload.user;
+      state.token = action.payload.token;
+      state.userRole = action.payload.role;
+      state.loading = false;
+      state.error = null;
+    },
   },
 });
 
-export const { setCredentials, logout } = authSlice.actions;
+export const { setCredentials, logout, restoreSession } = authSlice.actions;
 export default authSlice.reducer;

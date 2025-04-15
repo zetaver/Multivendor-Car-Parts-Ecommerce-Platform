@@ -1,8 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Package, ShoppingBag, HelpCircle, Facebook, Twitter, Instagram } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 const Footer = () => {
+  const { t } = useTranslation();
+  
   return (
     <footer className="bg-[#1E1E2D] border-t border-gray-700">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
@@ -19,7 +22,7 @@ const Footer = () => {
                 <span className="text-xl font-bold text-[#FFB800]">EasyCasse</span>
               </Link>
             </div>
-            <p className="mt-4 text-gray-300">Your trusted marketplace for quality auto parts</p>
+            <p className="mt-4 text-gray-300">{t('footer.tagline')}</p>
             <div className="mt-6 flex space-x-4">
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-[#FFB800]">
                 <Facebook className="h-6 w-6" />
@@ -35,58 +38,58 @@ const Footer = () => {
 
           {/* Products Section */}
           <div>
-            <h3 className="text-sm font-semibold text-white uppercase tracking-wider">Products</h3>
+            <h3 className="text-sm font-semibold text-white uppercase tracking-wider">{t('footer.sections.products.title')}</h3>
             <ul className="mt-4 space-y-3">
               <li>
                 <Link to="/products" className="text-base text-gray-300 hover:text-[#FFB800]">
-                  All Parts
+                  {t('footer.sections.products.allParts')}
                 </Link>
               </li>
               <li>
                 <Link to="/categories" className="text-base text-gray-300 hover:text-[#FFB800]">
-                  Categories
+                  {t('footer.sections.products.categories')}
                 </Link>
               </li>
               <li>
                 <Link to="/new-arrivals" className="text-base text-gray-300 hover:text-[#FFB800]">
-                  New Arrivals
+                  {t('footer.sections.products.newArrivals')}
                 </Link>
               </li>
               <li>
                 <Link to="/best-sellers" className="text-base text-gray-300 hover:text-[#FFB800]">
-                  Best Sellers
+                  {t('footer.sections.products.bestSellers')}
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link to="/deals" className="text-base text-gray-300 hover:text-[#FFB800]">
                   Deals
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
 
           {/* Sell Section */}
           <div>
-            <h3 className="text-sm font-semibold text-white uppercase tracking-wider">Sell</h3>
+            <h3 className="text-sm font-semibold text-white uppercase tracking-wider">{t('footer.sections.sell.title')}</h3>
             <ul className="mt-4 space-y-3">
               <li>
                 <Link to="/sell" className="text-base text-gray-300 hover:text-[#FFB800]">
-                  Start Selling
+                  {t('footer.sections.sell.startSelling')}
                 </Link>
               </li>
               <li>
                 <Link to="/seller-guidelines" className="text-base text-gray-300 hover:text-[#FFB800]">
-                  Seller Guidelines
+                  {t('footer.sections.sell.sellerGuidelines')}
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link to="/seller/dashboard" className="text-base text-gray-300 hover:text-[#FFB800]">
                   Seller Dashboard
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link to="/seller-support" className="text-base text-gray-300 hover:text-[#FFB800]">
-                  Seller Support
+                  {t('footer.sections.sell.sellerSupport')}
                 </Link>
               </li>
             </ul>
@@ -94,16 +97,16 @@ const Footer = () => {
 
           {/* Support Section */}
           <div>
-            <h3 className="text-sm font-semibold text-white uppercase tracking-wider">Support</h3>
+            <h3 className="text-sm font-semibold text-white uppercase tracking-wider">{t('footer.sections.support.title')}</h3>
             <ul className="mt-4 space-y-3">
               <li>
                 <Link to="/help" className="text-base text-gray-300 hover:text-[#FFB800]">
-                  Help Center
+                  {t('footer.sections.support.helpCenter')}
                 </Link>
               </li>
               <li>
                 <Link to="/contact" className="text-base text-gray-300 hover:text-[#FFB800]">
-                  Contact Us
+                  {t('footer.sections.support.contactUs')}
                 </Link>
               </li>
             </ul>
@@ -111,21 +114,21 @@ const Footer = () => {
 
           {/* Legal Section */}
           <div>
-            <h3 className="text-sm font-semibold text-white uppercase tracking-wider">Legal</h3>
+            <h3 className="text-sm font-semibold text-white uppercase tracking-wider">{t('footer.sections.legal.title')}</h3>
             <ul className="mt-4 space-y-3">
               <li>
                 <Link to="/terms" className="text-base text-gray-300 hover:text-[#FFB800]">
-                  Terms of Service
+                  {t('footer.sections.legal.termsOfService')}
                 </Link>
               </li>
               <li>
                 <Link to="/privacy" className="text-base text-gray-300 hover:text-[#FFB800]">
-                  Privacy Policy
+                  {t('footer.sections.legal.privacyPolicy')}
                 </Link>
               </li>
               <li>
                 <Link to="/cookies" className="text-base text-gray-300 hover:text-[#FFB800]">
-                  Cookie Policy
+                  {t('footer.sections.legal.cookiePolicy')}
                 </Link>
               </li>
             </ul>
@@ -135,21 +138,21 @@ const Footer = () => {
         {/* Bottom Section */}
         <div className="mt-12 border-t border-gray-700 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-base text-gray-300">© 2024 EasyCasse. All rights reserved.</p>
+            <p className="text-base text-gray-300">{t('footer.copyright')}</p>
             <ul className="flex flex-wrap justify-center space-x-6">
               <li>
                 <Link to="/terms" className="text-sm text-gray-300 hover:text-[#FFB800]">
-                  Terms of Service
+                  {t('footer.sections.legal.termsOfService')}
                 </Link>
               </li>
               <li>
                 <Link to="/privacy" className="text-sm text-gray-300 hover:text-[#FFB800]">
-                  Privacy Policy
+                  {t('footer.sections.legal.privacyPolicy')}
                 </Link>
               </li>
               <li>
                 <Link to="/cookies" className="text-sm text-gray-300 hover:text-[#FFB800]">
-                  Cookie Policy
+                  {t('footer.sections.legal.cookiePolicy')}
                 </Link>
               </li>
             </ul>

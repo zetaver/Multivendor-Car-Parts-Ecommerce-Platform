@@ -1,84 +1,46 @@
 const mongoose = require('mongoose');
 
-const productSchema = new mongoose.Schema({
-  title: {
-    type: String,
-    required: true,
-    trim: true
-  },
-  description: {
-    type: String,
-    required: true
-  },
-  price: {
-    type: Number,
-    required: true,
-    min: 0
-  },
-  images: [{
-    type: String,
-    required: true
-  }],
-  category: {
-    type: String,
-    required: true
-  },
-  subcategory: {
-    type: String,
-    required: true
-  },
-  condition: {
-    type: String,
-    enum: ['new', 'used'],
-    required: true
-  },
-  oemNumber: {
-    type: String,
-    required: true,
-    unique: true
-  },
-  seller: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'User',
-    required: true
-  },
-  compatibility: [{
-    make: String,
-    model: String,
-    year: Number
-  }],
-  stock: {
-    type: Number,
-    required: true,
-    min: 0,
-    default: 0
-  },
-  views: {
-    type: Number,
-    default: 0
-  },
-  rating: {
-    type: Number,
-    default: 0,
-    min: 0,
-    max: 5
-  },
-  totalReviews: {
-    type: Number,
-    default: 0
-  },
-  status: {
-    type: String,
-    enum: ['active', 'inactive', 'deleted'],
-    default: 'active'
-  }
-}, {
-  timestamps: true
+const compatibilitySchema = new mongoose.Schema({
+  make: { type: String, required: true },
+  model: { type: String, required: true },
+  year: { type: Number, required: true },
 });
 
-// Add indexes for better search performance
-productSchema.index({ title: 'text', description: 'text', oemNumber: 'text' });
-productSchema.index({ category: 1, subcategory: 1 });
-productSchema.index({ seller: 1 });
+const productSchema = new mongoose.Schema({
+  title: { type: String, required: true },
+  description: { type: String, required: true },
+  price: { type: Number, required: true },
+  category: { type: mongoose.Schema.Types.ObjectId, ref: 'Category', required: true },
+  oemNumber: { type: String, required: true },
+  compatibility: [compatibilitySchema],
+  images: [{ type: String }],
+  seller: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
+  status: { type: String, default: 'pending', enum: ['pending', 'approved', 'rejected'] },
+  viewCount: {
+    type: Number,
+    default: 0
+  },
+  brand: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Brand'
+  },
+  model: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Model'
+  },
+  version: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Version'
+  }
+}, { timestamps: true });
 
-module.exports = mongoose.model('Product', productSchema);
+// Exclude seller from the output
+productSchema.set('toJSON', {
+  transform: (doc, ret) => {
+    delete ret.seller; // Remove seller from the response
+    return ret;
+  }
+});
+
+const Product = mongoose.model('Product', productSchema);
+module.exports = Product;
