@@ -94,5 +94,5 @@
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/zetaver/react-car-parts-marketplace.git
-cd react-car-parts-marketplace
+git clone hhttps://github.com/zetaver/Multivendor-Car-Parts-Ecommerce-Platform.git
+cd Multivendor-Car-Parts-Ecommerce-Platform
