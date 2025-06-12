@@ -69,11 +69,12 @@
 #### Overview
 ![Vendor Overview](./screenshots/vendor.png)
 
-#### Dashboard
-![Vendor Dashboard](./screenshots/vendor_dashbord.png)
-
 #### Products
 ![Vendor Products](./screenshots/vendor_products.png)
+
+
+#### Offers
+![Vendor Offers](./screenshots/offers.png) 
 
 #### Orders
 ![Vendor Orders](./screenshots/vendor_orders.png)
