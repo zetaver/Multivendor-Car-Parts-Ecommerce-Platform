@@ -77,10 +77,8 @@
 ![Vendor Offers](./screenshots/offers.png) 
 
 #### Orders
-![Vendor Orders](./screenshots/vendor_orders.png)
+![Vendor Orders](./screenshots/orders.png)
 
-#### Analytics
-![Vendor Analytics](./screenshots/vendor_analytics.png)
 
 ---
 
