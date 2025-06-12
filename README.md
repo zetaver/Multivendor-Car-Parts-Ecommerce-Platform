@@ -6,6 +6,8 @@
 
 **AutoMart** is a modern **Multivendor Car Parts Ecommerce Platform** built with the **MERN stack (MongoDB, Express.js, React, Node.js)** and styled with **Tailwind CSS**. The platform enables multiple sellers to list automotive parts and customers to shop, track orders, and make secure purchases—all in one responsive solution.
 
+> 🌐 **Live Demo**: [https://easeycasse.kaamkonnect.com/](https://easeycasse.kaamkonnect.com/)
+
 ---
 
 ## Features
